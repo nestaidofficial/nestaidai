@@ -248,7 +248,7 @@ export function SchedulingBento() {
               eyebrow="Recovery"
               title="Outreach"
               description="Reach caregivers through calls, texts, and follow-up workflows so scheduling moves faster across the channels your team already uses."
-              highlights={["46+ caregivers reached in 2 min", "Responses collected", "Matched with best caregiver"]}
+              items={["46+ caregivers reached in 2 min", "Responses collected", "Matched with best caregiver"]}
             />
           </motion.div>
 
