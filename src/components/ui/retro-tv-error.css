@@ -1,0 +1,360 @@
+/* ============================================================
+   Retro TV 404 — all scoped class names
+   ============================================================ */
+
+.main_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* ── TV + stand column ── */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─────────────── Antenna ─────────────── */
+.antenna {
+  position: relative;
+  width: 100px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+}
+
+.antenna_shadow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+}
+
+/* left arm */
+.a1 {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  width: 4px;
+  height: 56px;
+  background: linear-gradient(to top, #555, #999);
+  border-radius: 3px;
+  transform-origin: bottom center;
+  transform: translateX(-14px) rotate(-22deg);
+}
+.a1d {
+  position: absolute;
+  top: -1px;
+  left: calc(50% - 28px);
+  width: 10px;
+  height: 10px;
+  background: #aaa;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* right arm */
+.a2 {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  width: 4px;
+  height: 56px;
+  background: linear-gradient(to top, #555, #999);
+  border-radius: 3px;
+  transform-origin: bottom center;
+  transform: translateX(10px) rotate(22deg);
+}
+.a2d {
+  position: absolute;
+  top: -1px;
+  right: calc(50% - 28px);
+  width: 10px;
+  height: 10px;
+  background: #aaa;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.a_base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 12px;
+  background: #555;
+  border-radius: 4px 4px 0 0;
+}
+
+/* ─────────────── TV body ─────────────── */
+.tv {
+  width: 320px;
+  height: 210px;
+  background: linear-gradient(150deg, #3c3c3c 0%, #1c1c1c 100%);
+  border-radius: 18px;
+  display: flex;
+  align-items: stretch;
+  padding: 16px;
+  position: relative;
+  border: 2.5px solid #111;
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* corner curve cut */
+.cruve {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.curve_svg {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 46px;
+  height: 46px;
+  fill: #F6F6F3; /* matches site background so it "cuts" the corner */
+}
+
+/* ── Screen area ── */
+.display_div {
+  flex: 1;
+  margin-right: 12px;
+}
+
+.screen_out {
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.95);
+}
+
+.screen_out1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  background: radial-gradient(ellipse at 40% 45%, #0e1a10 0%, #050905 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* scanline overlay */
+.screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0.18) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* CRT glare */
+.screen::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  width: 35%;
+  height: 30%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.screenM {
+  display: none;
+}
+
+.notfound_text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #28ff44;
+  text-shadow:
+    0 0 6px #28ff44,
+    0 0 18px rgba(40, 255, 68, 0.35);
+  position: relative;
+  z-index: 4;
+  animation: tv-flicker 3s ease-in-out infinite;
+}
+
+@keyframes tv-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93%            { opacity: 0.55; }
+  95%            { opacity: 1; }
+  97%            { opacity: 0.7; }
+  99%            { opacity: 1; }
+}
+
+/* ── Horizontal scan lines decoration ── */
+.lines {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+}
+.line1 {
+  width: 210px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1px;
+}
+.line2 {
+  width: 160px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 1px;
+}
+.line3 {
+  width: 185px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1px;
+}
+
+/* ── Control panel ── */
+.buttons_div {
+  width: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+.b1 {
+  width: 26px;
+  height: 26px;
+  background: #3a3a3a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255,255,255,0.06);
+}
+.b1 > div {
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 40% 35%, #ff5533, #aa1100);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(204, 40, 0, 0.65);
+}
+
+.b2 {
+  width: 26px;
+  height: 10px;
+  background: #3a3a3a;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.speakers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.g1 {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+  align-items: center;
+}
+
+.g11,
+.g12,
+.g13,
+.g {
+  width: 30px;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 2px;
+}
+
+/* ─────────────── Stand / base ─────────────── */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.base1 {
+  width: 90px;
+  height: 14px;
+  background: linear-gradient(145deg, #3c3c3c, #1c1c1c);
+  border-radius: 0 0 5px 5px;
+}
+.base2 {
+  width: 130px;
+  height: 9px;
+  background: linear-gradient(145deg, #303030, #181818);
+  border-radius: 0 0 5px 5px;
+}
+.base3 {
+  width: 190px;
+  height: 10px;
+  background: linear-gradient(145deg, #282828, #101010);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* ─────────────── 404 digit display ─────────────── */
+.text_404 {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.text_4041,
+.text_4042,
+.text_4043 {
+  font-size: clamp(72px, 10vw, 120px);
+  font-weight: 900;
+  font-family: var(--font-heading), Georgia, serif;
+  color: #0d0d0d;
+  line-height: 1;
+  letter-spacing: -2px;
+}

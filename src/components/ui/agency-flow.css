@@ -1,0 +1,10 @@
+/* Traveling light along the horizontal timeline */
+@keyframes agency-flow-light {
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+.agency-flow-light {
+  offset-path: path("M 17 10 H 183");
+  animation: agency-flow-light 3.5s linear forwards;
+}

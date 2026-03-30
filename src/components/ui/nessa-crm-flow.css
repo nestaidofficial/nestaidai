@@ -1,0 +1,108 @@
+/* ─── Mobile elongated paths (portrait viewBox 200×280) ─── */
+
+@keyframes nessa-mob-light-1 {
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+.nessa-mob-light-1 {
+  offset-path: path("M 20 10 v 50 q 0 6 6 6 h 69 q 5 0 5 6 v 92");
+  animation: nessa-mob-light-1 4.2s linear infinite;
+}
+
+@keyframes nessa-mob-light-2 {
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+.nessa-mob-light-2 {
+  offset-path: path("M 73 10 v 38 q 0 6 6 6 h 16 q 5 0 5 6 v 104");
+  animation: nessa-mob-light-2 3.2s linear 0.9s infinite;
+}
+
+@keyframes nessa-mob-light-3 {
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+.nessa-mob-light-3 {
+  offset-path: path("M 127 10 v 38 q 0 6 -6 6 h -16 q -5 0 -5 6 v 104");
+  animation: nessa-mob-light-3 3.2s linear 1.8s infinite;
+}
+
+@keyframes nessa-mob-light-4 {
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+.nessa-mob-light-4 {
+  offset-path: path("M 177 10 v 50 q 0 6 -6 6 h -66 q -5 0 -5 6 v 92");
+  animation: nessa-mob-light-4 4.2s linear 2.7s infinite;
+}
+
+/* ─── Desktop paths (landscape viewBox 200×100) ─── */
+
+/* Path 1 - Clients (longest outer left path) */
+@keyframes nessa-light-1 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.nessa-light-1 {
+  offset-path: path("M 20 10 v 22 q 0 5 5 5 h 70 q 5 0 5 5 v 18");
+  animation: nessa-light-1 3.6s linear infinite;
+}
+
+/* Path 2 - Caregivers (short inner left path) */
+@keyframes nessa-light-2 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.nessa-light-2 {
+  offset-path: path("M 73 10 v 16 q 0 5 5 5 h 17 q 5 0 5 5 v 18");
+  animation: nessa-light-2 1.8s linear 0.9s infinite;
+}
+
+/* Path 3 - Scheduling (short inner right path) */
+@keyframes nessa-light-3 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.nessa-light-3 {
+  offset-path: path("M 127 10 v 16 q 0 5 -5 5 h -17 q -5 0 -5 5 v 18");
+  animation: nessa-light-3 1.8s linear 1.8s infinite;
+}
+
+/* Path 4 - EVV (longest outer right path) */
+@keyframes nessa-light-4 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.nessa-light-4 {
+  offset-path: path("M 177 10 v 22 q 0 5 -5 5 h -67 q -5 0 -5 5 v 18");
+  animation: nessa-light-4 3.5s linear 2.7s infinite;
+}
+
+/* ─── Top badge pulsing glow ─── */
+@keyframes nessa-badge-glow {
+  0%, 100% { box-shadow: 0 0 6px 2px rgba(244, 198, 172, 0.4); }
+  50%       { box-shadow: 0 0 18px 6px rgba(244, 198, 172, 0.85); }
+}
+.nessa-badge-glow {
+  animation: nessa-badge-glow 2.4s ease-in-out infinite;
+}

@@ -1,0 +1,59 @@
+---
+description: Background, colors, spacing and layout conventions for the Nessa landing page
+alwaysApply: true
+---
+
+# Design System
+
+## Background
+The global background is `#F6F6F3` (warm off-white) with a fixed dot-grid overlay. Both layers are defined in `layout.tsx` as `fixed inset-0` divs with negative z-index — do NOT add opaque backgrounds to sections or they will cover the dots.
+
+```tsx
+// ✅ CORRECT — section with transparent/glass background so dots show through
+<section className="section-padding">
+  <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl p-6" />
+</section>
+
+// ❌ WRONG — kills the dot pattern
+<section className="bg-white">...</section>
+```
+
+## Color Palette
+- Background base: `#F6F6F3`
+- Dot color: `#c8c8c4`
+- Card / surface: `bg-white/60 backdrop-blur-sm`
+- Borders: `border-black/10`
+- Hover overlay: `hover:bg-black/5`
+- Primary background: `bg-black` (use `.gradient-bg` utility)
+- Gradient text: `.gradient-text` utility (`from-black to-gray-600`)
+
+## Button Colors
+All non-gradient, non-destructive buttons use a **black background with white text**. Hover darkens slightly.
+
+Tailwind tokens defined in `tailwind.config.ts`:
+- `btn-base` → `#000000`
+- `btn-hover` → `#1a1a1a`
+
+```tsx
+// ✅ Correct button backgrounds (use named Tailwind tokens)
+variant="default"   → bg-btn-base text-white hover:bg-btn-hover
+variant="outline"   → bg-btn-base text-white hover:bg-btn-hover  (border kept)
+variant="secondary" → bg-btn-base text-white hover:bg-btn-hover
+variant="ghost"     → hover:bg-btn-base hover:text-white
+variant="gradient"  → gradient-bg text-white  (keep blue→violet, no change)
+
+// ❌ Do NOT use bg-background, bg-primary, bg-secondary, or any light fill for buttons
+// ❌ Do NOT use text-foreground on buttons — always text-white
+```
+
+## Spacing & Layout
+- Section padding: `section-padding` utility → `py-20 px-4 sm:px-6 lg:px-8`
+- Max width wrapper: `container-max` utility → `max-w-7xl mx-auto`
+
+## Navbar Glass Effect (on scroll)
+```tsx
+className="bg-[#F6F6F3]/80 backdrop-blur-md border-b border-black/10 shadow-sm"
+```
+
+## Footer
+Always use `bg-[#0f0f0f] text-gray-400` — the footer is intentionally dark.

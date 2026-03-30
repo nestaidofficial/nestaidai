@@ -1,0 +1,39 @@
+---
+description: Font families, weights, sizes and line heights for the Nessa landing page
+globs: **/*.tsx,**/*.css
+alwaysApply: false
+---
+
+# Typography
+
+Three fonts are loaded via `next/font/google` in `layout.tsx` and exposed as CSS variables.
+
+## Font Roles
+
+| Role | Font | Variable | Weight | Size | Line Height | Color |
+|---|---|---|---|---|---|---|
+| Headings (`h1`–`h6`) | Gelasio | `--font-heading` | 400 | — | 1.2 | `rgb(0,0,0)` |
+| Subheadings | IBM Plex Sans | `--font-subheading` | 400 | 18px | 24px | `rgb(0,0,0)` |
+| Body / paragraphs | Inter | `--font-body` | 300 | 14px | 18px | `rgba(0,0,0,0.75)` |
+
+## Tailwind Utility Classes
+```tsx
+// Heading — Gelasio serif
+<h2 className="font-heading text-4xl">...</h2>
+
+// Subheading — IBM Plex Sans
+<p className="font-subheading text-lg">...</p>
+
+// Body — Inter light
+<p className="font-body text-sm">...</p>
+```
+
+## Global CSS Application
+- `h1`–`h6` → Gelasio 400 automatically via `globals.css`
+- `p`, `li`, `td`, `blockquote` → Inter 300 automatically
+- Apply `font-subheading` manually on labels, captions, or descriptive text
+
+## DO NOT
+- Do not use `font-sans` for headings — it resolves to Inter
+- Do not set `font-weight: bold` on h-tags; Gelasio displays best at 400
+- Do not override the base `p` color to full black; keep `rgba(0,0,0,0.75)`

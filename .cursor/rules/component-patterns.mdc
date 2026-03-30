@@ -1,0 +1,72 @@
+---
+description: Component structure, section layout and shadcn/ui patterns for the Nessa landing page
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# Component Patterns
+
+## Project Stack
+- **Next.js 16** App Router · **TypeScript** · **Tailwind CSS v3** · **shadcn/ui** primitives
+- Path alias: `@/*` → `src/*`
+
+## Section Structure
+Every landing page section follows this pattern:
+```tsx
+<section id="section-id" className="section-padding">
+  <div className="container-max">
+    {/* Section header */}
+    <div className="text-center mb-16">
+      <Badge variant="subtle" className="mb-4">Label</Badge>
+      <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+        Plain text <span className="gradient-text">gradient highlight</span>
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Supporting copy here.
+      </p>
+    </div>
+    {/* Content */}
+  </div>
+</section>
+```
+
+## Cards / Surfaces
+Always use glass-style cards — never solid white:
+```tsx
+// ✅ Standard card
+<div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl p-6 hover:shadow-md transition-shadow" />
+
+// ✅ Featured / highlighted card
+<div className="bg-white/80 backdrop-blur-sm border border-primary shadow-xl shadow-primary/10 rounded-2xl p-8" />
+```
+
+## Buttons
+Uses `src/components/ui/button.tsx` with CVA variants:
+- `variant="gradient"` → primary CTA (blue→violet gradient)
+- `variant="outline"` → secondary action
+- `variant="ghost"` → nav/inline actions
+- `size="xl"` → hero CTAs · `size="lg"` → section CTAs · `size="sm"` → nav
+
+## Badge
+Uses `src/components/ui/badge.tsx`:
+- `variant="subtle"` → section labels (blue tint)
+- `variant="gradient"` → highlighted badges (e.g. "Most Popular")
+
+## File Locations
+```
+src/
+  app/           → layout.tsx, page.tsx, globals.css
+  components/
+    layout/      → Navbar.tsx, Footer.tsx
+    sections/    → Hero, LogoBar, Features, HowItWorks, Pricing, Testimonials, FAQ, CTA
+    ui/          → button.tsx, badge.tsx (shadcn primitives)
+  lib/
+    utils.ts     → cn() helper
+```
+
+## cn() Helper
+Always use `cn()` from `@/lib/utils` to merge Tailwind classes conditionally:
+```tsx
+import { cn } from "@/lib/utils";
+className={cn("base-class", condition && "conditional-class", className)}
+```
