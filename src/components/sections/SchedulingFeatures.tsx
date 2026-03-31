@@ -42,7 +42,7 @@ export function SchedulingFeatures() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <h2 className="font-heading text-2xl sm:text-4xl tracking-tight mb-3">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
             Built for the scheduling work home care teams deal with every day
           </h2>
         </motion.div>
@@ -58,11 +58,11 @@ export function SchedulingFeatures() {
               className="group p-5 rounded-2xl border bg-white/60 backdrop-blur-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               style={{ borderColor: "#F4C6AC" }}
             >
-              <div className="w-9 h-9 rounded-xl bg-black/5 flex items-center justify-center mb-3">
-                <feature.icon className="w-4 h-4 text-black/70" />
+              <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center mb-3">
+                <feature.icon className="w-5 h-5 text-black/70" />
               </div>
-              <h3 className="font-semibold text-sm mb-1">{feature.title}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-semibold text-base mb-1.5">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

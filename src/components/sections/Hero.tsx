@@ -10,8 +10,8 @@ export function Hero() {
       <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Announcement pill */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs">
-            <span className="inline-flex items-center justify-center rounded-md bg-black text-white px-1.5 py-0.5 text-[10px] font-semibold">
+          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
+            <span className="inline-flex items-center justify-center rounded-md bg-black text-white px-2 py-0.5 text-xs font-semibold">
               NEW
             </span>
             <span className="text-foreground">
@@ -21,14 +21,14 @@ export function Hero() {
         </div>
 
         {/* Headline with italic emphasis */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading tracking-tight leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-6">
           Step <em className="italic">into</em> the future
           <br />
           of home care — AI + human care
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base text-muted-foreground max-w-xs sm:max-w-xl mx-auto mb-8 leading-relaxed">
+        <p className="text-lg sm:text-xl text-muted-foreground max-w-xs sm:max-w-2xl mx-auto mb-8 leading-relaxed">
           Nestaid uses AI agents to run scheduling, caregiver coordination, EVV, and operations — so your team can focus on care and growth.
         </p>
 

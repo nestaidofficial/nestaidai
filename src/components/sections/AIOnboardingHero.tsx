@@ -22,19 +22,19 @@ export function AIOnboardingHero() {
         >
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs gap-1.5">
-              <BrainCircuit className="w-3.5 h-3.5 text-foreground" strokeWidth={1.5} />
+            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm gap-1.5">
+              <BrainCircuit className="w-4 h-4 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground">AI Onboarding</span>
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading tracking-tight leading-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-5">
             From first inquiry to matched caregiver — AI handles the intake
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
             Our AI collects client responses, runs structured intake interviews, and helps match the right caregiver to each client — so your team focuses on care, not paperwork.
           </p>
 
@@ -64,11 +64,11 @@ export function AIOnboardingHero() {
           {highlights.map(({ icon: Icon, label, desc }) => (
             <div
               key={label}
-              className="workflow-item w-[140px] h-[140px] border-peach"
+              className="workflow-item w-[160px] h-[160px] border-peach"
             >
-              <Icon className="w-6 h-6 text-foreground flex-shrink-0" strokeWidth={1.5} />
-              <p className="text-xs font-medium text-foreground text-center leading-tight">{label}</p>
-              <p className="text-[10px] text-muted-foreground text-center leading-tight">{desc}</p>
+              <Icon className="w-7 h-7 text-foreground flex-shrink-0" strokeWidth={1.5} />
+              <p className="text-sm font-medium text-foreground text-center leading-tight">{label}</p>
+              <p className="text-xs text-muted-foreground text-center leading-tight">{desc}</p>
             </div>
           ))}
         </motion.div>

@@ -61,11 +61,11 @@ export function Navbar() {
         <div className="flex shrink-0 items-center">
           <Link href="/" className="hover:opacity-80 transition-opacity rounded-md px-2 py-1">
             <Image
-              src="/logo.svg"
-              alt="Nessa"
-              width={120}
-              height={37}
-              className="h-10 w-auto"
+              src="/logomain.jpg"
+              alt="Nestaid"
+              width={200}
+              height={50}
+              className="h-12 w-auto"
               priority
             />
           </Link>

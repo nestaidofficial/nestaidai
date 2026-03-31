@@ -34,7 +34,7 @@ export function CTA() {
               extraordinary?
             </h2>
 
-            <p className="text-xl text-white/80 max-w-xl mx-auto mb-10">
+            <p className="text-xl sm:text-2xl text-white/80 max-w-xl mx-auto mb-10">
               Join 10,000+ teams already using Nessa to ship faster and grow
               smarter. Start for free today.
             </p>

@@ -79,11 +79,11 @@ export function Pricing() {
       <div className="container-max">
         {/* Section header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
             Simple, transparent{" "}
             <span className="gradient-text">pricing</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Start for free. Scale as you grow. No hidden fees, no surprises.
             Cancel anytime.
           </p>

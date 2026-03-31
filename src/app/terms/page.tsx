@@ -383,10 +383,10 @@ export default function TermsPage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-6">
                 Terms of <span className="gradient-text">Service</span>
               </h1>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                 Please read these Terms carefully before using the Nestaid platform. They outline your rights, responsibilities, and the rules governing your use of our Services.
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">
+              <p className="mt-4 text-base text-muted-foreground">
                 Last updated: <span className="font-medium text-black/70">March 28, 2026</span>
               </p>
             </div>
@@ -401,13 +401,13 @@ export default function TermsPage() {
               {/* Sticky table of contents */}
               <aside className="hidden lg:block lg:col-span-3">
                 <div className="sticky top-24 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl p-5">
-                  <p className="text-xs font-semibold text-black uppercase tracking-widest mb-4">Contents</p>
+                  <p className="text-sm font-semibold text-black uppercase tracking-widest mb-4">Contents</p>
                   <nav className="space-y-1">
                     {tocSections.map((s) => (
                       <a
                         key={s.id}
                         href={`#${s.id}`}
-                        className="block text-sm text-muted-foreground hover:text-black transition-colors py-1 leading-snug"
+                        className="block text-base text-muted-foreground hover:text-black transition-colors py-1 leading-snug"
                       >
                         {s.title}
                       </a>
@@ -420,7 +420,7 @@ export default function TermsPage() {
               <div className="lg:col-span-9">
                 <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl p-8 sm:p-10">
                   {/* Preamble */}
-                  <div className="text-sm text-muted-foreground leading-relaxed mb-8 pb-8 border-b border-black/8">
+                  <div className="text-base text-muted-foreground leading-relaxed mb-8 pb-8 border-b border-black/8">
                     <p>
                       Welcome to Nestaid. These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of the Nestaid website, platform, software, AI-powered tools, communications features, and related services (collectively, the &ldquo;Services&rdquo;). By accessing or using the Services, you agree to these Terms. If you do not agree, do not use the Services.
                     </p>
@@ -436,10 +436,10 @@ export default function TermsPage() {
                       id={s.id}
                       className={idx !== 0 ? "mt-10 pt-10 border-t border-black/8" : ""}
                     >
-                      <h2 className="text-xl sm:text-2xl font-heading tracking-tight text-black mb-4">
+                      <h2 className="text-2xl sm:text-3xl font-heading tracking-tight text-black mb-4">
                         {s.title}
                       </h2>
-                      <div className="text-sm text-muted-foreground leading-relaxed space-y-3 [&_ul]:mt-2 [&_ul]:ml-5 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_li]:leading-relaxed [&_strong]:text-black/80 [&_strong]:font-medium">
+                      <div className="text-base text-muted-foreground leading-relaxed space-y-3 [&_ul]:mt-2 [&_ul]:ml-5 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_li]:leading-relaxed [&_strong]:text-black/80 [&_strong]:font-medium">
                         {s.content}
                       </div>
                     </div>

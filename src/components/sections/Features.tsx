@@ -45,10 +45,10 @@ export function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left — copy */}
           <div>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading tracking-tight mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
               One super employee for home care operations
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 max-w-lg">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-lg">
               Nestaid handles scheduling, caregiver coordination, EVV, and daily operations — so your team can focus on care and growth.
             </p>
 
@@ -58,11 +58,11 @@ export function Features() {
                   key={pillar.title}
                   className="group p-5 rounded-2xl border bg-white/60 backdrop-blur-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300" style={{ borderColor: "#F4C6AC" }}
                 >
-                  <div className="w-9 h-9 rounded-xl bg-black/5 flex items-center justify-center mb-3">
-                    <pillar.icon className="w-4 h-4 text-black/70" />
+                  <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center mb-3">
+                    <pillar.icon className="w-5 h-5 text-black/70" />
                   </div>
-                  <h3 className="font-semibold text-sm mb-1">{pillar.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <h3 className="font-semibold text-base mb-1.5">{pillar.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>

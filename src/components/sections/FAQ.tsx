@@ -54,7 +54,7 @@ function FAQItem({
         className="w-full flex items-center justify-between p-5 text-left hover:bg-black/5 transition-colors"
         aria-expanded={isOpen}
       >
-        <span className="font-medium pr-4">{question}</span>
+        <span className="font-medium text-base pr-4">{question}</span>
         <ChevronDown
           className={cn(
             "w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-200",
@@ -63,7 +63,7 @@ function FAQItem({
         />
       </button>
       {isOpen && (
-        <div className="px-5 pb-5 text-sm leading-relaxed border-t border-black/10 bg-black/[0.02] pt-4">
+        <div className="px-5 pb-5 text-base leading-relaxed border-t border-black/10 bg-black/[0.02] pt-4">
           {answer}
         </div>
       )}
@@ -78,10 +78,10 @@ export function FAQ() {
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading tracking-tight mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
               Frequently asked questions
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
               Everything you need to know about Nessa. Can&apos;t find the answer
               you&apos;re looking for?{" "}
               <Link href="/support" className="hover:underline">

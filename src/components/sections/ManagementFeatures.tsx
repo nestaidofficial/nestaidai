@@ -28,10 +28,10 @@ export function ManagementFeatures() {
           <Card className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl">
             <CardHeader>
               <div className="p-6 md:p-8">
-                <h3 className="font-heading text-xl sm:text-2xl mb-3">
+                <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
                   Client & Caregiver Management
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
                   Keep client details, caregiver profiles, care plans, and credentials organized in one clear place.
                 </p>
               </div>
@@ -58,7 +58,7 @@ export function ManagementFeatures() {
           {/* Tall card - Right side (2 columns) */}
           <Card className="group overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col">
             <div className="p-6 pb-2">
-              <p className="text-lg sm:text-xl lg:text-2xl font-heading text-center">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
                 Keep every profile, plan, and credential easy to find and update.
               </p>
             </div>
@@ -70,10 +70,10 @@ export function ManagementFeatures() {
                     key={label}
                     className="flex items-center gap-4 rounded-xl border border-peach bg-white/80 px-4 py-3.5"
                   >
-                    <Icon className="w-5 h-5 text-foreground flex-shrink-0" strokeWidth={1.5} />
+                    <Icon className="w-6 h-6 text-foreground flex-shrink-0" strokeWidth={1.5} />
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-foreground leading-tight">{label}</p>
-                      <p className="text-xs text-muted-foreground leading-tight truncate">{desc}</p>
+                      <p className="text-base font-medium text-foreground leading-tight">{label}</p>
+                      <p className="text-sm text-muted-foreground leading-tight truncate">{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -84,19 +84,19 @@ export function ManagementFeatures() {
           {/* Bottom left card (2 columns) */}
           <Card className="group shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col">
             <CardHeader className="p-6 md:p-8">
-              <p className="text-lg sm:text-xl lg:text-2xl font-heading text-center">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
                 Give your team one place to manage client records, care details, and AI-driven workflows.
               </p>
             </CardHeader>
             <CardContent className="mt-auto px-6 pb-6 md:px-8 md:pb-8">
               <div className="flex justify-center gap-3">
-                <div className="workflow-item w-[78px]">
-                  <Search className="size-6 text-foreground flex-shrink-0" strokeWidth={1.5} />
-                  <span className="text-[10px] text-muted-foreground text-center leading-tight">Search Records</span>
+                <div className="workflow-item w-[90px]">
+                  <Search className="size-7 text-foreground flex-shrink-0" strokeWidth={1.5} />
+                  <span className="text-xs text-muted-foreground text-center leading-tight">Search Records</span>
                 </div>
-                <div className="workflow-item w-[78px]">
-                  <Plus className="size-6 text-foreground flex-shrink-0" strokeWidth={1.5} />
-                  <span className="text-[10px] text-muted-foreground text-center leading-tight">Add Client</span>
+                <div className="workflow-item w-[90px]">
+                  <Plus className="size-7 text-foreground flex-shrink-0" strokeWidth={1.5} />
+                  <span className="text-xs text-muted-foreground text-center leading-tight">Add Client</span>
                 </div>
               </div>
             </CardContent>
@@ -105,10 +105,10 @@ export function ManagementFeatures() {
           {/* Bottom right card (3 columns) */}
           <Card className="group relative shadow-black/5 sm:col-span-3 sm:rounded-2xl flex flex-col">
             <CardHeader className="p-6 md:p-8">
-              <h3 className="font-heading text-xl sm:text-2xl mb-3">
+              <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
                 Client Onboarding Workflows
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
                 We first understand how your agency works, then tailor the onboarding workflow to match it. Once that is in place, our AI can move faster and support the process more accurately.
               </p>
             </CardHeader>
@@ -126,8 +126,8 @@ export function ManagementFeatures() {
                     key={label}
                     className="workflow-item"
                   >
-                    <Icon className="size-6 text-foreground flex-shrink-0" />
-                    <span className="text-[10px] text-muted-foreground text-center leading-tight">{label}</span>
+                    <Icon className="size-7 text-foreground flex-shrink-0" />
+                    <span className="text-xs text-muted-foreground text-center leading-tight">{label}</span>
                   </div>
                 ))}
               </div>

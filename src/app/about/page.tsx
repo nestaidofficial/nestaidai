@@ -96,7 +96,7 @@ export default function AboutPage() {
                 Built by people who{" "}
                 <span className="gradient-text">lived the problem</span>
               </h1>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                 Home care is one of the most important industries in the world — and one of the most under-served by modern software. We started Nessa to change that.
               </p>
             </div>
@@ -113,8 +113,8 @@ export default function AboutPage() {
                   key={stat.label}
                   className="bg-white/60 backdrop-blur-sm border border-peach rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
                 >
-                  <p className="text-3xl font-heading text-black mb-1">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground font-subheading">{stat.label}</p>
+                  <p className="text-3xl sm:text-4xl font-heading text-black mb-1">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground font-subheading">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -127,14 +127,14 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <Badge variant="subtle" className="mb-4">Mission</Badge>
-                <h2 className="text-3xl sm:text-4xl font-heading tracking-tight mb-5">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-5">
                   Give care agencies a{" "}
                   <span className="gradient-text">superpower</span>
                 </h2>
-                <p className="text-base text-muted-foreground leading-relaxed mb-5">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-5">
                   Home care coordinators manage an impossible amount of complexity every day — scheduling, compliance, caregiver call-outs, client needs, billing, and more. Most do it with a patchwork of spreadsheets, phone calls, and sheer willpower.
                 </p>
-                <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                   Nessa was built to give those coordinators back their time. We combine AI coordination, smart scheduling, real-time EVV, and seamless onboarding into one platform that actually fits how home care works.
                 </p>
                 <Button asChild variant="default" size="lg">
@@ -146,7 +146,7 @@ export default function AboutPage() {
 
               <div className="relative">
                 <div className="bg-white/60 backdrop-blur-sm border border-peach rounded-3xl p-8 lg:p-10">
-                  <blockquote className="text-xl sm:text-2xl font-heading text-black leading-snug mb-6">
+                  <blockquote className="text-2xl sm:text-3xl font-heading text-black leading-snug mb-6">
                     "We built the tool we wished existed when we were coordinators ourselves."
                   </blockquote>
                   <div className="flex items-center gap-4">
@@ -160,8 +160,8 @@ export default function AboutPage() {
                       />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-black">Rabina Adhikari</p>
-                      <p className="text-xs text-muted-foreground">Co-founder & CEO</p>
+                      <p className="text-base font-medium text-black">Rabina Adhikari</p>
+                      <p className="text-sm text-muted-foreground">Co-founder & CEO</p>
                     </div>
                   </div>
                 </div>
@@ -197,8 +197,8 @@ export default function AboutPage() {
                   <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center mb-4">
                     <v.icon className="w-5 h-5 text-black/70" />
                   </div>
-                  <h3 className="text-base font-semibold text-black mb-2">{v.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{v.description}</p>
+                  <h3 className="text-lg font-semibold text-black mb-2">{v.title}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">{v.description}</p>
                 </div>
               ))}
             </div>
@@ -210,10 +210,10 @@ export default function AboutPage() {
           <div className="container-max">
             <div className="text-center mb-12">
               <Badge variant="subtle" className="mb-4">The Team</Badge>
-              <h2 className="text-3xl sm:text-4xl font-heading tracking-tight mb-4">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
                 People behind Nessa
               </h2>
-              <p className="text-base text-muted-foreground max-w-xl mx-auto">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
                 A small, focused team with deep roots in home care and a shared obsession with great software.
               </p>
             </div>
@@ -239,9 +239,9 @@ export default function AboutPage() {
                       {member.initials}
                     </div>
                   )}
-                  <h3 className="text-base font-semibold text-black leading-tight">{member.name}</h3>
-                  <p className="text-xs text-muted-foreground font-subheading mb-3">{member.role}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">{member.bio}</p>
+                  <h3 className="text-lg font-semibold text-black leading-tight">{member.name}</h3>
+                  <p className="text-sm text-muted-foreground font-subheading mb-3">{member.role}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed max-w-sm">{member.bio}</p>
                 </div>
               ))}
             </div>
@@ -253,10 +253,10 @@ export default function AboutPage() {
           <div className="container-max">
             <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-3xl p-10 sm:p-14 text-center">
               <Badge variant="subtle" className="mb-5">Join Us</Badge>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading tracking-tight mb-5 max-w-2xl mx-auto">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-5 max-w-2xl mx-auto">
                 Ready to transform your home care operations?
               </h2>
-              <p className="text-base text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
                 Book a free 30-minute demo and see how Nessa can give your team time back, cut call-out stress, and grow your agency with confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">

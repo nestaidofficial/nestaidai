@@ -16,18 +16,18 @@ export function ManagementHero() {
         >
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs">
+            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
               <span className="text-foreground">Client & Caregiver Management</span>
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading tracking-tight leading-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-5">
             Manage records, AI workflows, and automations in one place
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
             Keep client and caregiver details organized while AI helps power follow-ups, reminders, email, SMS, and calls across your workflow.
           </p>
 

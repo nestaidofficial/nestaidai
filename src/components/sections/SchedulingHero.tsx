@@ -60,7 +60,7 @@ export function SchedulingHero() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center text-center space-y-4 mb-10"
         >
-          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl tracking-tight max-w-3xl">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight max-w-3xl">
             From scheduling chaos to coordinated care
           </h1>
         </motion.div>
@@ -75,7 +75,7 @@ export function SchedulingHero() {
               {m1.map((q) => (
                 <span
                   key={q}
-                  className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs text-foreground whitespace-nowrap"
+                  className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm text-foreground whitespace-nowrap"
                 >
                   {q}
                 </span>
@@ -86,7 +86,7 @@ export function SchedulingHero() {
               {m2.map((q) => (
                 <span
                   key={q}
-                  className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs text-foreground whitespace-nowrap"
+                  className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm text-foreground whitespace-nowrap"
                 >
                   {q}
                 </span>
@@ -97,7 +97,7 @@ export function SchedulingHero() {
               {m3.map((q) => (
                 <span
                   key={q}
-                  className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs text-foreground whitespace-nowrap"
+                  className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm text-foreground whitespace-nowrap"
                 >
                   {q}
                 </span>
@@ -119,10 +119,10 @@ export function SchedulingHero() {
                   <Icon className="w-5 h-5 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex flex-col gap-2 pt-8 lg:pt-16">
-                  <h3 className="font-heading text-xl sm:text-2xl tracking-tight">
+                  <h3 className="font-heading text-2xl sm:text-3xl tracking-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-xs leading-relaxed text-muted-foreground">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>

@@ -21,11 +21,11 @@ export function ManagementCTA() {
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading mb-6 text-white">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading mb-6 text-white">
               Ready to add AI to your agency&apos;s workflow?
             </h2>
 
-            <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
               See how Nestaid can support records, outreach, scheduling, and daily follow-up — without changing how your agency already works.
             </p>
 

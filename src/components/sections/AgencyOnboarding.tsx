@@ -91,10 +91,10 @@ export function AgencyOnboarding() {
           transition={{ duration: 0.5 }}
           className="mb-14"
         >
-          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl tracking-tight mb-3">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
             How Nestaid complements your operations
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             From your first call to full automation — a clear path with no guesswork.
           </p>
         </motion.div>
@@ -122,16 +122,16 @@ export function AgencyOnboarding() {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className={cn(
-                      "w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0",
+                      "w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0",
                       isUpcoming ? "bg-black/5" : "bg-black/8"
                     )}>
                       <step.icon className={cn(
-                        "w-4 h-4 transition-colors duration-1000",
+                        "w-5 h-5 transition-colors duration-1000",
                         isUpcoming ? "text-black/30" : "text-foreground"
                       )} strokeWidth={1.5} />
                     </div>
                     <span className={cn(
-                      "text-[10px] font-medium px-2 py-0.5 rounded-full transition-all duration-1000",
+                      "text-xs font-medium px-2.5 py-1 rounded-full transition-all duration-1000",
                       isDone && "bg-black/8 text-black/50 border border-black/10",
                       isActive && "bg-[#F4C6AC]/30 text-black border border-[#F4C6AC]",
                       isUpcoming && "bg-black/5 text-black/40 border border-black/10"
@@ -141,15 +141,15 @@ export function AgencyOnboarding() {
                   </div>
                   <div>
                     <p className={cn(
-                      "font-heading text-sm leading-snug mb-0.5 transition-colors duration-1000",
+                      "font-heading text-base leading-snug mb-0.5 transition-colors duration-1000",
                       isUpcoming && "text-black/40"
                     )}>{step.title}</p>
                     <p className={cn(
-                      "text-[10px] font-medium mb-1.5 transition-colors duration-1000",
+                      "text-xs font-medium mb-1.5 transition-colors duration-1000",
                       isUpcoming ? "text-black/25" : "text-[#F4C6AC]"
                     )}>{step.subtitle}</p>
                     <p className={cn(
-                      "text-xs leading-relaxed transition-colors duration-1000",
+                      "text-sm leading-relaxed transition-colors duration-1000",
                       isUpcoming ? "text-black/30" : "text-muted-foreground"
                     )}>{step.description}</p>
                   </div>
@@ -183,17 +183,17 @@ export function AgencyOnboarding() {
               )}>
                 <div className="flex items-center gap-2 mb-2">
                   <div className={cn(
-                    "w-7 h-7 rounded-lg flex items-center justify-center",
+                    "w-8 h-8 rounded-lg flex items-center justify-center",
                     step.status === "upcoming" ? "bg-black/5" : "bg-black/8"
                   )}>
-                    <step.icon className={cn("w-3.5 h-3.5", step.status === "upcoming" ? "text-black/30" : "text-foreground")} strokeWidth={1.5} />
+                    <step.icon className={cn("w-4 h-4", step.status === "upcoming" ? "text-black/30" : "text-foreground")} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className={cn("font-heading text-sm", step.status === "upcoming" && "text-black/40")}>{step.title}</p>
-                    <p className={cn("text-[10px] font-medium", step.status === "upcoming" ? "text-black/25" : "text-[#F4C6AC]")}>{step.subtitle}</p>
+                    <p className={cn("font-heading text-base", step.status === "upcoming" && "text-black/40")}>{step.title}</p>
+                    <p className={cn("text-xs font-medium", step.status === "upcoming" ? "text-black/25" : "text-[#F4C6AC]")}>{step.subtitle}</p>
                   </div>
                 </div>
-                <p className={cn("text-xs leading-relaxed", step.status === "upcoming" ? "text-black/30" : "text-muted-foreground")}>
+                <p className={cn("text-sm leading-relaxed", step.status === "upcoming" ? "text-black/30" : "text-muted-foreground")}>
                   {step.description}
                 </p>
               </div>

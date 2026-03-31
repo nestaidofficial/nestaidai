@@ -64,10 +64,10 @@ export function AIOnboardingFeatures() {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl tracking-tight mb-3">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
             How AI Onboarding works
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             Every new client goes through a consistent, AI-guided process — so nothing gets missed and care starts faster.
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ export function AIOnboardingFeatures() {
           {/* Left large card — animated intake list */}
           <Card className="group overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col">
             <div className="p-6 pb-2">
-              <p className="text-lg sm:text-xl lg:text-2xl font-heading text-center">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
                 Every intake step, handled automatically.
               </p>
             </div>
@@ -89,10 +89,10 @@ export function AIOnboardingFeatures() {
                     key={label}
                     className="flex items-center gap-4 rounded-xl border border-peach bg-white/80 px-4 py-3.5"
                   >
-                    <Icon className="w-5 h-5 text-foreground flex-shrink-0" strokeWidth={1.5} />
+                    <Icon className="w-6 h-6 text-foreground flex-shrink-0" strokeWidth={1.5} />
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-foreground leading-tight">{label}</p>
-                      <p className="text-xs text-muted-foreground leading-tight truncate">{desc}</p>
+                      <p className="text-base font-medium text-foreground leading-tight">{label}</p>
+                      <p className="text-sm text-muted-foreground leading-tight truncate">{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -104,10 +104,10 @@ export function AIOnboardingFeatures() {
           <Card className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl">
             <CardHeader>
               <div className="p-6 md:p-8">
-                <h3 className="font-heading text-xl sm:text-2xl mb-3">
+                <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
                   From Inquiry to Matched Caregiver
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
                   The AI walks every new client through a thorough intake, then surfaces the best caregiver match — so your coordinators make great decisions fast.
                 </p>
               </div>
@@ -135,10 +135,10 @@ export function AIOnboardingFeatures() {
                     {/* Content */}
                     <div className="flex-1 pb-8">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-bold text-[#F4C6AC]">{step.id}</span>
-                        <p className="font-heading text-base leading-snug">{step.title}</p>
+                        <span className="text-sm font-bold text-[#F4C6AC]">{step.id}</span>
+                        <p className="font-heading text-lg leading-snug">{step.title}</p>
                       </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed">{step.description}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -151,9 +151,9 @@ export function AIOnboardingFeatures() {
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-2 mb-3">
                 <Sparkles className="w-5 h-5 text-foreground" strokeWidth={1.5} />
-                <h3 className="font-heading text-2xl sm:text-3xl">What the AI captures during intake</h3>
+                <h3 className="font-heading text-3xl sm:text-4xl">What the AI captures during intake</h3>
               </div>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Structured data collected automatically — no manual forms, no missed details.
               </p>
             </div>
@@ -183,10 +183,10 @@ export function AIOnboardingFeatures() {
                     }`}
                   >
                     <div className="flex items-start gap-2">
-                      <Icon className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <h4 className="text-sm font-medium text-foreground leading-tight">{label}</h4>
+                      <Icon className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <h4 className="text-base font-medium text-foreground leading-tight">{label}</h4>
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
                   </div>
                 ))}
               </div>

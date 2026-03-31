@@ -21,15 +21,15 @@ export function AIOnboardingCTA() {
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
-            <p className="text-sm font-medium text-white/50 uppercase tracking-widest mb-4">
+            <p className="text-base font-medium text-white/50 uppercase tracking-widest mb-4">
               AI Onboarding
             </p>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading mb-6 text-white">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading mb-6 text-white">
               Let AI handle the intake so your team can focus on care
             </h2>
 
-            <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
               Stop chasing forms and playing phone tag. Nessa&apos;s AI collects everything you need from new clients and surfaces the right caregiver match — before your coordinator even picks up the phone.
             </p>
 

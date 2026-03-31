@@ -130,7 +130,7 @@ export function LogoBar() {
   return (
     <section className="py-12 border-y border-black/10">
       <div className="container-max">
-        <p className="text-center text-3xl sm:text-4xl lg:text-5xl font-heading tracking-tight text-muted-foreground mb-8">
+        <p className="text-center text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight text-muted-foreground mb-8">
           Helping home care teams run smoother
         </p>
       </div>

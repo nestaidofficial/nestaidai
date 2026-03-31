@@ -71,7 +71,7 @@ const SchedulingDiagram = () => {
     <div className="mt-6 space-y-3">
       <div className="flex items-center gap-2 mb-4">
         <Layers3 className="w-4 h-4 text-foreground" />
-        <p className="text-[10px] font-medium uppercase tracking-wider text-foreground">
+        <p className="text-xs font-medium uppercase tracking-wider text-foreground">
           Nestaid Scheduling Layer
         </p>
       </div>
@@ -86,10 +86,10 @@ const SchedulingDiagram = () => {
                   <Icon className="w-4 h-4 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-medium text-foreground leading-tight mb-0.5">
+                  <p className="text-sm font-medium text-foreground leading-tight mb-0.5">
                     {step.label}
                   </p>
-                  <p className="text-[10px] text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -117,7 +117,7 @@ const ReceptionistDiagram = () => {
     <div className="space-y-3">
       <div className="flex items-center gap-2 mb-4">
         <PhoneIncoming className="w-4 h-4 text-foreground" />
-        <p className="text-[10px] font-medium uppercase tracking-wider text-foreground">
+        <p className="text-xs font-medium uppercase tracking-wider text-foreground">
           Nestaid Receptionist Layer
         </p>
       </div>
@@ -132,10 +132,10 @@ const ReceptionistDiagram = () => {
                   <Icon className="w-4 h-4 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-medium text-foreground leading-tight mb-0.5">
+                  <p className="text-sm font-medium text-foreground leading-tight mb-0.5">
                     {step.label}
                   </p>
-                  <p className="text-[10px] text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -180,17 +180,17 @@ const FeatureCard = ({
 
         <div className="space-y-2">
           {eyebrow ? (
-            <p className="text-[10px] font-medium uppercase tracking-wider text-[#F4C6AC]">
+            <p className="text-xs font-medium uppercase tracking-wider text-[#F4C6AC]">
               {eyebrow}
             </p>
           ) : null}
 
-          <h3 className="font-heading text-lg tracking-tight text-foreground">
+          <h3 className="font-heading text-xl sm:text-2xl tracking-tight text-foreground">
             {title}
           </h3>
 
           {!hideDescription && (
-            <p className="text-xs leading-relaxed text-muted-foreground">{description}</p>
+            <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
           )}
         </div>
 
@@ -209,7 +209,7 @@ const FeatureCard = ({
           {items.map((item) => (
             <span
               key={item}
-              className="rounded-full border border-black/10 bg-white/80 px-3 py-1 text-[10px] font-medium text-foreground"
+              className="rounded-full border border-black/10 bg-white/80 px-3 py-1 text-xs font-medium text-foreground"
             >
               {item}
             </span>

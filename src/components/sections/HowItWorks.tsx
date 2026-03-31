@@ -26,11 +26,11 @@ export function HowItWorks() {
       <div className="container-max">
         {/* Section header */}
         <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading tracking-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
             The ops team you{" "}
             <em className="italic">never had to hire</em>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-xs sm:max-w-xl lg:max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto">
             Scheduling, EVV, follow-ups — handled automatically, so your team focuses on care.
           </p>
 

@@ -28,10 +28,10 @@ export function SchedulingProblem() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <h2 className="font-heading text-2xl sm:text-4xl tracking-tight mb-3">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
             Scheduling gets messy when everything depends on manual follow-up
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A single shift change can mean calls, texts, outreach, updates, and back-and-forth. Nestaid adds an AI layer that helps your team respond faster and keep coverage moving.
           </p>
         </motion.div>
@@ -45,12 +45,12 @@ export function SchedulingProblem() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6"
           >
-            <h3 className="font-heading text-lg mb-4">Without Nestaid</h3>
+            <h3 className="font-heading text-xl sm:text-2xl mb-4">Without Nestaid</h3>
             <ul className="space-y-3">
               {withoutItems.map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <X className="w-4 h-4 text-black/40 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{item}</span>
+                  <X className="w-5 h-5 text-black/40 flex-shrink-0" />
+                  <span className="text-base text-muted-foreground">{item}</span>
                 </li>
               ))}
             </ul>
@@ -63,12 +63,12 @@ export function SchedulingProblem() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6"
           >
-            <h3 className="font-heading text-lg mb-4">With Nestaid</h3>
+            <h3 className="font-heading text-xl sm:text-2xl mb-4">With Nestaid</h3>
             <ul className="space-y-3">
               {withItems.map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <CheckCircle className="w-4 h-4 text-[#F4C6AC] flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-[#F4C6AC] flex-shrink-0" />
+                  <span className="text-base text-muted-foreground">{item}</span>
                 </li>
               ))}
             </ul>
