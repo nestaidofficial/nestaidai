@@ -1,7 +1,38 @@
-import { Phone } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function CallNessa() {
+  const [phone, setPhone] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  async function handleCall() {
+    if (!phone.replace(/\D/g, "").match(/^\d{10}$|^1\d{10}$/)) {
+      setStatus("error");
+      setMessage("Enter a valid 10-digit phone number");
+      return;
+    }
+    setStatus("loading");
+    setMessage("");
+    try {
+      const res = await fetch("/api/retell/call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Call failed");
+      setStatus("success");
+      setMessage("Nessa is calling you now!");
+    } catch (err) {
+      setStatus("error");
+      setMessage(err instanceof Error ? err.message : "Something went wrong");
+    }
+  }
+
   return (
     <section className="section-padding">
       <div className="container-max">
@@ -21,15 +52,29 @@ export function CallNessa() {
               <input
                 type="tel"
                 placeholder="Enter your number"
+                value={phone}
+                onChange={(e) => { setPhone(e.target.value); setStatus("idle"); setMessage(""); }}
+                onKeyDown={(e) => e.key === "Enter" && handleCall()}
                 className="flex-1 bg-transparent text-sm focus:outline-none placeholder:text-muted-foreground"
               />
             </div>
-            <Button variant="default" className="w-full h-11 text-sm font-medium">
-              Call Nessa
+            <Button
+              variant="default"
+              className="w-full h-11 text-sm font-medium"
+              onClick={handleCall}
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Call Nessa"}
             </Button>
-            <p className="text-xs text-muted-foreground mt-3">
-              Experience Nessa in 30 seconds
-            </p>
+            {message ? (
+              <p className={`text-xs mt-3 ${status === "error" ? "text-red-500" : "text-green-600"}`}>
+                {message}
+              </p>
+            ) : (
+              <p className="text-xs text-muted-foreground mt-3">
+                Experience Nessa in 30 seconds
+              </p>
+            )}
           </div>
 
           {/* Secondary link */}
