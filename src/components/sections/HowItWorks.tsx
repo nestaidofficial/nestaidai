@@ -1,13 +1,40 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
 import { WorkflowAnimation } from "@/components/ui/workflow-animation";
 
 export function HowItWorks() {
   const [time, setTime] = useState("");
+  const [phone, setPhone] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  async function handleCall() {
+    if (!phone.replace(/\D/g, "").match(/^\d{10}$|^1\d{10}$/)) {
+      setStatus("error");
+      setMessage("Enter a valid 10-digit phone number");
+      return;
+    }
+    setStatus("loading");
+    setMessage("");
+    try {
+      const res = await fetch("/api/retell/call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Call failed");
+      setStatus("success");
+      setMessage("Nessa is calling you now!");
+    } catch (err) {
+      setStatus("error");
+      setMessage(err instanceof Error ? err.message : "Something went wrong");
+    }
+  }
 
   useEffect(() => {
     const update = () => {
@@ -45,23 +72,48 @@ export function HowItWorks() {
             Nestaid uses AI agents to run scheduling, caregiver coordination, EVV, and operations — so your team can focus on care and growth.
           </p>
 
-          <div className="mt-6 sm:mt-8 flex justify-center">
-            <div className="flex items-stretch h-10 w-full max-w-[300px] sm:max-w-md">
-              <input
-                type="email"
-                placeholder="Work email"
-                className="flex-1 h-10 rounded-l-lg border border-r-0 border-black/10 bg-white px-3 sm:px-4 text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent min-w-0"
-              />
+          <div className="mt-6 sm:mt-8 flex flex-col items-center">
+            <div className="flex items-stretch h-11 mb-3 w-full max-w-[300px] sm:max-w-sm">
+              <div className="flex items-center gap-2 flex-1 border border-r-0 border-black/10 rounded-l-xl bg-white px-3 sm:px-4 min-w-0">
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-muted-foreground shrink-0" />
+                <input
+                  type="tel"
+                  placeholder="Your phone number"
+                  value={phone}
+                  onChange={(e) => { setPhone(e.target.value); setStatus("idle"); setMessage(""); }}
+                  onKeyDown={(e) => e.key === "Enter" && handleCall()}
+                  className="flex-1 bg-transparent text-sm focus:outline-none placeholder:text-muted-foreground min-w-0"
+                />
+              </div>
               <Button
                 variant="default"
-                className="h-10 rounded-l-none rounded-r-lg px-4 sm:px-6 shrink-0"
-                asChild
+                className="h-11 rounded-l-none rounded-r-xl px-4 sm:px-5 text-sm font-medium shrink-0"
+                onClick={handleCall}
+                disabled={status === "loading"}
               >
-                <Link href="https://calendly.com/rahulchettri601/nestaid-demo-call" target="_blank" rel="noopener noreferrer">
-                  Get free trial
-                </Link>
+                {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Call Nessa"}
               </Button>
             </div>
+            {message ? (
+              <p className={`text-xs ${status === "error" ? "text-red-500" : "text-green-600"}`}>
+                {message}
+              </p>
+            ) : (
+              <p className="text-xs text-muted-foreground">
+                Experience Nessa in 30 seconds
+              </p>
+            )}
+            <p className="mt-4 text-sm text-muted-foreground">
+              or{" "}
+              <a
+                href="https://calendly.com/rahulchettri601/nestaid-demo-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 font-medium text-foreground hover:opacity-70 transition-opacity"
+              >
+                Book a Demo
+              </a>
+            </p>
           </div>
         </div>
 
