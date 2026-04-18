@@ -136,6 +136,16 @@ export function Navbar() {
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/blog"
+                    className="px-4 py-2 text-sm font-medium hover:bg-accent rounded-md transition-colors"
+                  >
+                    Blog
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -349,7 +359,7 @@ const companyLinks2: LinkItem[] = [
   },
   {
     title: 'Blog',
-    href: '#',
+    href: '/blog',
     icon: Leaf,
   },
   {

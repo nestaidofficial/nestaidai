@@ -30,6 +30,7 @@ Home care agencies in the United States — from solo coordinators to multi-loca
 - [AI Onboarding](https://www.nestaid.us/ai-onboarding): Caregiver intake workflow
 - [Pricing](https://www.nestaid.us/pricing): Usage-based pricing model
 - [About](https://www.nestaid.us/about): Team, mission, and values
+- [Blog](https://www.nestaid.us/blog): Guides and operational playbooks for home care AI, scheduling, and call-out management
 - [Privacy Policy](https://www.nestaid.us/privacy): Data handling and security practices
 - [Terms of Service](https://www.nestaid.us/terms): Service agreement
 
