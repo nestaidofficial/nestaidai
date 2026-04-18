@@ -262,12 +262,12 @@ const sections = [
           <p>
             Website:{" "}
             <a
-              href="https://www.nestaid.ai"
+              href="https://www.nestaid.us"
               target="_blank"
               rel="noopener noreferrer"
               className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
-              www.nestaid.ai
+              www.nestaid.us
             </a>
           </p>
         </div>
