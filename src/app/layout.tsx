@@ -178,7 +178,7 @@ export default function RootLayout({
         {/* Fixed dot-grid on top of the base color */}
         <div
           aria-hidden="true"
-          className="fixed inset-0 -z-10 [background-size:20px_20px] [background-image:radial-gradient(#c8c8c4_1px,transparent_1px)]"
+          className="fixed inset-0 -z-10 opacity-80 [background-size:20px_20px] [background-image:radial-gradient(#c8c8c4_1px,transparent_1px)]"
         />
         {/* Radial vignette — fades dots toward edges for depth */}
         <div
