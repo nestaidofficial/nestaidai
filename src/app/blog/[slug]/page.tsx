@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Badge } from "@/components/ui/badge";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/blog";
 
 type Params = { slug: string };
@@ -132,11 +131,6 @@ export default async function BlogPostPage({
               </nav>
 
               <header className="mb-10">
-                {post.tags?.[0] && (
-                  <Badge variant="subtle" className="mb-5">
-                    {post.tags[0]}
-                  </Badge>
-                )}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-6">
                   {post.title}
                 </h1>

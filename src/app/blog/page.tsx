@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Badge } from "@/components/ui/badge";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -39,7 +38,6 @@ export default function BlogIndexPage() {
         <section className="section-padding">
           <div className="container-max">
             <div className="max-w-3xl mx-auto text-center mb-14">
-              <Badge variant="subtle" className="mb-5">Blog</Badge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-5">
                 Home care AI, <span className="gradient-text">done right</span>
               </h1>
@@ -55,9 +53,6 @@ export default function BlogIndexPage() {
                 className="block group mb-10 rounded-3xl border border-peach bg-white/60 backdrop-blur-sm p-8 sm:p-12 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground mb-4">
-                  <span className="bg-black text-white px-2 py-1 rounded-md font-medium uppercase tracking-wide">
-                    Featured
-                  </span>
                   <span>{formatDate(featured.date)}</span>
                   <span>·</span>
                   <span>{featured.readingMinutes} min read</span>
