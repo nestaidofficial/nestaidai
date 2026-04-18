@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/lib/faq-data";
@@ -50,11 +49,11 @@ export function FAQ() {
               Frequently asked questions
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know about Nessa. Can&apos;t find the answer
+              Everything you need to know about Nestaid. Can&apos;t find the answer
               you&apos;re looking for?{" "}
-              <Link href="/support" className="hover:underline">
+              <a href="mailto:rahul@nestaid.us" className="hover:underline">
                 Reach out to our team.
-              </Link>
+              </a>
             </p>
           </div>
 

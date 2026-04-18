@@ -5,48 +5,40 @@ import Link from "next/link";
 import {
   Star,
   DollarSign,
-  GitCommitHorizontal,
-  Map,
+  LayoutDashboard,
+  Calendar,
+  Users,
   Info,
-  Newspaper,
-  Briefcase,
-  Megaphone,
   Shield,
   FileText,
-  Cookie,
-  Lock,
 } from "lucide-react";
 
 const brand = {
-  name: "Nessa",
+  name: "Nestaid",
   description:
-    "The all-in-one platform that helps modern teams move faster, collaborate smarter, and grow with confidence.",
+    "The AI-powered operations platform for home care agencies. Handle calls, coordinate call-outs, and keep schedules moving 24/7 with Nessa, your AI receptionist.",
 };
 
 const socialLinks = [
-  { name: "Twitter", href: "https://twitter.com" },
-  { name: "GitHub", href: "https://github.com" },
-  { name: "LinkedIn", href: "https://linkedin.com" },
-  { name: "Email", href: "mailto:hello@nessa.app" },
+  { name: "Email", href: "mailto:rahul@nestaid.us" },
+  { name: "Book a demo", href: "https://calendly.com/rahulchettri601/nestaid-demo-call" },
 ];
 
 const columns = [
   {
     title: "Product",
     links: [
-      { name: "Features", Icon: Star, href: "#features" },
+      { name: "Features", Icon: Star, href: "/#features" },
+      { name: "Management", Icon: LayoutDashboard, href: "/management" },
+      { name: "Scheduling", Icon: Calendar, href: "/scheduling" },
+      { name: "AI Onboarding", Icon: Users, href: "/ai-onboarding" },
       { name: "Pricing", Icon: DollarSign, href: "/pricing" },
-      { name: "Changelog", Icon: GitCommitHorizontal, href: "/changelog" },
-      { name: "Roadmap", Icon: Map, href: "/roadmap" },
     ],
   },
   {
     title: "Company",
     links: [
       { name: "About", Icon: Info, href: "/about" },
-      { name: "Blog", Icon: Newspaper, href: "/blog" },
-      { name: "Careers", Icon: Briefcase, href: "/careers" },
-      { name: "Press", Icon: Megaphone, href: "/press" },
     ],
   },
   {
@@ -54,8 +46,6 @@ const columns = [
     links: [
       { name: "Privacy Policy", Icon: Shield, href: "/privacy" },
       { name: "Terms of Service", Icon: FileText, href: "/terms" },
-      { name: "Cookie Policy", Icon: Cookie, href: "/cookies" },
-      { name: "Security", Icon: Lock, href: "/security" },
     ],
   },
 ];
@@ -69,7 +59,7 @@ export function Footer() {
           <div className="lg:col-span-4 mb-10 lg:mb-0">
             <Link href="/" className="inline-flex items-center mb-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Nessa" className="h-8 w-auto" />
+              <img src="/logo.svg" alt="Nestaid" className="h-8 w-auto" />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs text-gray-400/80">
               {brand.description}
@@ -79,7 +69,7 @@ export function Footer() {
                 <React.Fragment key={link.name}>
                   <a
                     className="hover:text-black transition-colors"
-                    target="_blank"
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
                     href={link.href}
                     rel="noopener noreferrer"
                   >
@@ -119,7 +109,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-20 border-t border-black/10 pt-6 pb-8 flex items-center justify-center">
           <p className="text-xs text-gray-400">
-            &copy; {new Date().getFullYear()} Nessa, Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Nestaid, Inc. All rights reserved.
           </p>
         </div>
       </div>
