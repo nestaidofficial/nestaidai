@@ -1,0 +1,40 @@
+# Nestaid
+
+> Nestaid is an AI-powered operations platform built for home care agencies. It provides an AI receptionist (Nessa) that handles inbound calls, an AI coordinator that manages call-outs and caregiver outreach, and an operations layer for scheduling, onboarding, and compliance. Nestaid integrates with existing home care software rather than replacing it.
+
+## What Nestaid does
+
+- **AI Receptionist (Nessa)**: 24/7 inbound call handling, intake, and routing for home care agencies.
+- **AI Coordinator**: Automated call-out handling, open shift outreach, and caregiver coordination.
+- **Scheduling**: Real-time shift management, caregiver-availability matching, and double-booking prevention.
+- **AI Onboarding**: Caregiver intake, compliance verification, and interview scheduling.
+- **Management Platform**: Centralized client records, caregiver coordination, and agency operations.
+
+## Who it's for
+
+Home care agencies in the United States — from solo coordinators to multi-location enterprises — that need to reduce coordinator burnout, handle call-outs faster, and keep schedules moving 24/7.
+
+## Key facts
+
+- **Product name**: Nestaid (the platform); Nessa (the AI agent)
+- **Pricing**: Usage-based — pay by AI-handled call volume, completed coordinator actions, and scheduling outcomes
+- **Integration**: Works alongside existing home care software; does not replace it
+- **Compliance**: Built for HIPAA and Medicaid EVV workflows
+- **Founders**: Rabina Adhikari (CEO, former home care coordinator), Rahul Chettri (CTO, data scientist)
+
+## Primary pages
+
+- [Home](https://www.nestaid.us/): Product overview, how it works, and FAQ
+- [Management Platform](https://www.nestaid.us/management): Agency operations hub
+- [Scheduling & Call-outs](https://www.nestaid.us/scheduling): AI coordinator for shift coverage
+- [AI Onboarding](https://www.nestaid.us/ai-onboarding): Caregiver intake workflow
+- [Pricing](https://www.nestaid.us/pricing): Usage-based pricing model
+- [About](https://www.nestaid.us/about): Team, mission, and values
+- [Privacy Policy](https://www.nestaid.us/privacy): Data handling and security practices
+- [Terms of Service](https://www.nestaid.us/terms): Service agreement
+
+## Contact
+
+- **Sales & demos**: https://calendly.com/rahulchettri601/nestaid-demo-call
+- **Email**: rahul@nestaid.us
+- **Website**: https://www.nestaid.us

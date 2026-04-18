@@ -17,9 +17,17 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us — Nessa",
+  title: "About Us",
   description:
-    "Learn about Nessa's mission to modernize home care operations with AI-powered tools that put people first.",
+    "Learn about Nestaid's mission to modernize home care operations with AI-powered tools — including our AI agent Nessa — that put people first.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Nestaid",
+    description:
+      "Meet the team behind Nestaid — the AI-powered operations platform built for home care agencies.",
+    url: "/about",
+    type: "website",
+  },
 };
 
 const values = [

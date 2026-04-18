@@ -5,8 +5,9 @@ import { RetroTvError } from '@/components/ui/retro-tv-error';
 import { Button } from '@/components/ui/button';
 
 export const metadata = {
-  title: '404 — Page Not Found | Nessa',
+  title: '404 — Page Not Found',
   description: 'The page you were looking for does not exist.',
+  robots: { index: false, follow: false },
 };
 
 export default function NotFound() {
