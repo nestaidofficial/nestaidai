@@ -80,7 +80,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F6F6F3",
+  themeColor: "#FAFAFA",
   width: "device-width",
   initialScale: 1,
 };
@@ -174,7 +174,7 @@ export default function RootLayout({
         ) : null}
 
         {/* Fixed base background color */}
-        <div aria-hidden="true" className="fixed inset-0 -z-20 bg-[#F6F6F3]" />
+        <div aria-hidden="true" className="fixed inset-0 -z-20 bg-[#FAFAFA]" />
         {/* Fixed dot-grid on top of the base color */}
         <div
           aria-hidden="true"
@@ -183,7 +183,7 @@ export default function RootLayout({
         {/* Radial vignette — fades dots toward edges for depth */}
         <div
           aria-hidden="true"
-          className="fixed inset-0 -z-10 bg-[#F6F6F3] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,black_100%)]"
+          className="fixed inset-0 -z-10 bg-[#FAFAFA] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,black_100%)]"
         />
         {children}
 

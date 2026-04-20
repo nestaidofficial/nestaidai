@@ -55,7 +55,7 @@ export function HowItWorks() {
         <div className="text-center mb-10 sm:mb-16">
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
-              <span className="inline-flex items-center justify-center rounded-md bg-black text-white px-2 py-0.5 text-xs font-semibold">
+              <span className="inline-flex items-center justify-center rounded-md bg-[#FFDAB9] text-black px-2 py-0.5 text-xs font-semibold">
                 24/7
               </span>
               <span className="text-foreground">
@@ -155,15 +155,15 @@ export function HowItWorks() {
                 className="w-full h-auto relative z-[1]"
               />
 
-              {/* Workflow animation — inset-0 so it fully fills behind the SVG bezel */}
-              <div className="absolute inset-0 overflow-hidden bg-[#F6F6F3] z-0">
+              {/* Workflow animation — clipped to the phone's rounded shape so the white screen doesn't bleed past the bezel */}
+              <div className="absolute inset-0 overflow-hidden z-0 rounded-[50px] sm:rounded-[56px] md:rounded-[64px]">
                 <WorkflowAnimation />
               </div>
 
-              {/* Bottom fade overlay — sits above content, below bezel */}
+              {/* Bottom fade overlay — sits above content, clipped to match the phone's bottom curve */}
               <div
-                className="absolute bottom-0 left-0 right-0 h-[28%] pointer-events-none z-[2] rounded-b-[40px] overflow-hidden"
-                style={{ background: "linear-gradient(to bottom, transparent 0%, #F6F6F3 75%)" }}
+                className="absolute bottom-0 left-0 right-0 h-[35%] pointer-events-none z-[2] overflow-hidden rounded-b-[50px] sm:rounded-b-[56px] md:rounded-b-[64px]"
+                style={{ background: "linear-gradient(to bottom, transparent 0%, #FAFAFA 70%)" }}
               />
 
               {/* Status bar overlay — positioned over the phone screen area */}

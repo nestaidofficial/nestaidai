@@ -40,7 +40,7 @@ export function Hero() {
         <div className="w-full max-w-4xl mx-auto text-center mb-10 sm:mb-16">
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
-              <span className="inline-flex items-center justify-center rounded-md bg-black text-white px-2 py-0.5 text-xs font-semibold">
+              <span className="inline-flex items-center justify-center rounded-md bg-[#FFDAB9] text-black px-2 py-0.5 text-xs font-semibold">
                 NEW
               </span>
               <span className="text-foreground">

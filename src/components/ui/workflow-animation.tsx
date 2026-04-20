@@ -62,7 +62,7 @@ export function WorkflowAnimation() {
   const replied = phase >= 6 ? 1 : 0;
 
   return (
-    <div className="w-full h-full bg-[#F6F6F3] overflow-hidden select-none flex flex-col">
+    <div className="w-full h-full bg-white overflow-hidden select-none flex flex-col">
       <div className="px-4 pt-[22%] pb-4 flex flex-col gap-3 flex-1">
 
         {/* Back button */}

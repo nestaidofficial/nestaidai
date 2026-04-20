@@ -54,7 +54,7 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#F6F6F3] border-b border-black/10">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-black/10">
       <nav className="flex h-14 w-full max-w-6xl mx-auto items-center justify-between px-8 gap-8">
 
         {/* Logo — left */}
@@ -63,8 +63,8 @@ export function Navbar() {
             <Image
               src="/logomain.jpg"
               alt="Nestaid"
-              width={200}
-              height={50}
+              width={512}
+              height={195}
               className="h-12 w-auto"
               priority
             />

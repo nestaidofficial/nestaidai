@@ -52,7 +52,7 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#F6F6F3] text-gray-500 pt-20">
+    <footer className="bg-white text-gray-500 pt-20">
       <div className="max-w-screen-xl mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           {/* Brand */}
