@@ -202,7 +202,12 @@ export function Pricing() {
         {/* Enterprise note */}
         <p className="text-center text-sm text-muted-foreground mt-10">
           Need a custom plan?{" "}
-          <Link href="/contact" className="text-primary font-medium hover:underline">
+          <Link
+            href="https://calendly.com/rahulchettri601/nestaid-demo-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-medium hover:underline"
+          >
             Talk to our sales team
           </Link>{" "}
           for volume discounts and custom contracts.

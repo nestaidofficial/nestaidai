@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Terms of Service — Nestaid",
   description:
     "Nestaid's Terms of Service govern your access to and use of the Nestaid platform, AI-powered tools, and related services.",
+  alternates: { canonical: "/terms" },
 };
 
 const sections = [

@@ -45,7 +45,11 @@ export function CTA() {
                 className="bg-white text-gray-900 hover:bg-white/90 shadow-xl font-semibold"
                 asChild
               >
-                <Link href="/signup">
+                <Link
+                  href="https://calendly.com/rahulchettri601/nestaid-demo-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Start for free
                   <ArrowRight className="w-5 h-5" />
                 </Link>

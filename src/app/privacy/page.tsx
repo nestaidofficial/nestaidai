@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Nestaid",
   description:
     "Nestaid's Privacy Policy explains how we collect, use, disclose, and protect personal information in connection with our AI-powered home care operations platform.",
+  alternates: { canonical: "/privacy" },
 };
 
 const sections = [

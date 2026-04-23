@@ -91,14 +91,18 @@ const organizationSchema = {
   name: "Nestaid",
   alternateName: "Nessa AI",
   url: siteUrl,
-  logo: `${siteUrl}/logomain.jpg`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/logomain.jpg`,
+    width: 512,
+    height: 195,
+  },
   description: defaultDescription,
   foundingDate: "2024",
   founders: [
     { "@type": "Person", name: "Rabina Adhikari", jobTitle: "Co-founder & CEO" },
     { "@type": "Person", name: "Rahul Chettri", jobTitle: "Co-founder & CTO" },
   ],
-  sameAs: [] as string[],
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -108,6 +112,14 @@ const organizationSchema = {
       availableLanguage: ["en"],
     },
   ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: siteUrl,
+  name: siteName,
+  description: defaultDescription,
 };
 
 const softwareSchema = {
@@ -143,10 +155,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href={siteUrl} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <script
           type="application/ld+json"
