@@ -48,7 +48,6 @@ export function CallNessa() {
           {/* Input card */}
           <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl px-6 pt-5 pb-4 w-full max-w-sm shadow-sm">
             <div className="flex items-center gap-3 border border-black/10 rounded-xl bg-white px-4 h-12 mb-3">
-              <Phone className="w-4 h-4 text-muted-foreground shrink-0" />
               <input
                 type="tel"
                 placeholder="Enter your number"
@@ -60,11 +59,22 @@ export function CallNessa() {
             </div>
             <Button
               variant="default"
-              className="w-full h-11 text-sm font-medium"
+              className="group relative overflow-hidden w-full h-11 px-5 text-sm font-medium"
               onClick={handleCall}
               disabled={status === "loading"}
             >
-              {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Call Nessa"}
+              {status === "loading" ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <>
+                  <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">
+                    Try Nestaid
+                  </span>
+                  <i className="absolute right-1 top-1 bottom-1 rounded-md z-10 grid w-1/4 place-items-center transition-all duration-500 bg-black text-white group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+                    <Phone size={16} strokeWidth={2} aria-hidden="true" />
+                  </i>
+                </>
+              )}
             </Button>
             {message ? (
               <p className={`text-xs mt-3 ${status === "error" ? "text-red-500" : "text-green-600"}`}>

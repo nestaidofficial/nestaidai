@@ -75,7 +75,6 @@ export function HowItWorks() {
           <div className="mt-6 sm:mt-8 flex flex-col items-center">
             <div className="flex items-stretch h-11 mb-3 w-full max-w-[300px] sm:max-w-sm">
               <div className="flex items-center gap-2 flex-1 border border-r-0 border-black/10 rounded-l-xl bg-white px-3 sm:px-4 min-w-0">
-                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-muted-foreground shrink-0" />
                 <input
                   type="tel"
                   placeholder="Your phone number"
@@ -87,11 +86,22 @@ export function HowItWorks() {
               </div>
               <Button
                 variant="default"
-                className="h-11 rounded-l-none rounded-r-xl px-4 sm:px-5 text-sm font-medium shrink-0"
+                className="group relative overflow-hidden h-11 rounded-l-none rounded-r-xl pl-4 pr-12 sm:pl-5 sm:pr-14 text-sm font-medium shrink-0"
                 onClick={handleCall}
                 disabled={status === "loading"}
               >
-                {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Call Nessa"}
+                {status === "loading" ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <>
+                    <span className="transition-opacity duration-500 group-hover:opacity-0">
+                      Try Nestaid
+                    </span>
+                    <i className="absolute right-1 top-1 bottom-1 rounded-md z-10 grid w-9 place-items-center transition-all duration-500 bg-black text-white group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+                      <Phone size={16} strokeWidth={2} aria-hidden="true" />
+                    </i>
+                  </>
+                )}
               </Button>
             </div>
             {message ? (
@@ -121,7 +131,7 @@ export function HowItWorks() {
         <div className="relative flex items-center justify-center min-h-[300px]">
           {/* Left stat — hidden on mobile, shown md+ */}
           <div className="hidden md:block absolute left-0 lg:left-16 top-1/3 -translate-y-1/2 z-10">
-            <div className="bg-white/80 backdrop-blur-sm border border-peach rounded-2xl px-5 py-3 shadow-sm">
+            <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
               <span className="font-sans text-[15px] font-light text-gray-800">
                 <span className="font-sans font-bold text-[#16A34A]">5</span> min average fill time
               </span>
@@ -130,7 +140,7 @@ export function HowItWorks() {
 
           {/* Right stat top — hidden on mobile, shown md+ */}
           <div className="hidden md:block absolute right-0 lg:right-16 top-1/4 z-10">
-            <div className="bg-white/80 backdrop-blur-sm border border-peach rounded-2xl px-5 py-3 shadow-sm">
+            <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
               <span className="font-sans text-[15px] font-light text-gray-800">
                 <span className="font-sans font-bold text-[#16A34A]">24/7</span> AI call-out handling
               </span>
@@ -139,7 +149,7 @@ export function HowItWorks() {
 
           {/* Right stat bottom — hidden on mobile, shown md+ */}
           <div className="hidden md:block absolute right-0 lg:right-8 bottom-1/4 z-10">
-            <div className="bg-white/80 backdrop-blur-sm border border-peach rounded-2xl px-5 py-3 shadow-sm">
+            <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
               <span className="font-sans text-[15px] font-light text-gray-800">
                 <span className="font-sans font-bold text-[#16A34A]">91%</span> less manual coordination
               </span>
@@ -216,17 +226,17 @@ export function HowItWorks() {
 
         {/* Mobile-only stats row — shown only below md */}
         <div className="flex md:hidden justify-center gap-3 mt-6 flex-wrap">
-          <div className="bg-white/80 backdrop-blur-sm border border-peach rounded-2xl px-5 py-3 shadow-sm">
+          <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
             <span className="font-sans text-[15px] font-light text-gray-800">
               <span className="font-sans font-bold text-[#16A34A]">5</span> min average fill time
             </span>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm border border-peach rounded-2xl px-5 py-3 shadow-sm">
+          <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
             <span className="font-sans text-[15px] font-light text-gray-800">
               <span className="font-sans font-bold text-[#16A34A]">24/7</span> AI call-out handling
             </span>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm border border-peach rounded-2xl px-5 py-3 shadow-sm">
+          <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
             <span className="font-sans text-[15px] font-light text-gray-800">
               <span className="font-sans font-bold text-[#16A34A]">91%</span> less manual coordination
             </span>
