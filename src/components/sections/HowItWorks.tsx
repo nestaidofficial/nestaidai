@@ -163,7 +163,7 @@ export function HowItWorks() {
               {/* Bottom fade overlay — sits above content, clipped to match the phone's bottom curve */}
               <div
                 className="absolute bottom-0 left-0 right-0 h-[35%] pointer-events-none z-[2] overflow-hidden rounded-b-[50px] sm:rounded-b-[56px] md:rounded-b-[64px]"
-                style={{ background: "linear-gradient(to bottom, transparent 0%, #FAFAFA 70%)" }}
+                style={{ background: "linear-gradient(to bottom, transparent 0%, #FFFFFF 70%)" }}
               />
 
               {/* Status bar overlay — positioned over the phone screen area */}

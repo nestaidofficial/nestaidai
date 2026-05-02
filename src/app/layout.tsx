@@ -192,16 +192,11 @@ export default function RootLayout({
         ) : null}
 
         {/* Fixed base background color */}
-        <div aria-hidden="true" className="fixed inset-0 -z-20 bg-[#FAFAFA]" />
+        <div aria-hidden="true" className="fixed inset-0 -z-20 bg-white" />
         {/* Fixed dot-grid on top of the base color */}
         <div
           aria-hidden="true"
-          className="fixed inset-0 -z-10 opacity-80 [background-size:20px_20px] [background-image:radial-gradient(#c8c8c4_1px,transparent_1px)]"
-        />
-        {/* Radial vignette — fades dots toward edges for depth */}
-        <div
-          aria-hidden="true"
-          className="fixed inset-0 -z-10 bg-[#FAFAFA] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,black_100%)]"
+          className="fixed inset-0 -z-10 opacity-65 [background-size:20px_20px] [background-image:radial-gradient(#cccac6_1.1px,transparent_1.1px)] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,black_20%,transparent_90%)]"
         />
         {children}
 
