@@ -35,3 +35,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# SEO crawl exports (Screaming Frog, etc.)
+details_tab_*.csv
+indexability.csv
+internal_all.csv
+issues_overview_report.csv
+sitemaps_all.csv

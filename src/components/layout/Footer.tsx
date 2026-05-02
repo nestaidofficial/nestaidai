@@ -11,6 +11,7 @@ import {
   Info,
   Shield,
   FileText,
+  Leaf,
 } from "lucide-react";
 
 const brand = {
@@ -39,6 +40,7 @@ const columns = [
     title: "Company",
     links: [
       { name: "About", Icon: Info, href: "/about" },
+      { name: "Blog", Icon: Leaf, href: "/blog" },
     ],
   },
   {
@@ -59,7 +61,13 @@ export function Footer() {
           <div className="lg:col-span-4 mb-10 lg:mb-0">
             <Link href="/" className="inline-flex items-center mb-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Nestaid" className="h-8 w-auto" />
+              <img
+                src="/logo.svg"
+                alt="Nestaid"
+                width={120}
+                height={32}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs text-gray-400/80">
               {brand.description}

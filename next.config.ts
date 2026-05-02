@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    const calendly = "https://calendly.com/rahulchettri601/nestaid-demo-call";
+    return [
+      { source: "/signup", destination: calendly, permanent: true },
+      { source: "/contact", destination: calendly, permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

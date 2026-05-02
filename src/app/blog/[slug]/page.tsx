@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { getAllPostSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllPostSlugs, getAllPosts, getPostBySlug } from "@/lib/blog";
 
 type Params = { slug: string };
 
@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   const url = `/blog/${post.slug}`;
   return {
-    title: post.title,
+    title: { absolute: post.title },
     description: post.description,
     keywords: post.keywords,
     alternates: { canonical: url },
@@ -61,6 +61,10 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const relatedPosts = getAllPosts()
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 2);
 
   const siteUrl = "https://www.nestaid.us";
   const articleSchema = {
@@ -167,6 +171,35 @@ export default async function BlogPostPage({
                   ← More from the blog
                 </Link>
               </div>
+
+              {relatedPosts.length > 0 && (
+                <aside className="mt-20 pt-10 border-t border-black/10">
+                  <h2 className="text-2xl sm:text-3xl font-heading tracking-tight mb-6">
+                    Keep reading
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {relatedPosts.map((related) => (
+                      <Link
+                        key={related.slug}
+                        href={`/blog/${related.slug}`}
+                        className="group rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
+                      >
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+                          <time dateTime={related.date}>{formatDate(related.date)}</time>
+                          <span>·</span>
+                          <span>{related.readingMinutes} min read</span>
+                        </div>
+                        <h3 className="text-lg sm:text-xl font-heading tracking-tight mb-2 leading-snug group-hover:underline underline-offset-4 decoration-black/30">
+                          {related.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                          {related.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </aside>
+              )}
             </div>
           </div>
         </article>

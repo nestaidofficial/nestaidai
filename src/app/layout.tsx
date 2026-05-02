@@ -51,6 +51,9 @@ export const metadata: Metadata = {
   publisher: "Nestaid",
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
   openGraph: {
     type: "website",

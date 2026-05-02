@@ -4,9 +4,9 @@ import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Nestaid",
+  title: "Privacy Policy",
   description:
-    "Nestaid's Privacy Policy explains how we collect, use, disclose, and protect personal information in connection with our AI-powered home care operations platform.",
+    "How Nestaid collects, uses, discloses, and protects personal information for our AI-powered home care operations platform.",
   alternates: { canonical: "/privacy" },
 };
 

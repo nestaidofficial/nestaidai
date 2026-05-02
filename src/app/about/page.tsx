@@ -17,12 +17,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Nestaid — AI for Home Care Operations",
   description:
-    "Learn about Nestaid's mission to modernize home care operations with AI-powered tools — including our AI agent Nessa — that put people first.",
+    "Meet the team modernizing home care operations with AI — including Nessa, our AI receptionist and coordinator built for home care agencies.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Nestaid",
+    title: "About Nestaid — AI for Home Care Operations",
     description:
       "Meet the team behind Nestaid — the AI-powered operations platform built for home care agencies.",
     url: "/about",
@@ -76,12 +76,6 @@ const team: {
   initials?: string;
   imageSrc?: string;
 }[] = [
-  {
-    name: "Rabina Adhikari",
-    role: "Co-founder & CEO",
-    bio: "Former home care coordinator turned builder. After 10 years working on the caregiving and coordination side of home care agencies, Rabina started Nessa to fix the operational chaos she saw every day — burned-out coordinators, messy schedules, constant call-outs, and too much reliance on spreadsheets and sticky notes.",
-    imageSrc: "/rabina.PNG",
-  },
   {
     name: "Rahul Chettri",
     role: "Co-founder & CTO",
@@ -160,16 +154,16 @@ export default function AboutPage() {
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border border-black/10 flex-shrink-0">
                       <Image
-                        src="/rabina.PNG"
-                        alt="Rabina Adhikari"
+                        src="/rahul.jpg"
+                        alt="Rahul Chettri"
                         width={80}
                         height={80}
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
                     <div>
-                      <p className="text-base font-medium text-black">Rabina Adhikari</p>
-                      <p className="text-sm text-muted-foreground">Co-founder & CEO</p>
+                      <p className="text-base font-medium text-black">Rahul Chettri</p>
+                      <p className="text-sm text-muted-foreground">Co-founder & CTO</p>
                     </div>
                   </div>
                 </div>
@@ -226,7 +220,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 gap-5 max-w-md mx-auto">
               {team.map((member) => (
                 <div
                   key={member.name}

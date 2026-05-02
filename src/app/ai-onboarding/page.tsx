@@ -8,7 +8,7 @@ import { AIOnboardingCTA } from "@/components/sections/AIOnboardingCTA";
 export const metadata: Metadata = {
   title: "AI Caregiver Onboarding for Home Care Agencies",
   description:
-    "Turn caregiver onboarding into a one-touch workflow. Nestaid's AI intake collects forms, verifies compliance, and books interviews — without spreadsheets or phone tag.",
+    "Turn caregiver onboarding into one workflow. Nestaid's AI collects forms, verifies compliance, and books interviews — without phone tag.",
   alternates: { canonical: "/ai-onboarding" },
   openGraph: {
     title: "AI Caregiver Onboarding | Nestaid",

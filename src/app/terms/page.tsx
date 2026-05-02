@@ -4,9 +4,9 @@ import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Nestaid",
+  title: "Terms of Service",
   description:
-    "Nestaid's Terms of Service govern your access to and use of the Nestaid platform, AI-powered tools, and related services.",
+    "Terms governing your access to and use of the Nestaid platform, AI-powered tools, and related services.",
   alternates: { canonical: "/terms" },
 };
 

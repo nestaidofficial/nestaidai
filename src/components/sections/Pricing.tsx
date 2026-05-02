@@ -168,7 +168,11 @@ export function Pricing() {
 
               {/* CTA */}
               <Button variant={plan.ctaVariant} size="lg" className="w-full mb-8" asChild>
-                <Link href={plan.name === "Enterprise" ? "/contact" : "/signup"}>
+                <Link
+                  href="https://calendly.com/rahulchettri601/nestaid-demo-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {plan.cta}
                 </Link>
               </Button>

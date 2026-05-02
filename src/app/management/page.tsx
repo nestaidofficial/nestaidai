@@ -9,12 +9,12 @@ import { ManagementCTA } from "@/components/sections/ManagementCTA";
 export const metadata: Metadata = {
   title: "Agency Management Platform for Home Care",
   description:
-    "Run your entire home care agency in one place. Nestaid centralizes client records, caregiver coordination, onboarding, and compliance into a single AI-powered platform.",
+    "Run your home care agency in one place. Nestaid centralizes client records, caregiver coordination, onboarding, and compliance — AI-powered.",
   alternates: { canonical: "/management" },
   openGraph: {
     title: "Agency Management Platform for Home Care | Nestaid",
     description:
-      "Centralize client records, caregiver coordination, onboarding, and compliance with Nestaid's AI-powered management platform for home care agencies.",
+      "Centralize client records, caregiver coordination, onboarding, and compliance with Nestaid's AI-powered management platform.",
     url: "/management",
     type: "website",
   },
