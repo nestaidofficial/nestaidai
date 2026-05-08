@@ -12,140 +12,144 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    id: "introduction",
-    title: "1. Introduction",
-    content: (
-      <>
-        <p>
-          Nestaid (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the Nestaid platform, including our website and software applications (collectively, the &ldquo;Service&rdquo;). Nestaid is a software-as-a-service (SaaS) platform that provides AI-powered operational tools for home care agencies, including AI receptionist support, scheduling coordination, call-out handling, shift recovery workflows, communications, and related agency operations tools (&ldquo;Agency Customers&rdquo;).
-        </p>
-        <p>
-          Agency Customers may use our Service to support communications and workflows involving their employees, caregivers, applicants, staff, and other authorized users (&ldquo;End Users&rdquo;).
-        </p>
-        <p>
-          This Privacy Policy explains how we collect, use, disclose, and protect personal information in connection with our Service. It applies to both Agency Customers who use our platform and End Users whose information is processed through our platform on behalf of Agency Customers.
-        </p>
-      </>
-    ),
-  },
-  {
     id: "our-role",
-    title: "2. Our Role",
+    title: "1. Our Role",
     content: (
       <>
         <p>
-          In most cases, Nestaid acts as a service provider on behalf of Agency Customers. When an Agency Customer uses our platform to manage staffing workflows, scheduling, caregiver records, applicant onboarding, operational communications, or other internal processes, the Agency Customer controls that data and is responsible for how it is used. Nestaid processes such data on the Agency Customer&rsquo;s behalf and according to their instructions.
+          Nestaid works with home care agencies and related organizations
+          (&ldquo;Agency Customers&rdquo;). In most cases, Nestaid acts as a
+          service provider and processes information on behalf of Agency
+          Customers.
         </p>
         <p>
-          If you are an End User, such as a caregiver, applicant, employee, or other person communicating with a home care agency through our platform, questions about your personal information should generally be directed to the relevant home care agency first. If needed, you may also contact Nestaid using the contact information listed below.
+          If you are a caregiver, employee, applicant, client, staff member, or
+          other person interacting with an Agency Customer through Nestaid, the
+          Agency Customer generally controls your information. Questions about
+          your information should usually be directed to that Agency Customer
+          first.
         </p>
       </>
     ),
   },
   {
     id: "information-we-collect",
-    title: "3. Information We Collect",
+    title: "2. Information We Collect",
     content: (
       <>
-        <h3 className="text-base font-semibold text-black mt-6 mb-3">From Agency Customers</h3>
-        <p>When an agency signs up for Nestaid, we may collect account and business information such as:</p>
+        <p>We may collect information from Agency Customers, including:</p>
         <ul>
           <li>Agency name</li>
-          <li>Administrator and staff names</li>
+          <li>Staff names</li>
           <li>Email addresses</li>
           <li>Phone numbers</li>
           <li>Billing and account details</li>
-          <li>Platform configuration and preferences</li>
-          <li>Communication settings and workflow settings</li>
+          <li>Platform settings and workflow preferences</li>
         </ul>
-
-        <h3 className="text-base font-semibold text-black mt-6 mb-3">From End Users (on behalf of Agency Customers)</h3>
-        <p>When End Users interact with our platform or with AI tools deployed by an Agency Customer, we may process information on that Agency Customer&rsquo;s behalf, including:</p>
+        <p>
+          Agency Customers may also use Nestaid to process information about
+          caregivers, applicants, employees, clients, and other users,
+          including:
+        </p>
         <ul>
           <li>Name</li>
-          <li>Email address</li>
-          <li>Phone number</li>
-          <li>Work availability and scheduling information</li>
-          <li>Job application details</li>
-          <li>Employment history</li>
-          <li>Professional licenses, certifications, and related compliance information</li>
-          <li>Shift status, attendance, and call-out related information</li>
-          <li>Messages, call transcripts, call recordings, voicemail content, notes, and communication history</li>
-          <li>Documents or forms submitted through the platform</li>
-          <li>Other information the Agency Customer chooses to collect using the Service</li>
+          <li>Contact information</li>
+          <li>Scheduling and availability information</li>
+          <li>Shift status, call-out, and coverage information</li>
+          <li>Job application or onboarding details</li>
+          <li>Licenses, certifications, and compliance-related information</li>
+          <li>
+            Messages, call transcripts, call recordings, voicemails, notes,
+            forms, and uploaded documents
+          </li>
         </ul>
-        <p>This information is collected and controlled by the Agency Customer. Nestaid processes it on their behalf in order to provide the Service.</p>
-
-        <h3 className="text-base font-semibold text-black mt-6 mb-3">Information Collected Automatically</h3>
-        <p>When users access our Service, we may automatically collect certain technical and usage information, such as:</p>
-        <ul>
-          <li>IP address</li>
-          <li>Browser type and version</li>
-          <li>Device type and operating system</li>
-          <li>Pages viewed and actions taken within the Service</li>
-          <li>Access times and session activity</li>
-          <li>Cookies and similar tracking technologies</li>
-        </ul>
+        <p>
+          We may also collect technical information such as IP address, browser
+          type, device information, pages viewed, session activity, cookies, and
+          similar data.
+        </p>
       </>
     ),
   },
   {
     id: "how-we-use",
-    title: "4. How We Use Information",
+    title: "3. How We Use Information",
     content: (
       <>
-        <p>We use personal information for the following purposes:</p>
+        <p>We use information to:</p>
         <ul>
-          <li>To provide, operate, maintain, and improve the Service</li>
-          <li>To enable AI receptionist, scheduling, call-out management, and shift coordination workflows</li>
-          <li>To process information on behalf of Agency Customers</li>
-          <li>To facilitate voice calls, text messages, alerts, reminders, and other communications initiated by Agency Customers</li>
-          <li>To support onboarding, staffing, scheduling, compliance, and operational workflows</li>
-          <li>To personalize and configure platform features for Agency Customers</li>
-          <li>To provide customer support</li>
-          <li>To monitor usage, troubleshoot issues, and improve platform performance</li>
-          <li>To detect, investigate, and prevent fraud, abuse, security incidents, and technical problems</li>
-          <li>To comply with legal obligations</li>
+          <li>Provide and operate Nestaid</li>
+          <li>
+            Support AI receptionist, scheduling, call-out, and shift
+            coordination workflows
+          </li>
+          <li>
+            Send calls, messages, alerts, reminders, and service communications
+          </li>
+          <li>Configure agency workflows</li>
+          <li>Provide customer support</li>
+          <li>Improve platform reliability, safety, and performance</li>
+          <li>
+            Detect security issues, fraud, abuse, or technical problems
+          </li>
+          <li>Comply with legal obligations</li>
         </ul>
-        <p>We may also use limited data internally to improve the reliability, safety, and functionality of our platform, subject to our agreements with Agency Customers.</p>
+        <p>
+          We do not sell personal information. We do not use End User data
+          processed on behalf of Agency Customers for unrelated marketing
+          purposes.
+        </p>
       </>
     ),
   },
   {
-    id: "voice-calls",
-    title: "5. Voice Calls, AI Communications, and SMS/Text Messaging",
+    id: "hipaa-regulated-data",
+    title: "4. HIPAA-Regulated Data",
     content: (
       <>
-        <p>Nestaid may support voice calls, AI-assisted conversations, and SMS/text messaging in the following ways:</p>
-
-        <h3 className="text-base font-semibold text-black mt-6 mb-3">Messages and calls to Agency Customers</h3>
-        <p>We may send text messages, automated alerts, voice calls, emails, or other service-related communications directly to Agency Customer staff for purposes such as:</p>
-        <ul>
-          <li>Account notifications</li>
-          <li>Platform alerts</li>
-          <li>Urgent staffing updates</li>
-          <li>Scheduling-related notifications</li>
-          <li>System or service updates</li>
-          <li>Operational communications related to use of the Service</li>
-        </ul>
-
-        <h3 className="text-base font-semibold text-black mt-6 mb-3">Messages and calls to End Users on behalf of Agency Customers</h3>
-        <p>Agency Customers may use Nestaid&rsquo;s platform to communicate with caregivers, applicants, employees, or other End Users. In these cases, the Agency Customer is the sender of the communication and is responsible for obtaining any required consent.</p>
-        <p>These communications may include:</p>
-        <ul>
-          <li>Shift notifications and schedule updates</li>
-          <li>Call-out alerts and shift coverage requests</li>
-          <li>Open shift outreach</li>
-          <li>Interview scheduling confirmations and reminders</li>
-          <li>Applicant status updates</li>
-          <li>Onboarding reminders</li>
-          <li>Compliance and document reminders</li>
-          <li>Care coordination messages</li>
-          <li>Other home care operations-related communications</li>
-        </ul>
-        <p>Message frequency varies depending on user activity and the Agency Customer&rsquo;s platform usage. Message and data rates may apply.</p>
-        <p>Recipients may opt out of SMS messages at any time by replying <strong>STOP</strong> to a message. For help, reply <strong>HELP</strong>.</p>
-        <p className="font-medium text-black/80">We do not sell, rent, or share phone numbers, SMS consent data, or SMS opt-in records with third parties for their own marketing purposes. SMS consent is not a condition of purchasing any goods or services.</p>
+        <p>
+          Some Agency Customers may use Nestaid in connection with information
+          that may be considered Protected Health Information (&ldquo;PHI&rdquo;)
+          or electronic Protected Health Information (&ldquo;ePHI&rdquo;) under
+          HIPAA.
+        </p>
+        <p>
+          Where HIPAA applies, Nestaid processes PHI/ePHI only as permitted by
+          applicable law, customer instructions, and a written Business
+          Associate Agreement where required.
+        </p>
+        <p>
+          Nestaid does not use PHI/ePHI processed on behalf of Agency Customers
+          to train general AI models or for unrelated marketing purposes.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "calls-ai-sms",
+    title: "5. Calls, AI Communications, and SMS",
+    content: (
+      <>
+        <p>
+          Nestaid may support voice calls, AI-assisted conversations, emails,
+          alerts, and SMS/text messaging.
+        </p>
+        <p>
+          Agency Customers may use Nestaid to communicate with caregivers,
+          applicants, employees, clients, staff, or other users. These
+          communications may include shift updates, call-out alerts, coverage
+          requests, reminders, onboarding messages, and other operational
+          communications.
+        </p>
+        <p>
+          Message frequency may vary. Message and data rates may apply. SMS
+          recipients may opt out at any time by replying <strong>STOP</strong>.
+          For help, reply <strong>HELP</strong>.
+        </p>
+        <p className="font-medium text-black/80">
+          We do not sell, rent, or share phone numbers, SMS consent data, or
+          SMS opt-in records with third parties for their own marketing purposes.
+        </p>
       </>
     ),
   },
@@ -154,16 +158,32 @@ const sections = [
     title: "6. How We Share Information",
     content: (
       <>
-        <p>We may share personal information in the following circumstances:</p>
+        <p>We may share information:</p>
         <ul>
-          <li>With Agency Customers, who control the End User data processed through the platform</li>
-          <li>With vendors, service providers, and sub-processors that help us operate the Service, such as hosting, communications, analytics, storage, transcription, and support providers</li>
-          <li>When required by law, regulation, subpoena, court order, or other legal process</li>
-          <li>To protect the rights, property, safety, or security of Nestaid, our users, Agency Customers, or the public</li>
-          <li>In connection with a merger, acquisition, financing, reorganization, sale of assets, or similar business transaction</li>
-          <li>With consent or at the direction of the Agency Customer or the individual when applicable</li>
+          <li>With Agency Customers</li>
+          <li>
+            With service providers that help us operate Nestaid, such as
+            hosting, communications, storage, transcription, analytics, support,
+            and security providers
+          </li>
+          <li>When required by law or legal process</li>
+          <li>
+            To protect the rights, safety, and security of Nestaid, our
+            customers, users, or the public
+          </li>
+          <li>
+            In connection with a merger, acquisition, financing, or sale of
+            assets
+          </li>
+          <li>
+            With consent or at the direction of the Agency Customer or
+            individual
+          </li>
         </ul>
-        <p className="font-medium text-black/80">We do not sell personal information to third parties. We do not use End User data processed on behalf of Agency Customers for unrelated marketing purposes.</p>
+        <p>
+          Where required, we use appropriate contractual safeguards with service
+          providers that handle regulated data.
+        </p>
       </>
     ),
   },
@@ -172,16 +192,13 @@ const sections = [
     title: "7. Data Security",
     content: (
       <>
-        <p>We implement reasonable administrative, technical, and physical safeguards designed to protect personal information. These measures may include:</p>
-        <ul>
-          <li>Encryption in transit and at rest</li>
-          <li>Role-based access controls</li>
-          <li>Authentication and account security measures</li>
-          <li>Logging and audit controls</li>
-          <li>Secure cloud infrastructure</li>
-          <li>Ongoing monitoring and security reviews</li>
-        </ul>
-        <p>However, no method of transmission over the Internet or method of electronic storage is completely secure. As a result, we cannot guarantee absolute security.</p>
+        <p>
+          We use reasonable administrative, technical, and physical safeguards
+          designed to protect personal information. These may include
+          encryption, access controls, authentication, logging, audit controls,
+          secure cloud infrastructure, and security monitoring.
+        </p>
+        <p>No system is completely secure, and we cannot guarantee absolute security.</p>
       </>
     ),
   },
@@ -190,8 +207,15 @@ const sections = [
     title: "8. Data Retention",
     content: (
       <>
-        <p>We retain Agency Customer account information for as long as necessary to provide the Service, fulfill our contractual obligations, resolve disputes, enforce agreements, and comply with legal obligations.</p>
-        <p>End User data processed on behalf of Agency Customers is retained according to the Agency Customer&rsquo;s instructions, our agreements with that Agency Customer, and applicable law. When an Agency Customer terminates its account, we will delete, return, or retain data in accordance with our contractual commitments and legal requirements.</p>
+        <p>
+          We retain information as long as necessary to provide the Service, meet
+          contractual obligations, resolve disputes, enforce agreements, and
+          comply with legal requirements.
+        </p>
+        <p>
+          Information processed on behalf of Agency Customers is retained
+          according to customer instructions, our agreements, and applicable law.
+        </p>
       </>
     ),
   },
@@ -200,37 +224,37 @@ const sections = [
     title: "9. Your Rights",
     content: (
       <>
-        <h3 className="text-base font-semibold text-black mt-6 mb-3">Agency Customers</h3>
-        <p>Agency Customers may access, update, correct, or delete certain account information through the platform or by contacting us.</p>
-
-        <h3 className="text-base font-semibold text-black mt-6 mb-3">End Users</h3>
-        <p>If you are an End User and want to access, correct, or delete your personal information, you should contact the relevant home care agency directly, since that agency controls your information. If you cannot reach the agency, you may contact Nestaid and we will make reasonable efforts to assist or direct your request appropriately.</p>
-        <p>Depending on your location, you may have additional rights under applicable privacy laws, which may include the right to:</p>
-        <ul>
-          <li>Access your personal information</li>
-          <li>Request correction or deletion</li>
-          <li>Request data portability</li>
-          <li>Limit or object to certain processing</li>
-          <li>Withdraw consent where processing is based on consent</li>
-        </ul>
+        <p>
+          Agency Customers may access, update, or delete certain account
+          information through the platform or by contacting us.
+        </p>
+        <p>
+          If you are an End User, you should contact the relevant Agency
+          Customer to access, correct, or delete your information. If needed,
+          you may also contact Nestaid, and we will make reasonable efforts to
+          assist or direct your request appropriately.
+        </p>
       </>
     ),
   },
   {
     id: "cookies",
-    title: "10. Cookies and Similar Technologies",
+    title: "10. Cookies",
     content: (
       <p>
-        We use cookies and similar technologies to operate the Service, remember preferences, analyze usage, and improve performance. You can control cookies through your browser settings, but disabling cookies may affect the functionality of certain parts of the Service.
+        We use cookies and similar technologies to operate the website and
+        Service, remember preferences, analyze usage, and improve performance.
+        You can control cookies through your browser settings.
       </p>
     ),
   },
   {
     id: "childrens-privacy",
-    title: "11. Children's Privacy",
+    title: "11. Children&apos;s Privacy",
     content: (
       <p>
-        Our Service is not intended for individuals under the age of 18, and we do not knowingly collect personal information directly from children. If we learn that we have collected personal information from a child in violation of applicable law, we will take reasonable steps to delete it.
+        Nestaid is not intended for individuals under 18. We do not knowingly
+        collect personal information directly from children.
       </p>
     ),
   },
@@ -239,7 +263,9 @@ const sections = [
     title: "12. Changes to This Policy",
     content: (
       <p>
-        We may update this Privacy Policy from time to time. If we make material changes, we will update the &ldquo;Last updated&rdquo; date and may provide additional notice where required. Continued use of the Service after the updated policy becomes effective means the updated policy will apply.
+        We may update this Privacy Policy from time to time. If we make
+        material changes, we will update the &ldquo;Last updated&rdquo; date and
+        may provide additional notice where required.
       </p>
     ),
   },
@@ -247,32 +273,29 @@ const sections = [
     id: "contact",
     title: "13. Contact Us",
     content: (
-      <>
-        <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-        <div className="mt-4 bg-white/60 backdrop-blur-sm border border-black/10 rounded-xl p-5 inline-block">
-          <p className="font-medium text-black">Nestaid</p>
-          <p>
-            Email:{" "}
-            <a
-              href="mailto:rahul@nestaid.us"
-              className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
-            >
-              rahul@nestaid.us
-            </a>
-          </p>
-          <p>
-            Website:{" "}
-            <a
-              href="https://www.nestaid.us"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
-            >
-              www.nestaid.us
-            </a>
-          </p>
-        </div>
-      </>
+      <div className="mt-2 bg-white/60 backdrop-blur-sm border border-black/10 rounded-xl p-5 inline-block">
+        <p className="font-medium text-black">Nestaid Inc.</p>
+        <p>
+          Website:{" "}
+          <a
+            href="https://www.nestaid.us"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            www.Nestaid.us
+          </a>
+        </p>
+        <p>
+          Email:{" "}
+          <a
+            href="mailto:rahul@nestaid.us"
+            className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            rahul@Nestaid.us
+          </a>
+        </p>
+      </div>
     ),
   },
 ];
@@ -291,10 +314,17 @@ export default function PrivacyPage() {
                 Privacy <span className="gradient-text">Policy</span>
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                We take your privacy seriously. This policy explains how Nestaid collects, uses, and protects your personal information.
+                Nestaid Inc. (&ldquo;Nestaid,&rdquo; &ldquo;we,&rdquo;
+                &ldquo;us,&rdquo; or &ldquo;our&rdquo;) provides AI-powered
+                software tools for home care agencies, including AI receptionist,
+                scheduling coordination, call-out handling, shift recovery,
+                communications, and related operational workflows. This Privacy
+                Policy explains how we collect, use, share, and protect personal
+                information through our website, platform, and related services.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                Last updated: <span className="font-medium text-black/70">February 8, 2026</span>
+                Last updated:{" "}
+                <span className="font-medium text-black/70">May 6, 2026</span>
               </p>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { Reveal } from "@/components/ui/reveal";
 
 const testimonials = [
   {
@@ -82,11 +83,11 @@ export function Testimonials() {
     <section id="testimonials" className="section-padding overflow-hidden">
       <div className="container-max">
         {/* Section header */}
-          <div className="text-center mb-10 sm:mb-16">
+        <Reveal className="text-center mb-10 sm:mb-16" amount={0.4}>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
             Why teams choose Nestaid
           </h2>
-        </div>
+        </Reveal>
       </div>
 
       {/* Marquee — full width, outside container */}

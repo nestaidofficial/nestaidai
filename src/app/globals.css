@@ -255,3 +255,17 @@
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
+
+/* Phone-screen call animation keyframes */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(3px); filter: blur(1px); }
+  to   { opacity: 1; transform: translateY(0);   filter: blur(0); }
+}

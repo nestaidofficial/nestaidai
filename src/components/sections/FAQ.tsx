@@ -4,6 +4,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/lib/faq-data";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 
 function FAQItem({
   question,
@@ -44,25 +45,27 @@ export function FAQ() {
       <div className="container-max">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-8 sm:mb-12">
+          <Reveal className="text-center mb-8 sm:mb-12" amount={0.4}>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
               Frequently asked questions
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-[17px] text-muted-foreground max-w-2xl mx-auto">
               Everything you need to know about Nestaid. Can&apos;t find the answer
               you&apos;re looking for?{" "}
               <a href="mailto:rahul@nestaid.us" className="hover:underline">
                 Reach out to our team.
               </a>
             </p>
-          </div>
+          </Reveal>
 
           {/* FAQ List */}
-          <div className="space-y-3">
+          <RevealGroup className="space-y-3" stagger={0.06} amount={0.15}>
             {faqs.map((faq) => (
-              <FAQItem key={faq.question} {...faq} />
+              <RevealItem key={faq.question}>
+                <FAQItem {...faq} />
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </div>
     </section>

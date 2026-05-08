@@ -5,6 +5,7 @@ import { Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
 import { WorkflowAnimation } from "@/components/ui/workflow-animation";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 
 export function HowItWorks() {
   const [time, setTime] = useState("");
@@ -52,26 +53,30 @@ export function HowItWorks() {
     <section id="how-it-works" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 pb-16">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-10 sm:mb-16">
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
-              <span className="inline-flex items-center justify-center rounded-md bg-[#FFDAB9] text-black px-2 py-0.5 text-xs font-semibold">
-                24/7
-              </span>
-              <span className="text-foreground">
-                AI-powered call-out handling
-              </span>
+        <RevealGroup className="text-center mb-10 sm:mb-16" stagger={0.1} amount={0.3}>
+          <RevealItem>
+            <div className="flex justify-center mb-8">
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
+                <span className="inline-flex items-center justify-center rounded-md bg-[#FFDAB9] text-black px-2 py-0.5 text-xs font-semibold">
+                  24/7
+                </span>
+                <span className="text-foreground">
+                  AI-powered call-out handling
+                </span>
+              </div>
             </div>
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-6">
-            Step <em className="italic">into</em> the future
-            <br />
-            of home care — AI + human care
-          </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-xs sm:max-w-2xl mx-auto mb-8 leading-relaxed">
-            Nestaid uses AI agents to run scheduling, caregiver coordination, EVV, and operations — so your team can focus on care and growth.
-          </p>
-
+          </RevealItem>
+          <RevealItem>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-6">
+              Grow your home care agency with a <br />24/7 AI teammate.
+            </h1>
+          </RevealItem>
+          <RevealItem>
+            <p className="text-[17px] text-muted-foreground max-w-xs sm:max-w-2xl mx-auto mb-8 leading-relaxed">
+              Nestaid's AI agents handles your calls, captures leads and fills call outs, so you can focus on business and scale faster.
+            </p>
+          </RevealItem>
+          <RevealItem>
           <div className="mt-6 sm:mt-8 flex flex-col items-center">
             <div className="flex items-stretch h-11 mb-3 w-full max-w-[300px] sm:max-w-sm">
               <div className="flex items-center gap-2 flex-1 border border-r-0 border-black/10 rounded-l-xl bg-white px-3 sm:px-4 min-w-0">
@@ -125,10 +130,11 @@ export function HowItWorks() {
               </a>
             </p>
           </div>
-        </div>
+          </RevealItem>
+        </RevealGroup>
 
         {/* Phone + floating stats */}
-        <div className="relative flex items-center justify-center min-h-[300px]">
+        <Reveal direction="up" duration={0.9} amount={0.15} className="relative flex items-center justify-center min-h-[300px]">
           {/* Left stat — hidden on mobile, shown md+ */}
           <div className="hidden md:block absolute left-0 lg:left-16 top-1/3 -translate-y-1/2 z-10">
             <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
@@ -222,26 +228,32 @@ export function HowItWorks() {
               )}
             </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* Mobile-only stats row — shown only below md */}
-        <div className="flex md:hidden justify-center gap-3 mt-6 flex-wrap">
-          <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-            <span className="font-sans text-[15px] font-light text-gray-800">
-              <span className="font-sans font-bold text-[#16A34A]">5</span> min average fill time
-            </span>
-          </div>
-          <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-            <span className="font-sans text-[15px] font-light text-gray-800">
-              <span className="font-sans font-bold text-[#16A34A]">24/7</span> AI call-out handling
-            </span>
-          </div>
-          <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-            <span className="font-sans text-[15px] font-light text-gray-800">
-              <span className="font-sans font-bold text-[#16A34A]">91%</span> less manual coordination
-            </span>
-          </div>
-        </div>
+        <RevealGroup className="flex md:hidden justify-center gap-3 mt-6 flex-wrap" stagger={0.1} amount={0.3}>
+          <RevealItem>
+            <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+              <span className="font-sans text-[15px] font-light text-gray-800">
+                <span className="font-sans font-bold text-[#16A34A]">5</span> min average fill time
+              </span>
+            </div>
+          </RevealItem>
+          <RevealItem>
+            <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+              <span className="font-sans text-[15px] font-light text-gray-800">
+                <span className="font-sans font-bold text-[#16A34A]">24/7</span> AI call-out handling
+              </span>
+            </div>
+          </RevealItem>
+          <RevealItem>
+            <div className="bg-white border-2 border-[#EAEAE3] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_#EAEAE3] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+              <span className="font-sans text-[15px] font-light text-gray-800">
+                <span className="font-sans font-bold text-[#16A34A]">91%</span> less manual coordination
+              </span>
+            </div>
+          </RevealItem>
+        </RevealGroup>
       </div>
     </section>
   );

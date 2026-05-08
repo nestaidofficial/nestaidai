@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "About Nestaid — AI for Home Care Operations",
   description:
-    "Meet the team modernizing home care operations with AI — including Nessa, our AI receptionist and coordinator built for home care agencies.",
+    "Meet the team modernizing home care operations with AI — including Nestaid, our AI receptionist and coordinator built for home care agencies.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Nestaid — AI for Home Care Operations",
@@ -53,7 +53,7 @@ const values = [
     icon: Zap,
     title: "Speed That Matters",
     description:
-      "When a caregiver calls out at 6 AM, you need answers fast. Nessa keeps operations moving around the clock.",
+      "When a caregiver calls out at 6 AM, you need answers fast. Nestaid keeps operations moving around the clock.",
   },
   {
     icon: Globe,
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 <span className="gradient-text">lived the problem</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Home care is one of the most important industries in the world — and one of the most under-served by modern software. We started Nessa to change that.
+                Home care is one of the most important industries in the world — and one of the most under-served by modern software. We started Nestaid to change that.
               </p>
             </div>
 
@@ -137,11 +137,11 @@ export default function AboutPage() {
                   Home care coordinators manage an impossible amount of complexity every day — scheduling, compliance, caregiver call-outs, client needs, billing, and more. Most do it with a patchwork of spreadsheets, phone calls, and sheer willpower.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Nessa was built to give those coordinators back their time. We combine AI coordination, smart scheduling, real-time EVV, and seamless onboarding into one platform that actually fits how home care works.
+                  Nestaid was built to give those coordinators back their time. We combine AI coordination, smart scheduling, real-time EVV, and seamless onboarding into one platform that actually fits how home care works.
                 </p>
                 <Button asChild variant="default" size="lg">
                   <Link href="https://calendly.com/rahulchettri601/nestaid-demo-call" target="_blank" rel="noopener noreferrer">
-                    See Nessa in Action <ArrowRight className="ml-2 size-4" />
+                    See Nestaid in Action <ArrowRight className="ml-2 size-4" />
                   </Link>
                 </Button>
               </div>
@@ -213,7 +213,7 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <Badge variant="subtle" className="mb-4">The Team</Badge>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
-                People behind Nessa
+                People behind Nestaid
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
                 A small, focused team with deep roots in home care and a shared obsession with great software.
@@ -259,7 +259,7 @@ export default function AboutPage() {
                 Ready to transform your home care operations?
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
-                Book a free 30-minute demo and see how Nessa can give your team time back, cut call-out stress, and grow your agency with confidence.
+                Book a free 30-minute demo and see how Nestaid can give your team time back, cut call-out stress, and grow your agency with confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button asChild variant="default" size="lg">
