@@ -80,6 +80,7 @@ export function HowItWorks() {
           <div className="mt-6 sm:mt-8 flex flex-col items-center">
             <div className="flex items-stretch h-11 mb-3 w-full max-w-[300px] sm:max-w-sm">
               <div className="flex items-center gap-2 flex-1 border border-r-0 border-black/10 rounded-l-xl bg-white px-3 sm:px-4 min-w-0">
+                <Phone size={16} strokeWidth={2} aria-hidden="true" className="text-muted-foreground shrink-0" />
                 <input
                   type="tel"
                   placeholder="Your phone number"
@@ -91,21 +92,14 @@ export function HowItWorks() {
               </div>
               <Button
                 variant="default"
-                className="group relative overflow-hidden h-11 rounded-l-none rounded-r-xl pl-4 pr-12 sm:pl-5 sm:pr-14 text-sm font-medium shrink-0"
+                className="h-11 rounded-l-none rounded-r-xl px-4 sm:px-5 text-sm font-medium shrink-0"
                 onClick={handleCall}
                 disabled={status === "loading"}
               >
                 {status === "loading" ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
                 ) : (
-                  <>
-                    <span className="transition-opacity duration-500 group-hover:opacity-0">
-                      Try Nestaid
-                    </span>
-                    <i className="absolute right-1 top-1 bottom-1 rounded-md z-10 grid w-9 place-items-center transition-all duration-500 bg-black text-white group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
-                      <Phone size={16} strokeWidth={2} aria-hidden="true" />
-                    </i>
-                  </>
+                  "Try Nestaid"
                 )}
               </Button>
             </div>

@@ -35,22 +35,22 @@ const CALL_CONNECT_AT = 700;
 
 const SARAH_LINE = "Hi, I can't make my 9am shift today caring for Mrs. Smith.";
 const SARAH_WORDS = SARAH_LINE.split(" ");
-const SARAH_WORD_INTERVAL = 95;
+const SARAH_WORD_INTERVAL = 110;
 
 // Nessa first acknowledges immediately, then sends a final update after outreach.
 const NESSA_ACK_LINE = "Noted, thanks for letting us know. You're called out for the shift today from 9am - 4pm.";
 const NESSA_ACK_WORDS = NESSA_ACK_LINE.split(" ");
-const NESSA_ACK_WORD_INTERVAL = 115;
+const NESSA_ACK_WORD_INTERVAL = 125;
 
 const NESSA_FINAL_LINE = "We've found coverage for the shift. Take care, Sarah.";
 const NESSA_FINAL_WORDS = NESSA_FINAL_LINE.split(" ");
-const NESSA_FINAL_WORD_INTERVAL = 85;
+const NESSA_FINAL_WORD_INTERVAL = 100;
 
-const NESSA_ACK_DELAY = 400;           // delay after Sarah finishes before Nessa acknowledges
-const HOLD_AFTER_ACK = 700;            // pause after acknowledgment before workflow starts
-const HOLD_AFTER_WORKFLOW = 1300;      // pause on Care Scheduled before final update
-const NESSA_FINAL_THINKING = 600;      // small delay before final message starts
-const HOLD_AFTER_FINAL_REPLY = 1800;   // hold on completed thread before restart
+const NESSA_ACK_DELAY = 550;           // delay after Sarah finishes before Nessa acknowledges
+const HOLD_AFTER_ACK = 1200;           // pause after acknowledgment before workflow starts
+const HOLD_AFTER_WORKFLOW = 1800;      // pause on Care Scheduled before final update
+const NESSA_FINAL_THINKING = 900;      // small delay before final message starts
+const HOLD_AFTER_FINAL_REPLY = 2600;   // hold on completed thread before restart
 
 export function WorkflowAnimation() {
   const [view, setView] = useState<"call" | "workflow">("call");
@@ -549,7 +549,7 @@ function TypingWords({ words, count }: { words: string[]; count: number }) {
       {words.slice(0, count).map((word, i) => (
         <Fragment key={i}>
           {i > 0 && " "}
-          <span className="inline-block animate-[wordIn_280ms_ease-out]">
+          <span className="inline-block animate-[wordIn_220ms_ease-out]">
             {word}
           </span>
         </Fragment>
