@@ -154,8 +154,150 @@ const sections = [
     ),
   },
   {
+    id: "google-services",
+    title: "6. Google Services, OAuth, and Calendar Integration",
+    content: (
+      <>
+        <p>
+          Nestaid offers optional integrations with Google services that Agency
+          Customers may enable. Connecting these services is voluntary and can
+          be disconnected at any time from Nestaid&rsquo;s integration settings.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">
+          Google Sign-In (OpenID Connect)
+        </p>
+        <p>
+          When an agency user chooses &ldquo;Sign in with Google,&rdquo; Nestaid
+          uses the <strong>openid</strong>,{" "}
+          <strong>https://www.googleapis.com/auth/userinfo.email</strong>, and{" "}
+          <strong>https://www.googleapis.com/auth/userinfo.profile</strong>{" "}
+          scopes only to identify the user, link their Google account to their
+          Nestaid agency user record, and complete authentication. We collect
+          and store the user&rsquo;s Google account email, basic profile name,
+          and Google account identifier solely for the purpose of authentication
+          and account linkage. This data is not used for advertising, marketing,
+          or any unrelated purpose.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">
+          Google Calendar Integration (AI Receptionist Appointment Booking)
+        </p>
+        <p>
+          Nestaid uses the{" "}
+          <strong>https://www.googleapis.com/auth/calendar.events</strong> scope
+          only for its AI Receptionist appointment booking feature for home-care
+          agencies. The scope is used to:
+        </p>
+        <ul>
+          <li>
+            Read existing events on the agency&rsquo;s selected Google Calendar
+            during business hours to calculate available appointment slots
+          </li>
+          <li>
+            Create a Google Calendar event when a caller confirms an appointment
+            (with the appointment title, start/end time, time zone, attendee
+            email, and an internal appointment ID)
+          </li>
+          <li>
+            Update the corresponding Google Calendar event when an appointment
+            is rescheduled in Nestaid
+          </li>
+          <li>
+            Delete the corresponding Google Calendar event when an appointment
+            is cancelled in Nestaid
+          </li>
+        </ul>
+        <p>
+          Nestaid does not request access to broader Google Calendar settings,
+          calendar metadata, sharing permissions, ACLs, or user settings. We do
+          not request the broader{" "}
+          <strong>https://www.googleapis.com/auth/calendar</strong> scope
+          because we only need access to event objects required for appointment
+          booking.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">
+          Data We Store From Google
+        </p>
+        <p>
+          For Google Sign-In, we store the user&rsquo;s Google email address,
+          basic profile name, and Google account identifier, plus an OAuth
+          refresh token used to maintain the integration. For Google Calendar,
+          we store only the data needed to manage bookings: appointment title,
+          start/end time, time zone, attendee email, internal appointment ID,
+          and the Google event ID returned by Google. Existing calendar events
+          read for availability checks are processed transiently and are not
+          persisted by Nestaid.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">
+          Sharing of Google User Data
+        </p>
+        <p>
+          Nestaid does not sell, rent, or transfer Google user data to third
+          parties for their own purposes. We share Google user data only with
+          the Agency Customer that connected the account and with vetted
+          subprocessors strictly required to operate the booking and
+          authentication features (for example, secure cloud hosting and
+          database providers), under contractual confidentiality and security
+          obligations.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">
+          Retention, Deletion, and User Control
+        </p>
+        <p>
+          Users can disconnect Google Sign-In or Google Calendar at any time
+          from Nestaid&rsquo;s integration settings. On disconnect, Nestaid
+          revokes and deletes the stored OAuth refresh token and removes stored
+          Google event IDs from our database. Users can additionally revoke
+          access at{" "}
+          <a
+            href="https://myaccount.google.com/permissions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            myaccount.google.com/permissions
+          </a>
+          . Nestaid does not delete the underlying Google Calendar events on
+          disconnect, since those events belong to the user&rsquo;s calendar.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">
+          Limited Use Disclosure
+        </p>
+        <p>
+          Nestaid&rsquo;s use and transfer of information received from Google
+          APIs to any other app will adhere to the{" "}
+          <a
+            href="https://developers.google.com/terms/api-services-user-data-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            Google API Services User Data Policy
+          </a>
+          , including the Limited Use requirements. Specifically: (1) we use
+          Google user data only to provide and improve the user-facing features
+          described above; (2) we do not transfer Google user data to third
+          parties except as needed to provide or improve those features, to
+          comply with applicable law, or as part of a merger, acquisition, or
+          sale of assets with appropriate notice to users; (3) we do not use
+          Google user data for serving advertisements; and (4) we do not allow
+          humans to read Google user data unless we have obtained the
+          user&rsquo;s affirmative agreement for specific data, it is necessary
+          for security purposes (such as investigating abuse), to comply with
+          applicable law, or the data is aggregated and used for internal
+          operations under standard privacy protections.
+        </p>
+      </>
+    ),
+  },
+  {
     id: "how-we-share",
-    title: "6. How We Share Information",
+    title: "7. How We Share Information",
     content: (
       <>
         <p>We may share information:</p>
@@ -189,7 +331,7 @@ const sections = [
   },
   {
     id: "data-security",
-    title: "7. Data Security",
+    title: "8. Data Security",
     content: (
       <>
         <p>
@@ -204,7 +346,7 @@ const sections = [
   },
   {
     id: "data-retention",
-    title: "8. Data Retention",
+    title: "9. Data Retention",
     content: (
       <>
         <p>
@@ -221,7 +363,7 @@ const sections = [
   },
   {
     id: "your-rights",
-    title: "9. Your Rights",
+    title: "10. Your Rights",
     content: (
       <>
         <p>
@@ -239,7 +381,7 @@ const sections = [
   },
   {
     id: "cookies",
-    title: "10. Cookies",
+    title: "11. Cookies",
     content: (
       <p>
         We use cookies and similar technologies to operate the website and
@@ -250,7 +392,7 @@ const sections = [
   },
   {
     id: "childrens-privacy",
-    title: "11. Children&apos;s Privacy",
+    title: "12. Children&apos;s Privacy",
     content: (
       <p>
         Nestaid is not intended for individuals under 18. We do not knowingly
@@ -260,7 +402,7 @@ const sections = [
   },
   {
     id: "changes",
-    title: "12. Changes to This Policy",
+    title: "13. Changes to This Policy",
     content: (
       <p>
         We may update this Privacy Policy from time to time. If we make
@@ -271,7 +413,7 @@ const sections = [
   },
   {
     id: "contact",
-    title: "13. Contact Us",
+    title: "14. Contact Us",
     content: (
       <div className="mt-2 bg-white/60 backdrop-blur-sm border border-black/10 rounded-xl p-5 inline-block">
         <p className="font-medium text-black">Nestaid Inc.</p>
@@ -324,7 +466,7 @@ export default function PrivacyPage() {
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
                 Last updated:{" "}
-                <span className="font-medium text-black/70">May 6, 2026</span>
+                <span className="font-medium text-black/70">May 8, 2026</span>
               </p>
             </div>
           </div>
