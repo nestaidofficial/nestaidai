@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { SparklesIcon, BadgeCheck, MapPinned, LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { PixelGrid } from "@/components/ui/pixel-grid";
 import "./nessa-crm-flow.css";
 
 interface NessaCrmFlowProps {
@@ -271,6 +272,20 @@ const NessaCrmFlow = ({
 
         {/* Main card */}
         <div className="relative z-10 flex h-[260px] w-full items-start justify-center overflow-hidden rounded-2xl border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.07)] bg-white">
+          <PixelGrid
+            className="opacity-60"
+            pixelColor="#D88966"
+            pixelSize={2}
+            pixelSpacing={6}
+            pixelBornFade={30}
+            pixelDeathFade={14}
+            pixelMinLife={180}
+            pixelMaxLife={420}
+            pixelMinOffLife={120}
+            pixelMaxOffLife={320}
+            glow
+          />
+
           {/* Subtle top gradient */}
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(0,0,0,0.03),_transparent_60%)]" />
 
@@ -285,11 +300,11 @@ const NessaCrmFlow = ({
           </div>
 
           {/* Bottom badges */}
-          <div className="absolute bottom-7 left-7 z-10 flex h-8 items-center gap-2 rounded-full bg-[#EAEAE3] px-4 text-xs text-[#18181b] shadow-sm">
+          <div className="absolute bottom-7 left-7 z-10 flex h-8 items-center gap-2 rounded-full bg-white px-4 text-xs text-[#18181b] shadow-sm">
             <FirstIcon className="size-3.5" />
             <span>{bottomBadges.first}</span>
           </div>
-          <div className="absolute bottom-7 right-7 z-10 hidden h-8 items-center gap-2 rounded-full bg-[#EAEAE3] px-4 text-xs text-[#18181b] shadow-sm sm:flex">
+          <div className="absolute bottom-7 right-7 z-10 hidden h-8 items-center gap-2 rounded-full bg-white px-4 text-xs text-[#18181b] shadow-sm sm:flex">
             <SecondIcon className="size-3.5" />
             <span>{bottomBadges.second}</span>
           </div>

@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import NessaCrmFlow from "@/components/ui/nessa-crm-flow";
+import SmoothWavyCanvas from "@/components/ui/smooth-wavy-canvas";
 import {
-  Users,
-  ShieldCheck,
-  MapPin,
   Phone,
   UserCog,
   CheckCircle2,
@@ -33,21 +31,18 @@ const itemVariants = {
 
 const supportingCards = [
   {
-    icon: Users,
     eyebrow: "Records",
     title: "Client & Caregiver Management",
     description:
       "Keep all client profiles, care plans, and caregiver credentials in one place — always accurate and easy to access.",
   },
   {
-    icon: MapPin,
     eyebrow: "EVV",
     title: "Electronic Visit Verification",
     description:
       "Track visits with GPS-based check-in and check-out — fully compliant with Medicaid EVV requirements.",
   },
   {
-    icon: ShieldCheck,
     eyebrow: "Onboarding",
     title: "AI-Powered Onboarding",
     description:
@@ -365,7 +360,15 @@ export function Features() {
             variants={itemVariants}
             className="lg:col-span-2 lg:row-span-3"
           >
-            <div className="relative h-full overflow-hidden rounded-3xl border border-black/10 bg-gradient-to-br from-white via-white to-[#F8F8F6] backdrop-blur-sm p-6 sm:p-8">
+            <div className="relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 sm:p-8">
+              <SmoothWavyCanvas
+                backgroundColor="#F8F8F7"
+                primaryColor="52, 52, 52"
+                secondaryColor="98, 98, 98"
+                accentColor="130, 130, 130"
+                lineOpacity={0.8}
+                animationSpeed={0.006}
+              />
               {/* Glow accent */}
               <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#F8F8F6] blur-3xl" />
 
@@ -388,17 +391,22 @@ export function Features() {
 
           {/* Supporting cards */}
           {supportingCards.map((card) => {
-            const Icon = card.icon;
             return (
               <motion.div
                 key={card.title}
                 variants={itemVariants}
                 className="lg:col-span-1 lg:row-span-1"
               >
-                <div className="group h-full rounded-3xl border border-black/10 bg-white/70 backdrop-blur-sm p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-black/5 text-foreground mb-4 transition-colors group-hover:bg-[#F4C6AC]/30">
-                    <Icon className="h-5 w-5" strokeWidth={1.75} />
-                  </div>
+                <div className="group relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
+                  <SmoothWavyCanvas
+                    backgroundColor="#F8F8F7"
+                    primaryColor="52, 52, 52"
+                    secondaryColor="98, 98, 98"
+                    accentColor="130, 130, 130"
+                    lineOpacity={0.8}
+                    animationSpeed={0.006}
+                  />
+                  <div className="relative z-10">
                   <p className="text-[11px] font-medium uppercase tracking-wider text-[#C97B5B] mb-1.5">
                     {card.eyebrow}
                   </p>
@@ -408,6 +416,7 @@ export function Features() {
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     {card.description}
                   </p>
+                  </div>
                 </div>
               </motion.div>
             );
