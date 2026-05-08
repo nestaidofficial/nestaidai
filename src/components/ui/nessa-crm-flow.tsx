@@ -36,7 +36,7 @@ const FLOW_ITEMS = [
     path: "M 73 10 v 16 q 0 5 5 5 h 17 q 5 0 5 5 v 18",
   },
   {
-    label: "Scheduling",
+    label: "Coordinator",
     x: 108,
     width: 38,
     dur: "1.8s",
@@ -121,19 +121,30 @@ const NessaCrmFlow = ({
 
         {/* Top badge pills — spread across 4 distinct x positions, 2 rows */}
         {[
-          { label: "Clients",        x: 5,   y: 3.5, w: 28 },  // far-left,    row 1
-          { label: "Caregivers",     x: 118, y: 3.5, w: 38 },  // center-right, row 1
-          { label: "Scheduling",     x: 42,  y: 20,  w: 38 },  // center-left,  row 2
-          { label: "Care Agencies",  x: 147, y: 20,  w: 42 },  // far-right,    row 2
+          { label: "Clients",        x: 3,   y: 2.5, w: 33 },   // far-left,    row 1
+          { label: "Caregivers",     x: 114, y: 2.5, w: 44 },   // center-right, row 1
+          { label: "Coordinator",    x: 38,  y: 20,  w: 44 },   // center-left,  row 2
+          { label: "Care Agencies",  x: 142, y: 20,  w: 48 },   // far-right,    row 2
         ].map(({ label, x, y, w }) => (
           <g key={`mob-badge-${label}`} stroke="none">
-            <rect x={x} y={y} width={w} height="12" rx="3" fill="#EAEAE3" />
+            <rect
+              x={x}
+              y={y}
+              width={w}
+              height="14"
+              rx="3"
+              fill="#FFFFFF"
+              stroke="#F4C6AC"
+              strokeWidth="0.6"
+              strokeDasharray="1.4 1.4"
+            />
             <text
               x={x + w / 2}
-              y={y + 6.3}
+              y={y + 7.3}
               fill="#18181b"
-              fontSize="4.8"
+              fontSize="5.4"
               fontWeight="500"
+              fontFamily="Inter, sans-serif"
               textAnchor="middle"
               dominantBaseline="middle"
             >
@@ -212,13 +223,24 @@ const NessaCrmFlow = ({
         {/* Top badge pills */}
         {FLOW_ITEMS.map((item) => (
           <g key={`badge-${item.label}`} stroke="none">
-            <rect x={item.x} y="3.5" width={item.width} height="12" rx="3" fill="#EAEAE3" />
+            <rect
+              x={item.x}
+              y="3.5"
+              width={item.width}
+              height="12"
+              rx="3"
+              fill="#FFFFFF"
+              stroke="#F4C6AC"
+              strokeWidth="0.4"
+              strokeDasharray="1.4 1.4"
+            />
             <text
               x={item.x + item.width / 2}
               y="9.8"
               fill="#18181b"
               fontSize="4.8"
               fontWeight="500"
+              fontFamily="Inter, sans-serif"
               textAnchor="middle"
               dominantBaseline="middle"
             >

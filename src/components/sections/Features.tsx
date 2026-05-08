@@ -12,23 +12,6 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 100, damping: 14 },
-  },
-};
-
 const supportingCards = [
   {
     eyebrow: "Records",
@@ -61,7 +44,7 @@ type Bubble =
 const BUBBLES: Record<string, Bubble> = {
   "ai-1": {
     kind: "ai",
-    text: "Hi Maya — Sarah's Tuesday 9 AM visit just opened up. Are you free to cover?",
+    text: "Hi Maya — Emma's Tuesday 9 AM visit just opened up. Are you free to cover?",
   },
   "user-typing": { kind: "typing", side: "user" },
   "user-1": {
@@ -156,9 +139,9 @@ function ChatBubble({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -4, scale: 0.96 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className="flex w-full justify-center pt-1"
+        className="flex w-full justify-start pt-1"
       >
-        <div className="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 flex items-center gap-3 shadow-sm">
+        <div className="inline-flex w-fit max-w-full rounded-2xl border border-black/10 bg-white px-4 py-3 items-center gap-3 shadow-sm">
           <div className="relative h-9 w-9 overflow-hidden rounded-xl shrink-0">
             <Image
               src="/calendar-icon.png"
@@ -219,7 +202,7 @@ function ChatBubble({
             transition={{ delay: 0.2 }}
             className="text-[11px] text-muted-foreground mt-1 mr-1"
           >
-            <span className="font-semibold text-foreground/70">Read</span>{" "}
+            <span className="font-semibold text-muted-foreground">Read</span>{" "}
             <span className="tabular-nums">{readDate}</span>
           </motion.p>
         )}
@@ -331,13 +314,7 @@ export function Features() {
     <section id="features" className="section-padding">
       <div className="container-max">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mb-10 sm:mb-14"
-        >
+        <div className="max-w-3xl mb-10 sm:mb-14" data-aos="fade-up">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
             One smart teammate for home care operations
           </h2>
@@ -345,21 +322,12 @@ export function Features() {
             Nestaid handles scheduling, caregiver coordination, EVV, and daily
             operations — so your team can focus on care and growth.
           </p>
-        </motion.div>
+        </div>
 
         {/* Bento grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-[minmax(180px,auto)]"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-[minmax(180px,auto)]">
           {/* Hero card — AI Coordinator */}
-          <motion.div
-            variants={itemVariants}
-            className="lg:col-span-2 lg:row-span-3"
-          >
+          <div className="lg:col-span-2 lg:row-span-3" data-aos="fade-up">
             <div className="relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 sm:p-8">
               <SmoothWavyCanvas
                 backgroundColor="#F8F8F7"
@@ -376,26 +344,23 @@ export function Features() {
                 <p className="text-xs font-medium uppercase tracking-wider text-[#C97B5B] mb-3">
                   AI Coordinator & Receptionist
                 </p>
-                <h3 className="font-body font-bold text-2xl sm:text-3xl tracking-tight text-foreground mb-3 max-w-md">
+                <p className="text-sm leading-relaxed text-muted-foreground mb-3 max-w-md">
                   Answers calls, handles call-outs, keeps schedules on track —
                   24/7.
-                </h3>
-                <p className="text-sm sm:text-[15px] text-muted-foreground max-w-md leading-relaxed">
-                  Every update happens in real time, so coordinators stay in
-                  control without chasing calls or texts.
                 </p>
                 <CallMockup />
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Supporting cards */}
-          {supportingCards.map((card) => {
+          {supportingCards.map((card, idx) => {
             return (
-              <motion.div
+              <div
                 key={card.title}
-                variants={itemVariants}
                 className="lg:col-span-1 lg:row-span-1"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
               >
                 <div className="group relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
                   <SmoothWavyCanvas
@@ -418,25 +383,19 @@ export function Features() {
                   </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* CRM Flow diagram — centered below bento */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="mt-16 sm:mt-20 flex justify-center"
-        >
+        <div className="mt-16 sm:mt-20 flex justify-center" data-aos="fade-up">
           <NessaCrmFlow
             className="h-[620px] sm:h-[540px] lg:h-[540px] w-full max-w-3xl"
             bottomBadges={{ first: "AI Receptionist", second: "AI Coordinator" }}
             bottomIcons={{ first: Phone, second: UserCog }}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

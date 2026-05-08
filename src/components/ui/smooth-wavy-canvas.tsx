@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface SmoothWavyCanvasProps {
   backgroundColor?: string;
@@ -20,155 +20,193 @@ export default function SmoothWavyCanvas({
   animationSpeed = 0.004,
 }: SmoothWavyCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const requestIdRef = useRef<number | null>(null);
-  const timeRef = useRef(0);
-  const mouseRef = useRef({ x: 0, y: 0 });
-
-  const resizeCanvas = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const parent = canvas.parentElement;
-    if (!parent) return;
-
-    const dpr = window.devicePixelRatio || 1;
-    const width = parent.clientWidth;
-    const height = parent.clientHeight;
-
-    canvas.width = Math.floor(width * dpr);
-    canvas.height = Math.floor(height * dpr);
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }, []);
-
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    mouseRef.current.x = e.clientX - rect.left;
-    mouseRef.current.y = e.clientY - rect.top;
-  }, []);
-
-  const getMouseInfluence = useCallback((x: number, y: number) => {
-    const dx = x - mouseRef.current.x;
-    const dy = y - mouseRef.current.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-    const maxDistance = 140;
-    return Math.max(0, 1 - distance / maxDistance);
-  }, []);
-
-  const animate = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    timeRef.current += animationSpeed;
-
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, width, height);
-
-    const numPrimaryLines = 16;
-    for (let i = 0; i < numPrimaryLines; i++) {
-      const yPos = (i / numPrimaryLines) * height;
-      const mouseInfl = getMouseInfluence(width / 2, yPos);
-
-      const amplitude = 14 + 8 * Math.sin(timeRef.current * 0.25 + i * 0.18) + mouseInfl * 8;
-      const frequency = 0.02 + 0.005 * Math.sin(timeRef.current * 0.16 + i * 0.11);
-      const speed = timeRef.current * (0.9 + 0.2 * Math.sin(i * 0.13));
-      const thickness = 0.45 + 0.2 * Math.sin(timeRef.current + i * 0.25);
-      const opacity = (0.06 + 0.04 * Math.abs(Math.sin(timeRef.current * 0.3 + i * 0.17))) * lineOpacity;
-
-      ctx.beginPath();
-      ctx.lineWidth = thickness;
-      ctx.strokeStyle = `rgba(${primaryColor}, ${opacity})`;
-
-      for (let x = 0; x <= width; x += 2) {
-        const y = yPos + amplitude * Math.sin(x * frequency + speed);
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-    }
-
-    const numSecondaryLines = 11;
-    for (let i = 0; i < numSecondaryLines; i++) {
-      const xPos = (i / numSecondaryLines) * width;
-      const mouseInfl = getMouseInfluence(xPos, height / 2);
-
-      const amplitude = 12 + 6 * Math.sin(timeRef.current * 0.19 + i * 0.16) + mouseInfl * 6;
-      const frequency = 0.02 + 0.004 * Math.cos(timeRef.current * 0.15 + i * 0.1);
-      const speed = timeRef.current * (0.8 + 0.15 * Math.cos(i * 0.18));
-      const thickness = 0.35 + 0.15 * Math.sin(timeRef.current + i * 0.35);
-      const opacity = (0.04 + 0.03 * Math.abs(Math.sin(timeRef.current * 0.26 + i * 0.2))) * lineOpacity;
-
-      ctx.beginPath();
-      ctx.lineWidth = thickness;
-      ctx.strokeStyle = `rgba(${secondaryColor}, ${opacity})`;
-
-      for (let y = 0; y <= height; y += 2) {
-        const x = xPos + amplitude * Math.sin(y * frequency + speed);
-        if (y === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-    }
-
-    const numAccentLines = 7;
-    for (let i = 0; i < numAccentLines; i++) {
-      const offset = (i / numAccentLines) * width * 1.2 - width * 0.1;
-      const amplitude = 10 + 6 * Math.cos(timeRef.current * 0.22 + i * 0.12);
-      const phase = timeRef.current * (0.55 + 0.15 * Math.sin(i * 0.12));
-      const thickness = 0.3 + 0.14 * Math.sin(timeRef.current + i * 0.24);
-      const opacity = (0.03 + 0.02 * Math.abs(Math.sin(timeRef.current * 0.24 + i * 0.15))) * lineOpacity;
-
-      ctx.beginPath();
-      ctx.lineWidth = thickness;
-      ctx.strokeStyle = `rgba(${accentColor}, ${opacity})`;
-
-      const steps = 40;
-      for (let j = 0; j <= steps; j++) {
-        const progress = j / steps;
-        const x = offset + progress * width;
-        const y = progress * height + amplitude * Math.sin(progress * 6 + phase);
-        if (j === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-    }
-
-    requestIdRef.current = requestAnimationFrame(animate);
-  }, [accentColor, animationSpeed, backgroundColor, getMouseInfluence, lineOpacity, primaryColor, secondaryColor]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    const parent = canvas.parentElement;
+    if (!parent) return;
 
-    resizeCanvas();
-    const observer = new ResizeObserver(() => resizeCanvas());
-    if (canvas.parentElement) observer.observe(canvas.parentElement);
+    const ctx = canvas.getContext("2d", { alpha: false });
+    if (!ctx) return;
 
-    window.addEventListener("resize", resizeCanvas);
-    canvas.addEventListener("mousemove", handleMouseMove);
-    animate();
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let time = 0;
+    let rafId: number | null = null;
+    let visible = false;
+    let pageVisible = !document.hidden;
+    let width = parent.clientWidth;
+    let height = parent.clientHeight;
+    const mouse = { x: -9999, y: -9999 };
+
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = parent.clientWidth;
+      height = parent.clientHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      drawFrame();
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+    const onMouseLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
+
+    const mouseInfluence = (x: number, y: number) => {
+      const dx = x - mouse.x;
+      const dy = y - mouse.y;
+      const d2 = dx * dx + dy * dy;
+      if (d2 > 19600) return 0; // 140^2
+      return 1 - Math.sqrt(d2) / 140;
+    };
+
+    const drawFrame = () => {
+      ctx.fillStyle = backgroundColor;
+      ctx.fillRect(0, 0, width, height);
+
+      const t = time;
+
+      const numPrimary = 14;
+      for (let i = 0; i < numPrimary; i++) {
+        const yPos = (i / numPrimary) * height;
+        const infl = mouseInfluence(width / 2, yPos);
+        const amplitude = 14 + 8 * Math.sin(t * 0.25 + i * 0.18) + infl * 8;
+        const frequency = 0.02 + 0.005 * Math.sin(t * 0.16 + i * 0.11);
+        const speed = t * (0.9 + 0.2 * Math.sin(i * 0.13));
+        const thickness = 0.45 + 0.2 * Math.sin(t + i * 0.25);
+        const opacity =
+          (0.06 + 0.04 * Math.abs(Math.sin(t * 0.3 + i * 0.17))) * lineOpacity;
+
+        ctx.beginPath();
+        ctx.lineWidth = thickness;
+        ctx.strokeStyle = `rgba(${primaryColor}, ${opacity})`;
+        for (let x = 0; x <= width; x += 4) {
+          const y = yPos + amplitude * Math.sin(x * frequency + speed);
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      const numSecondary = 9;
+      for (let i = 0; i < numSecondary; i++) {
+        const xPos = (i / numSecondary) * width;
+        const infl = mouseInfluence(xPos, height / 2);
+        const amplitude = 12 + 6 * Math.sin(t * 0.19 + i * 0.16) + infl * 6;
+        const frequency = 0.02 + 0.004 * Math.cos(t * 0.15 + i * 0.1);
+        const speed = t * (0.8 + 0.15 * Math.cos(i * 0.18));
+        const thickness = 0.35 + 0.15 * Math.sin(t + i * 0.35);
+        const opacity =
+          (0.04 + 0.03 * Math.abs(Math.sin(t * 0.26 + i * 0.2))) * lineOpacity;
+
+        ctx.beginPath();
+        ctx.lineWidth = thickness;
+        ctx.strokeStyle = `rgba(${secondaryColor}, ${opacity})`;
+        for (let y = 0; y <= height; y += 4) {
+          const x = xPos + amplitude * Math.sin(y * frequency + speed);
+          if (y === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      const numAccent = 6;
+      for (let i = 0; i < numAccent; i++) {
+        const offset = (i / numAccent) * width * 1.2 - width * 0.1;
+        const amplitude = 10 + 6 * Math.cos(t * 0.22 + i * 0.12);
+        const phase = t * (0.55 + 0.15 * Math.sin(i * 0.12));
+        const thickness = 0.3 + 0.14 * Math.sin(t + i * 0.24);
+        const opacity =
+          (0.03 + 0.02 * Math.abs(Math.sin(t * 0.24 + i * 0.15))) * lineOpacity;
+
+        ctx.beginPath();
+        ctx.lineWidth = thickness;
+        ctx.strokeStyle = `rgba(${accentColor}, ${opacity})`;
+        const steps = 30;
+        for (let j = 0; j <= steps; j++) {
+          const progress = j / steps;
+          const x = offset + progress * width;
+          const y = progress * height + amplitude * Math.sin(progress * 6 + phase);
+          if (j === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+    };
+
+    const tick = () => {
+      time += animationSpeed;
+      drawFrame();
+      rafId = requestAnimationFrame(tick);
+    };
+
+    const start = () => {
+      if (rafId != null || reduceMotion) return;
+      if (!visible || !pageVisible) return;
+      rafId = requestAnimationFrame(tick);
+    };
+    const stop = () => {
+      if (rafId != null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    };
+
+    resize();
+
+    if (reduceMotion) {
+      // Single static frame, then bail out of any animation work.
+      drawFrame();
+      return () => {};
+    }
+
+    const intersection = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          visible = entry.isIntersecting;
+        }
+        if (visible && pageVisible) start();
+        else stop();
+      },
+      { rootMargin: "100px" }
+    );
+    intersection.observe(canvas);
+
+    const onVisibility = () => {
+      pageVisible = !document.hidden;
+      if (visible && pageVisible) start();
+      else stop();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(parent);
+    window.addEventListener("resize", resize);
+    canvas.addEventListener("mousemove", onMouseMove);
+    canvas.addEventListener("mouseleave", onMouseLeave);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener("resize", resizeCanvas);
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      if (requestIdRef.current) cancelAnimationFrame(requestIdRef.current);
-      requestIdRef.current = null;
-      timeRef.current = 0;
+      stop();
+      intersection.disconnect();
+      resizeObserver.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("resize", resize);
+      canvas.removeEventListener("mousemove", onMouseMove);
+      canvas.removeEventListener("mouseleave", onMouseLeave);
     };
-  }, [animate, handleMouseMove, resizeCanvas]);
+  }, [accentColor, animationSpeed, backgroundColor, lineOpacity, primaryColor, secondaryColor]);
 
   return (
     <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none" style={{ backgroundColor }}>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
   AlertCircle,
@@ -81,22 +80,17 @@ export function SchedulingHowItWorks() {
       <div className="container-max">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-14"
-        >
+        <div className="mb-14" data-aos="fade-up">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
             From call-out to confirmed coverage
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             How Nestaid fits into your scheduling workflow
           </p>
-        </motion.div>
+        </div>
 
         {/* Desktop timeline */}
-        <div className="hidden md:block">
+        <div className="hidden md:block" data-aos="fade-up">
           {/* Static line + dots */}
           <div className="relative mb-8 h-6">
             <div className="absolute top-1/2 left-[10%] right-[10%] h-px bg-black/15 -translate-y-1/2" />
@@ -129,11 +123,8 @@ export function SchedulingHowItWorks() {
               const isDone = i < activeStep;
               const isUpcoming = i > activeStep;
               return (
-                <motion.div
+                <div
                   key={step.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
                   className={cn(
                     "rounded-2xl border p-4 flex flex-col gap-3 transition-all duration-300",
                     isUpcoming
@@ -174,20 +165,17 @@ export function SchedulingHowItWorks() {
                       isUpcoming ? "text-black/30" : "text-muted-foreground"
                     )}>{step.description}</p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
         </div>
 
         {/* Mobile — vertical list */}
-        <div className="flex flex-col gap-0 md:hidden">
+        <div className="flex flex-col gap-0 md:hidden" data-aos="fade-up">
           {steps.map((step, i) => (
-            <motion.div
+            <div
               key={step.id}
-              initial={{ opacity: 0, x: -12 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
               className="flex gap-4"
             >
               <div className="flex flex-col items-center">
@@ -218,7 +206,7 @@ export function SchedulingHowItWorks() {
                   {step.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

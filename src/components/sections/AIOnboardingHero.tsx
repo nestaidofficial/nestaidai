@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, BrainCircuit, MessageSquareText, UserCheck } from "lucide-react";
 
 const highlights = [
@@ -14,12 +13,7 @@ export function AIOnboardingHero() {
   return (
     <section className="section-padding pb-0">
       <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto"
-        >
+        <div className="text-center max-w-3xl mx-auto" data-aos="fade-down">
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
             <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm gap-1.5">
@@ -52,26 +46,23 @@ export function AIOnboardingHero() {
               </span>
             </Link>
           </div>
-        </motion.div>
+        </div>
 
         {/* Highlight pills row */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-x-8 gap-y-6 sm:gap-x-10 sm:gap-y-6 pb-2"
-        >
-          {highlights.map(({ icon: Icon, label, desc }) => (
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-6 sm:gap-x-10 sm:gap-y-6 pb-2">
+          {highlights.map(({ icon: Icon, label, desc }, idx) => (
             <div
               key={label}
               className="workflow-item w-[160px] h-[160px] border-peach"
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
             >
               <Icon className="w-7 h-7 text-foreground flex-shrink-0" strokeWidth={1.5} />
               <p className="text-sm font-medium text-foreground text-center leading-tight">{label}</p>
               <p className="text-xs text-muted-foreground text-center leading-tight">{desc}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

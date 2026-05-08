@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
@@ -14,7 +14,6 @@ const steps = [
     title: "Discovery Call",
     subtitle: "We listen first",
     description: "We start by understanding how your agency runs today — your current process, pain points, and what matters most to your team.",
-    status: "done" as const,
   },
   {
     id: "02",
@@ -22,7 +21,6 @@ const steps = [
     title: "Tailored Setup",
     subtitle: "Your process or ours",
     description: "If you have an existing workflow, we fit around it. If not, we help you define one that works — built specifically for home care.",
-    status: "done" as const,
   },
   {
     id: "03",
@@ -30,7 +28,6 @@ const steps = [
     title: "Pipeline Built",
     subtitle: "Everything connected",
     description: "Your intake, onboarding steps, documents, and compliance checkpoints are all wired together into a clean, automated pipeline.",
-    status: "in-progress" as const,
   },
   {
     id: "04",
@@ -38,7 +35,6 @@ const steps = [
     title: "AI Takes Over",
     subtitle: "Agents activated",
     description: "Our AI agents begin handling call-outs, scheduling coordination, caregiver outreach, and daily operations — 24/7.",
-    status: "upcoming" as const,
   },
   {
     id: "05",
@@ -46,7 +42,6 @@ const steps = [
     title: "Automations Live",
     subtitle: "Zero manual follow-up",
     description: "Reminders, document expiry alerts, SMS, email, and call automations run in the background so your admin team never chases anything.",
-    status: "upcoming" as const,
   },
   {
     id: "06",
@@ -54,153 +49,310 @@ const steps = [
     title: "Scale Lean",
     subtitle: "Grow without overhead",
     description: "Your agency grows — more clients, more caregivers — without adding headcount. The system absorbs the operational load.",
-    status: "upcoming" as const,
   },
 ];
 
-const statusStyle = {
-  done:          { dot: "bg-black",     line: "bg-black" },
-  "in-progress": { dot: "bg-[#F4C6AC]", line: "bg-black/20" },
-  upcoming:      { dot: "bg-black/15",  line: "bg-black/10" },
+const VIEW_W = 1200;
+const VIEW_H = 480;
+const STATION_X = [100, 300, 500, 700, 900, 1100];
+const PATH_D =
+  "M 100 240 Q 200 140 300 240 Q 400 340 500 240 Q 600 140 700 240 Q 800 340 900 240 Q 1000 140 1100 240";
+const DISCOVERY_GRID_STYLE = {
+  backgroundImage:
+    "linear-gradient(to right, #F8F8F7 1px, transparent 1px), linear-gradient(to bottom, #F8F8F7 1px, transparent 1px)",
+  backgroundSize: "12px 12px",
 };
 
 export function AgencyOnboarding() {
-  const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, setActiveStep] = useState(0);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveStep((prev) => {
-        if (prev >= steps.length) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
+      if (pausedRef.current) return;
+      setActiveStep((prev) => (prev >= steps.length - 1 ? prev : prev + 1));
     }, 1800);
     return () => clearInterval(interval);
   }, []);
 
+  const handleEnter = (i: number) => {
+    pausedRef.current = true;
+    setActiveStep(i);
+  };
+  const handleLeave = () => {
+    pausedRef.current = false;
+  };
+
+  const drawnFraction =
+    steps.length > 1 ? activeStep / (steps.length - 1) : 0;
+
   return (
     <section className="section-padding">
       <div className="container-max">
-
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-14"
-        >
+        <div className="mb-14" data-aos="fade-up">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
             How Nestaid complements your operations
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             From your first call to full automation — a clear path with no guesswork.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Desktop timeline */}
-        <div className="hidden md:block">
-          {/* Cards row */}
-          <div className="grid grid-cols-6 gap-3">
+        {/* Desktop journey (lg+) */}
+        <div
+          className="hidden lg:block relative h-[480px]"
+          data-aos="fade-up"
+          onMouseLeave={handleLeave}
+        >
+          {/* Curved SVG path */}
+          <svg
+            className="absolute inset-0 w-full h-full overflow-visible"
+            viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d={PATH_D}
+              fill="none"
+              stroke="black"
+              strokeOpacity={0.1}
+              strokeWidth={2}
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+            />
+            <motion.path
+              d={PATH_D}
+              fill="none"
+              stroke="#F4C6AC"
+              strokeWidth={2.5}
+              strokeLinecap="round"
+              pathLength={1}
+              strokeDasharray="1 1"
+              initial={{ strokeDashoffset: 1 }}
+              animate={{ strokeDashoffset: 1 - drawnFraction }}
+              transition={{ duration: 0.9, ease: "easeInOut" }}
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+
+          {/* Cards (alternating above / below) */}
+          {steps.map((step, i) => {
+            const isAbove = i % 2 === 0;
+            const isActive = i === activeStep;
+            const isDone = i < activeStep;
+            const isUpcoming = i > activeStep;
+            const xPct = (STATION_X[i] / VIEW_W) * 100;
+            const Icon = step.icon;
+
+            return (
+              <motion.div
+                key={`card-${step.id}`}
+                initial={{ opacity: 0, y: isAbove ? -12 : 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.45, ease: "easeOut" }}
+                className={cn(
+                  "absolute w-[160px] xl:w-[180px] rounded-2xl border p-4 cursor-pointer",
+                  "transition-[border-color,background-color,box-shadow,opacity] duration-500",
+                  isAbove ? "top-0" : "bottom-0",
+                  isActive &&
+                    "border-[#F4C6AC] bg-white shadow-[0_0_0_4px_rgba(244,198,172,0.18)]",
+                  isDone && "border-black/10 bg-white/70 backdrop-blur-sm",
+                  isUpcoming && "border-black/10 bg-white/40 opacity-70"
+                )}
+                style={{
+                  left: `${xPct}%`,
+                  transform: "translateX(-50%)",
+                  ...DISCOVERY_GRID_STYLE,
+                }}
+                onMouseEnter={() => handleEnter(i)}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div
+                    className={cn(
+                      "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0",
+                      isUpcoming ? "bg-black/5" : "bg-black/8"
+                    )}
+                  >
+                    <Icon
+                      className={cn(
+                        "w-4 h-4 transition-colors duration-500",
+                        isUpcoming ? "text-black/30" : "text-foreground"
+                      )}
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <span
+                    className={cn(
+                      "text-[11px] font-medium leading-tight",
+                      isUpcoming ? "text-black/30" : "text-[#F4C6AC]"
+                    )}
+                  >
+                    {step.subtitle}
+                  </span>
+                </div>
+                <p
+                  className={cn(
+                    "font-heading text-sm leading-snug mb-1",
+                    isUpcoming && "text-black/40"
+                  )}
+                >
+                  {step.title}
+                </p>
+                <p
+                  className={cn(
+                    "text-xs leading-relaxed",
+                    isUpcoming ? "text-black/30" : "text-muted-foreground"
+                  )}
+                >
+                  {step.description}
+                </p>
+              </motion.div>
+            );
+          })}
+
+          {/* Station nodes (centered on path midline) */}
+          {steps.map((step, i) => {
+            const isActive = i === activeStep;
+            const isDone = i < activeStep;
+            const isUpcoming = i > activeStep;
+            const xPct = (STATION_X[i] / VIEW_W) * 100;
+
+            return (
+              <button
+                key={`node-${step.id}`}
+                type="button"
+                aria-label={`Step ${step.id}: ${step.title}`}
+                onMouseEnter={() => handleEnter(i)}
+                onFocus={() => handleEnter(i)}
+                onBlur={handleLeave}
+                className={cn(
+                  "absolute top-1/2 -translate-y-1/2 -translate-x-1/2",
+                  "w-11 h-11 rounded-full flex items-center justify-center",
+                  "text-xs font-semibold transition-all duration-500",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C6AC] focus-visible:ring-offset-2",
+                  isDone && "bg-black text-white",
+                  isActive &&
+                    "bg-[#F4C6AC] text-black ring-4 ring-[#F4C6AC]/30",
+                  isUpcoming &&
+                    "bg-white border border-black/15 text-black/40"
+                )}
+                style={{ left: `${xPct}%` }}
+              >
+                {isActive && (
+                  <span
+                    className="absolute inset-0 rounded-full bg-[#F4C6AC] opacity-40 animate-ping"
+                    aria-hidden="true"
+                  />
+                )}
+                <span className="relative">{step.id}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Mobile / tablet — vertical timeline with animated peach spine */}
+        <div className="relative lg:hidden" data-aos="fade-up">
+          <div
+            className="absolute left-[7px] top-4 bottom-4 w-px bg-black/10"
+            aria-hidden="true"
+          />
+          <motion.div
+            className="absolute left-[7px] top-4 w-px bg-[#F4C6AC] origin-top"
+            style={{ bottom: 16 }}
+            animate={{ scaleY: (activeStep + 1) / steps.length }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+            aria-hidden="true"
+          />
+
+          <div className="flex flex-col gap-0">
             {steps.map((step, i) => {
               const isActive = i === activeStep;
               const isDone = i < activeStep;
               const isUpcoming = i > activeStep;
+              const Icon = step.icon;
+
               return (
-                <motion.div
+                <div
                   key={step.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: i * 0.15 }}
-                  className={cn(
-                    "rounded-2xl border p-4 flex flex-col gap-3 transition-all duration-1000",
-                    isUpcoming
-                      ? "border-black/8 bg-white/40"
-                      : "border-black/10 bg-white/60 backdrop-blur-sm"
-                  )}
+                  className="flex gap-4 relative"
+                  onMouseEnter={() => handleEnter(i)}
+                  onMouseLeave={handleLeave}
                 >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className={cn(
-                      "w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0",
-                      isUpcoming ? "bg-black/5" : "bg-black/8"
-                    )}>
-                      <step.icon className={cn(
-                        "w-5 h-5 transition-colors duration-1000",
-                        isUpcoming ? "text-black/30" : "text-foreground"
-                      )} strokeWidth={1.5} />
-                    </div>
-                    <span className={cn(
-                      "text-xs font-medium px-2.5 py-1 rounded-full transition-all duration-1000",
-                      isDone && "bg-black/8 text-black/50 border border-black/10",
-                      isActive && "bg-[#F4C6AC]/30 text-black border border-[#F4C6AC]",
-                      isUpcoming && "bg-black/5 text-black/40 border border-black/10"
-                    )}>
-                      {step.id}
+                  <div className="flex flex-col items-center pt-4 z-10">
+                    <span
+                      className={cn(
+                        "w-3.5 h-3.5 rounded-full flex-shrink-0 relative transition-colors duration-500",
+                        isDone && "bg-black",
+                        isActive && "bg-[#F4C6AC]",
+                        isUpcoming && "bg-black/15"
+                      )}
+                    >
+                      {isActive && (
+                        <span
+                          className="absolute inset-0 rounded-full bg-[#F4C6AC] opacity-50 animate-ping"
+                          aria-hidden="true"
+                        />
+                      )}
                     </span>
                   </div>
-                  <div>
-                    <p className={cn(
-                      "font-heading text-base leading-snug mb-0.5 transition-colors duration-1000",
-                      isUpcoming && "text-black/40"
-                    )}>{step.title}</p>
-                    <p className={cn(
-                      "text-xs font-medium mb-1.5 transition-colors duration-1000",
-                      isUpcoming ? "text-black/25" : "text-[#F4C6AC]"
-                    )}>{step.subtitle}</p>
-                    <p className={cn(
-                      "text-sm leading-relaxed transition-colors duration-1000",
-                      isUpcoming ? "text-black/30" : "text-muted-foreground"
-                    )}>{step.description}</p>
+                  <div
+                    className={cn(
+                      "flex-1 rounded-2xl border p-4 mb-3 transition-all duration-500",
+                      isActive && "border-[#F4C6AC] bg-white",
+                      isDone && "border-black/10 bg-white/60 backdrop-blur-sm",
+                      isUpcoming && "border-black/10 bg-white/40"
+                    )}
+                    style={DISCOVERY_GRID_STYLE}
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <div
+                        className={cn(
+                          "w-8 h-8 rounded-lg flex items-center justify-center",
+                          isUpcoming ? "bg-black/5" : "bg-black/8"
+                        )}
+                      >
+                        <Icon
+                          className={cn(
+                            "w-4 h-4",
+                            isUpcoming ? "text-black/30" : "text-foreground"
+                          )}
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                      <div>
+                        <p
+                          className={cn(
+                            "font-heading text-base",
+                            isUpcoming && "text-black/40"
+                          )}
+                        >
+                          {step.title}
+                        </p>
+                        <p
+                          className={cn(
+                            "text-xs font-medium",
+                            isUpcoming ? "text-black/25" : "text-[#F4C6AC]"
+                          )}
+                        >
+                          {step.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <p
+                      className={cn(
+                        "text-sm leading-relaxed",
+                        isUpcoming ? "text-black/30" : "text-muted-foreground"
+                      )}
+                    >
+                      {step.description}
+                    </p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
         </div>
-
-        {/* Mobile — vertical list */}
-        <div className="flex flex-col gap-0 md:hidden">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.id}
-              initial={{ opacity: 0, x: -12 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex gap-4"
-            >
-              <div className="flex flex-col items-center">
-                <div className={cn("w-3.5 h-3.5 rounded-full flex-shrink-0 mt-4", statusStyle[step.status].dot)} />
-                {i < steps.length - 1 && (
-                  <div className={cn("w-px flex-1 my-1", statusStyle[step.status].line)} />
-                )}
-              </div>
-              <div className={cn(
-                "flex-1 rounded-2xl border p-4 mb-3",
-                step.status === "upcoming"
-                  ? "border-black/8 bg-white/40"
-                  : "border-black/10 bg-white/60 backdrop-blur-sm"
-              )}>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className={cn(
-                    "w-8 h-8 rounded-lg flex items-center justify-center",
-                    step.status === "upcoming" ? "bg-black/5" : "bg-black/8"
-                  )}>
-                    <step.icon className={cn("w-4 h-4", step.status === "upcoming" ? "text-black/30" : "text-foreground")} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <p className={cn("font-heading text-base", step.status === "upcoming" && "text-black/40")}>{step.title}</p>
-                    <p className={cn("text-xs font-medium", step.status === "upcoming" ? "text-black/25" : "text-[#F4C6AC]")}>{step.subtitle}</p>
-                  </div>
-                </div>
-                <p className={cn("text-sm leading-relaxed", step.status === "upcoming" ? "text-black/30" : "text-muted-foreground")}>
-                  {step.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
       </div>
     </section>
   );

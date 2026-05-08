@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { AnimatedList } from "@/components/ui/animated-list";
 import {
@@ -58,25 +57,20 @@ export function AIOnboardingFeatures() {
       <div className="container-max">
 
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
-        >
+        <div className="mb-12" data-aos="fade-up">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
             How AI Onboarding works
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             Every new client goes through a consistent, AI-guided process — so nothing gets missed and care starts faster.
           </p>
-        </motion.div>
+        </div>
 
         {/* Bento grid */}
         <div className="grid gap-6 sm:grid-cols-5">
 
           {/* Left large card — animated intake list */}
-          <Card className="group overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col">
+          <Card className="group overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col" data-aos="fade-up">
             <div className="p-6 pb-2">
               <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
                 Every intake step, handled automatically.
@@ -101,7 +95,7 @@ export function AIOnboardingFeatures() {
           </Card>
 
           {/* Right tall card — matching steps */}
-          <Card className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl">
+          <Card className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl" data-aos="fade-up" data-aos-delay="100">
             <CardHeader>
               <div className="p-6 md:p-8">
                 <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
@@ -116,11 +110,8 @@ export function AIOnboardingFeatures() {
             <CardContent className="px-6 pb-8 md:px-8">
               <div className="flex flex-col gap-0">
                 {matchSteps.map((step, i) => (
-                  <motion.div
+                  <div
                     key={step.id}
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
                     className="flex gap-4"
                   >
                     {/* Timeline spine */}
@@ -140,14 +131,14 @@ export function AIOnboardingFeatures() {
                       </div>
                       <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </CardContent>
           </Card>
 
           {/* Bottom full-width card — capabilities grid */}
-          <div className="sm:col-span-5 mt-8">
+          <div className="sm:col-span-5 mt-8" data-aos="fade-up">
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-2 mb-3">
                 <Sparkles className="w-5 h-5 text-foreground" strokeWidth={1.5} />

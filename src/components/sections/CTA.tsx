@@ -6,7 +6,7 @@ export function CTA() {
   return (
     <section className="section-padding">
       <div className="container-max">
-        <div className="relative overflow-hidden rounded-3xl gradient-bg p-12 sm:p-16 text-center text-white">
+        <div className="relative overflow-hidden rounded-3xl gradient-bg p-12 sm:p-16 text-center text-white" data-aos="fade-up">
           {/* Background decoration */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />

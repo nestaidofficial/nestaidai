@@ -63,6 +63,13 @@ export function PixelGrid({
     const c2d = canvas.getContext("2d", { alpha: true });
     if (!c2d) return;
 
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let visible = false;
+    let pageVisible = !document.hidden;
+
     const randomAlpha = () => {
       const rand = Math.random() * 100;
       if (rand > 90) return 1;
@@ -131,7 +138,7 @@ export function PixelGrid({
     };
 
     const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const width = parent.clientWidth;
       const height = parent.clientHeight;
 
@@ -181,28 +188,66 @@ export function PixelGrid({
         c2d.fillRect(0, 0, width, height);
       }
 
-      if (glow) {
-        c2d.shadowBlur = 8;
-        c2d.shadowColor = pixelColor;
-      } else {
-        c2d.shadowBlur = 0;
-      }
+      // shadowBlur is set once outside the per-pixel loop — applying it per
+      // fillRect was the dominant cost on this canvas.
+      c2d.shadowBlur = 0;
 
       for (const pixel of pixelsRef.current) drawPixel(pixel);
       frameRef.current = requestAnimationFrame(renderLoop);
     };
 
+    const start = () => {
+      if (frameRef.current != null || reduceMotion) return;
+      if (!visible || !pageVisible) return;
+      frameRef.current = requestAnimationFrame(renderLoop);
+    };
+    const stop = () => {
+      if (frameRef.current != null) {
+        cancelAnimationFrame(frameRef.current);
+        frameRef.current = null;
+      }
+    };
+
     resizeCanvas();
+
+    if (reduceMotion) {
+      // Render a single still frame so the panel isn't blank.
+      for (const pixel of pixelsRef.current) {
+        c2d.fillStyle = getHexWithAlpha(pixelColor, pixel.maxAlpha);
+        c2d.fillRect(pixel.xPos, pixel.yPos, pixelSize, pixelSize);
+      }
+      const resizeObserver = new ResizeObserver(resizeCanvas);
+      resizeObserver.observe(parent);
+      return () => resizeObserver.disconnect();
+    }
+
+    const intersection = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) visible = entry.isIntersecting;
+        if (visible && pageVisible) start();
+        else stop();
+      },
+      { rootMargin: "100px" }
+    );
+    intersection.observe(canvas);
+
+    const onVisibility = () => {
+      pageVisible = !document.hidden;
+      if (visible && pageVisible) start();
+      else stop();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
     const resizeObserver = new ResizeObserver(resizeCanvas);
     resizeObserver.observe(parent);
     window.addEventListener("resize", resizeCanvas);
-    frameRef.current = requestAnimationFrame(renderLoop);
 
     return () => {
+      stop();
+      intersection.disconnect();
       resizeObserver.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("resize", resizeCanvas);
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-      frameRef.current = null;
     };
   }, [
     bgColor,
@@ -223,8 +268,12 @@ export function PixelGrid({
   return (
     <canvas
       ref={canvasRef}
-      className={cn("absolute inset-0 h-full w-full pointer-events-none", className)}
-      style={{ display: "block", backgroundColor: "transparent" }}
+      className={cn(
+        "absolute inset-0 h-full w-full pointer-events-none",
+        glow && "[filter:drop-shadow(0_0_4px_currentColor)]",
+        className
+      )}
+      style={{ display: "block", backgroundColor: "transparent", color: pixelColor }}
     />
   );
 }

@@ -36,7 +36,7 @@ export function CallNessa() {
   return (
     <section className="section-padding">
       <div className="container-max">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center" data-aos="fade-up">
           {/* Heading */}
           <h2 className="text-4xl sm:text-5xl font-heading tracking-tight mb-4">
             Hear Nessa <em className="italic">in action</em>

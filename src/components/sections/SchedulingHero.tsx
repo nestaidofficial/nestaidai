@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { RefreshCcw, Route, PhoneCall, CalendarClock } from "lucide-react";
 
@@ -54,16 +53,11 @@ export function SchedulingHero() {
   return (
     <section className="section-padding pb-0">
       <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center text-center space-y-4 mb-10"
-        >
+        <div className="flex flex-col items-center justify-center text-center space-y-4 mb-10" data-aos="fade-down">
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight max-w-3xl">
             From scheduling chaos to coordinated care
           </h1>
-        </motion.div>
+        </div>
 
         {/* Marquee rows */}
         <div className="relative overflow-hidden mb-0 max-w-3xl mx-auto">
@@ -108,12 +102,14 @@ export function SchedulingHero() {
 
         {/* Feature grid */}
         <div className="mt-10 grid grid-cols-1 divide-y divide-dashed divide-black/15 border-t border-dashed border-black/15 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-          {features.map((feature) => {
+          {features.map((feature, idx) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
                 className="flex flex-col gap-5 px-5 py-8 lg:px-6 lg:py-10"
+                data-aos="fade-up"
+                data-aos-delay={idx * 80}
               >
                 <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-foreground" strokeWidth={1.5} />

@@ -78,7 +78,7 @@ export function Pricing() {
     <section id="pricing" className="section-padding">
       <div className="container-max">
         {/* Section header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
             Simple, transparent{" "}
             <span className="gradient-text">pricing</span>
@@ -120,7 +120,7 @@ export function Pricing() {
 
         {/* Plans grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {plans.map((plan) => (
+          {plans.map((plan, idx) => (
             <div
               key={plan.name}
               className={cn(
@@ -129,6 +129,8 @@ export function Pricing() {
                   ? "border-primary shadow-xl shadow-primary/10 bg-white/80 backdrop-blur-sm"
                   : "border-black/10 bg-white/60 backdrop-blur-sm hover:shadow-md transition-shadow"
               )}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
             >
               {/* Popular badge */}
               {plan.badge && (

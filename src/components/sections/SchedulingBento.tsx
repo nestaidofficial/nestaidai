@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
 import {
   CalendarClock,
   Layers3,
@@ -19,32 +18,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-// Animation variants for the container to stagger children
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-// Animation variants for each grid item
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 10,
-    },
-  },
-};
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -224,13 +197,8 @@ export function SchedulingBento() {
   return (
     <section className="section-padding">
       <div className="container-max">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid w-full grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-3 auto-rows-[minmax(180px,auto)]"
-        >
-          <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-3">
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-3 auto-rows-[minmax(180px,auto)]">
+          <div className="md:col-span-1 md:row-span-3" data-aos="fade-up">
             <FeatureCard
               icon={<Layers3 className="h-5 w-5" />}
               eyebrow="AI Layers"
@@ -240,9 +208,9 @@ export function SchedulingBento() {
               hideIcon={true}
               hideDescription={true}
             />
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="80">
             <FeatureCard
               icon={<RefreshCcw className="h-5 w-5" />}
               eyebrow="Recovery"
@@ -250,44 +218,44 @@ export function SchedulingBento() {
               description="Reach caregivers through calls, texts, and follow-up workflows so scheduling moves faster across the channels your team already uses."
               items={["46+ caregivers reached in 2 min", "Responses collected", "Matched with best caregiver"]}
             />
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="160">
             <FeatureCard
               icon={<Sparkles className="h-5 w-5" />}
               eyebrow="Go Live"
               title="Launch in weeks"
               description="Go live quickly with a scheduling layer tailored to your agency's process, not a long replacement project."
             />
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="80">
             <FeatureCard
               icon={<Route className="h-5 w-5" />}
               eyebrow="Matching"
               title="AI Shift Matching"
               description="Match open shifts to the right caregivers based on availability, fit, and scheduling logic."
             />
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="160">
             <FeatureCard
               icon={<PhoneCall className="h-5 w-5" />}
               eyebrow="Outreach"
               title="Calls and Texts"
               description="Reach caregivers through both voice and text so shift coverage can move faster across the channels teams already use."
             />
-          </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants} className="md:col-span-2 md:row-span-1">
+          <div className="md:col-span-2 md:row-span-1" data-aos="fade-up">
             <FeatureCard
               icon={<CalendarClock className="h-5 w-5" />}
               eyebrow="Workflow"
               title="Tailored Scheduling Workflows"
               description="Set up call flows, outreach logic, escalation paths, and shift recovery rules based on how your agency already operates."
             />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

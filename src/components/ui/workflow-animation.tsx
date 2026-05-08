@@ -39,15 +39,13 @@ const SARAH_WORD_INTERVAL = 110;
 
 // Nessa first acknowledges immediately, then sends a final update after outreach.
 const NESSA_ACK_LINE = "Noted, thanks for letting us know. You're called out for the shift today from 9am - 4pm.";
-const NESSA_ACK_WORDS = NESSA_ACK_LINE.split(" ");
-const NESSA_ACK_WORD_INTERVAL = 125;
+const NESSA_ACK_TYPING_DURATION = 1600;
 
-const NESSA_FINAL_LINE = "We've found coverage for the shift. Take care, Sarah.";
-const NESSA_FINAL_WORDS = NESSA_FINAL_LINE.split(" ");
-const NESSA_FINAL_WORD_INTERVAL = 100;
+const NESSA_FINAL_LINE = "We've found coverage for the shift. Take care, Emma.";
+const NESSA_FINAL_TYPING_DURATION = 1200;
 
 const NESSA_ACK_DELAY = 550;           // delay after Sarah finishes before Nessa acknowledges
-const HOLD_AFTER_ACK = 1200;           // pause after acknowledgment before workflow starts
+const HOLD_AFTER_ACK = 2800;           // pause after acknowledgment before workflow starts
 const HOLD_AFTER_WORKFLOW = 1800;      // pause on Care Scheduled before final update
 const NESSA_FINAL_THINKING = 900;      // small delay before final message starts
 const HOLD_AFTER_FINAL_REPLY = 2600;   // hold on completed thread before restart
@@ -56,8 +54,8 @@ export function WorkflowAnimation() {
   const [view, setView] = useState<"call" | "workflow">("call");
   const [callConnected, setCallConnected] = useState(false);
   const [sarahCount, setSarahCount] = useState(0);
-  const [nessaAckCount, setNessaAckCount] = useState(0);
-  const [nessaFinalCount, setNessaFinalCount] = useState(0);
+  const [nessaAckShown, setNessaAckShown] = useState(false);
+  const [nessaFinalShown, setNessaFinalShown] = useState(false);
   const [showNessaAck, setShowNessaAck] = useState(false);
   const [showNessaFinal, setShowNessaFinal] = useState(false);
   const [phase, setPhase] = useState(0);
@@ -67,8 +65,8 @@ export function WorkflowAnimation() {
     setView("call");
     setCallConnected(false);
     setSarahCount(0);
-    setNessaAckCount(0);
-    setNessaFinalCount(0);
+    setNessaAckShown(false);
+    setNessaFinalShown(false);
     setShowNessaAck(false);
     setShowNessaFinal(false);
     setPhase(0);
@@ -89,23 +87,13 @@ export function WorkflowAnimation() {
     // --- Nessa immediate acknowledgment on the same call thread ---
     const SARAH_END_AT = CALL_CONNECT_AT + 250 + SARAH_WORDS.length * SARAH_WORD_INTERVAL;
     const NESSA_ACK_BUBBLE_AT = SARAH_END_AT + NESSA_ACK_DELAY;
-    const NESSA_ACK_WORD_START = NESSA_ACK_BUBBLE_AT + 220;
+    const NESSA_ACK_SHOWN_AT = NESSA_ACK_BUBBLE_AT + NESSA_ACK_TYPING_DURATION;
 
     timers.push(setTimeout(() => setShowNessaAck(true), NESSA_ACK_BUBBLE_AT));
-
-    NESSA_ACK_WORDS.forEach((_, i) => {
-      timers.push(
-        setTimeout(
-          () => setNessaAckCount(i + 1),
-          NESSA_ACK_WORD_START + i * NESSA_ACK_WORD_INTERVAL
-        )
-      );
-    });
+    timers.push(setTimeout(() => setNessaAckShown(true), NESSA_ACK_SHOWN_AT));
 
     // --- Switch to workflow view (after acknowledgment is delivered) ---
-    const NESSA_ACK_END_AT =
-      NESSA_ACK_WORD_START + NESSA_ACK_WORDS.length * NESSA_ACK_WORD_INTERVAL;
-    const WORKFLOW_START_AT = NESSA_ACK_END_AT + HOLD_AFTER_ACK;
+    const WORKFLOW_START_AT = NESSA_ACK_SHOWN_AT + HOLD_AFTER_ACK;
 
     timers.push(
       setTimeout(() => {
@@ -124,31 +112,21 @@ export function WorkflowAnimation() {
     const WORKFLOW_DONE_AT = WORKFLOW_START_AT + PHASE_TIMES[PHASE_TIMES.length - 1];
     const RETURN_TO_CALL_AT = WORKFLOW_DONE_AT + HOLD_AFTER_WORKFLOW;
     const NESSA_FINAL_BUBBLE_AT = RETURN_TO_CALL_AT + NESSA_FINAL_THINKING;
-    const NESSA_FINAL_WORD_START = NESSA_FINAL_BUBBLE_AT + 250;
+    const NESSA_FINAL_SHOWN_AT = NESSA_FINAL_BUBBLE_AT + NESSA_FINAL_TYPING_DURATION;
 
     timers.push(
       setTimeout(() => {
         setView("call");
         setSarahCount(SARAH_WORDS.length);
-        setNessaAckCount(NESSA_ACK_WORDS.length);
+        setNessaAckShown(true);
         setCallConnected(true);
       }, RETURN_TO_CALL_AT)
     );
 
     timers.push(setTimeout(() => setShowNessaFinal(true), NESSA_FINAL_BUBBLE_AT));
+    timers.push(setTimeout(() => setNessaFinalShown(true), NESSA_FINAL_SHOWN_AT));
 
-    NESSA_FINAL_WORDS.forEach((_, i) => {
-      timers.push(
-        setTimeout(
-          () => setNessaFinalCount(i + 1),
-          NESSA_FINAL_WORD_START + i * NESSA_FINAL_WORD_INTERVAL
-        )
-      );
-    });
-
-    const NESSA_FINAL_END_AT =
-      NESSA_FINAL_WORD_START + NESSA_FINAL_WORDS.length * NESSA_FINAL_WORD_INTERVAL;
-    const RESTART_AT = NESSA_FINAL_END_AT + HOLD_AFTER_FINAL_REPLY;
+    const RESTART_AT = NESSA_FINAL_SHOWN_AT + HOLD_AFTER_FINAL_REPLY;
 
     timers.push(setTimeout(() => setCycleKey((k) => k + 1), RESTART_AT));
 
@@ -171,9 +149,9 @@ export function WorkflowAnimation() {
           callConnected={callConnected}
           sarahCount={sarahCount}
           showNessaAck={showNessaAck}
-          nessaAckCount={nessaAckCount}
+          nessaAckShown={nessaAckShown}
           showNessaFinal={showNessaFinal}
-          nessaFinalCount={nessaFinalCount}
+          nessaFinalShown={nessaFinalShown}
         />
       ) : (
         <div className="px-4 pt-[22%] pb-4 flex flex-col gap-3 flex-1">
@@ -360,20 +338,18 @@ function CallScreen({
   callConnected,
   sarahCount,
   showNessaAck,
-  nessaAckCount,
+  nessaAckShown,
   showNessaFinal,
-  nessaFinalCount,
+  nessaFinalShown,
 }: {
   callConnected: boolean;
   sarahCount: number;
   showNessaAck: boolean;
-  nessaAckCount: number;
+  nessaAckShown: boolean;
   showNessaFinal: boolean;
-  nessaFinalCount: number;
+  nessaFinalShown: boolean;
 }) {
   const sarahDone = sarahCount >= SARAH_WORDS.length;
-  const nessaAckDone = nessaAckCount >= NESSA_ACK_WORDS.length;
-  const nessaFinalDone = nessaFinalCount >= NESSA_FINAL_WORDS.length;
   const sarahStarted = sarahCount > 0;
   const hasNessaReply = showNessaAck || showNessaFinal;
 
@@ -411,7 +387,7 @@ function CallScreen({
         >
           <Image
             src="/sarahavatar.png"
-            alt="Sarah Miller"
+            alt="Emma Carter"
             fill
             sizes="80px"
             className="object-cover"
@@ -426,7 +402,7 @@ function CallScreen({
           compact ? "text-[15px]" : "text-[18px]"
         } transition-all duration-500`}
       >
-        Sarah Miller
+        Emma Carter
       </p>
       <p className="font-body text-[12px] font-light text-slate-500 mt-0.5">
         Caregiver · Mobile
@@ -446,7 +422,7 @@ function CallScreen({
             <div className="flex items-center gap-1.5 mb-1">
               <Mic className="w-2.5 h-2.5 text-slate-500" />
               <span className="font-body text-[8.5px] font-light uppercase tracking-widest text-slate-500">
-                Sarah · Live transcript
+                Emma · Live transcript
               </span>
             </div>
             <p className="font-body text-[12.5px] font-medium text-[#020817] leading-snug">
@@ -466,22 +442,7 @@ function CallScreen({
             showNessaAck ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
           }`}
         >
-          <div className="max-w-[82%] bg-[#34C759] rounded-2xl rounded-tr-sm shadow-sm px-3.5 py-2.5">
-            <div className="flex items-center gap-1.5 mb-1">
-              <Sparkles className="w-2.5 h-2.5 text-white/70" />
-              <span className="font-body text-[8.5px] font-light uppercase tracking-widest text-white/70">
-                Nessa
-              </span>
-            </div>
-            <p className="font-body text-[12.5px] font-medium text-white leading-snug">
-              <span>&ldquo;</span>
-              <TypingWords words={NESSA_ACK_WORDS} count={nessaAckCount} />
-              {showNessaAck && !nessaAckDone && (
-                <span className="inline-block w-[2px] h-[11px] bg-white align-middle ml-0.5 animate-pulse" />
-              )}
-              {nessaAckDone && <span>&rdquo;</span>}
-            </p>
-          </div>
+          <NessaBubble line={NESSA_ACK_LINE} shown={nessaAckShown} />
         </div>
 
         {/* Nessa final confirmation — appears after outreach flow */}
@@ -490,22 +451,7 @@ function CallScreen({
             showNessaFinal ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
           }`}
         >
-          <div className="max-w-[82%] bg-[#34C759] rounded-2xl rounded-tr-sm shadow-sm px-3.5 py-2.5">
-            <div className="flex items-center gap-1.5 mb-1">
-              <Sparkles className="w-2.5 h-2.5 text-white/70" />
-              <span className="font-body text-[8.5px] font-light uppercase tracking-widest text-white/70">
-                Nessa
-              </span>
-            </div>
-            <p className="font-body text-[12.5px] font-medium text-white leading-snug">
-              <span>&ldquo;</span>
-              <TypingWords words={NESSA_FINAL_WORDS} count={nessaFinalCount} />
-              {showNessaFinal && !nessaFinalDone && (
-                <span className="inline-block w-[2px] h-[11px] bg-white align-middle ml-0.5 animate-pulse" />
-              )}
-              {nessaFinalDone && <span>&rdquo;</span>}
-            </p>
-          </div>
+          <NessaBubble line={NESSA_FINAL_LINE} shown={nessaFinalShown} />
         </div>
       </div>
 
@@ -534,6 +480,40 @@ function CallScreen({
           <PhoneOff className="w-5 h-5 text-white" />
         </div>
       </div>
+    </div>
+  );
+}
+
+function TypingDots() {
+  return (
+    <span className="inline-flex items-center gap-[3px] py-[3px]">
+      {[0, 1, 2].map((i) => (
+        <span
+          key={i}
+          className="inline-block h-1.5 w-1.5 rounded-full bg-white/80 animate-[dotPulse_1100ms_ease-in-out_infinite]"
+          style={{ animationDelay: `${i * 180}ms` }}
+        />
+      ))}
+    </span>
+  );
+}
+
+function NessaBubble({ line, shown }: { line: string; shown: boolean }) {
+  return (
+    <div className="max-w-[82%] bg-[#34C759] rounded-2xl rounded-tr-sm shadow-sm px-3.5 py-2.5">
+      <div className="flex items-center gap-1.5 mb-1">
+        <Sparkles className="w-2.5 h-2.5 text-white/70" />
+        <span className="font-body text-[8.5px] font-light uppercase tracking-widest text-white/70">
+          Nessa
+        </span>
+      </div>
+      {shown ? (
+        <p className="font-body text-[12.5px] font-medium text-white leading-snug animate-[fadeIn_220ms_ease-out]">
+          &ldquo;{line}&rdquo;
+        </p>
+      ) : (
+        <TypingDots />
+      )}
     </div>
   );
 }

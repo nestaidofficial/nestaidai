@@ -1,19 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export function ManagementHero() {
   return (
     <section className="section-padding pb-0">
       <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto"
-        >
+        <div className="text-center max-w-3xl mx-auto" data-aos="fade-down">
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
             <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
@@ -45,7 +39,7 @@ export function ManagementHero() {
               </span>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Gelasio, IBM_Plex_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { AOSProvider } from "@/components/providers/AOSProvider";
 
 const gelasio = Gelasio({
   variable: "--font-heading",
@@ -199,6 +200,7 @@ export default function RootLayout({
           aria-hidden="true"
           className="fixed inset-0 -z-10 opacity-65 [background-size:20px_20px] [background-image:radial-gradient(#cccac6_1.1px,transparent_1.1px)] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,black_20%,transparent_90%)]"
         />
+        <AOSProvider />
         <SmoothScroll>{children}</SmoothScroll>
 
         {gaId ? (
