@@ -363,9 +363,6 @@ function CallScreen({
     >
       {/* Status label */}
       <div className="flex items-center gap-1.5">
-        {callConnected && (
-          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-        )}
         <p className="font-body text-[10px] font-light uppercase tracking-widest text-slate-500">
           {callConnected ? "Live call · Nessa AI" : "Incoming call"}
         </p>
