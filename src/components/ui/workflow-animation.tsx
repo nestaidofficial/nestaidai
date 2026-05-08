@@ -11,7 +11,6 @@ import {
   ChevronRight,
   Lock,
   Check,
-  PhoneOff,
   Mic,
   Sparkles,
 } from "lucide-react";
@@ -474,12 +473,6 @@ function CallScreen({
         ))}
       </div>
 
-      {/* End-call button */}
-      <div className="mt-auto pt-3">
-        <div className="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center shadow-md">
-          <PhoneOff className="w-5 h-5 text-white" />
-        </div>
-      </div>
     </div>
   );
 }
