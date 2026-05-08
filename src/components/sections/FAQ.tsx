@@ -46,7 +46,7 @@ export function FAQ() {
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
           <Reveal className="text-center mb-8 sm:mb-12" amount={0.4}>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight mb-4">
               Frequently asked questions
             </h2>
             <p className="text-[17px] text-muted-foreground max-w-2xl mx-auto">

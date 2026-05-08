@@ -67,7 +67,7 @@ export function HowItWorks() {
             </div>
           </RevealItem>
           <RevealItem>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight leading-tight mb-6">
               Grow your home care agency with a <br />24/7 AI teammate.
             </h1>
           </RevealItem>
@@ -159,22 +159,27 @@ export function HowItWorks() {
           {/* Phone mockup */}
           <div className="relative z-0 flex items-center justify-center">
             <div className="relative w-[300px] sm:w-[340px] md:w-[380px]">
-              <Iphone15Pro
-                width={433}
-                height={882}
-                className="w-full h-auto relative z-[1]"
-              />
-
-              {/* Workflow animation — clipped to the phone's rounded shape so the white screen doesn't bleed past the bezel */}
-              <div className="absolute inset-0 overflow-hidden z-0 rounded-[50px] sm:rounded-[56px] md:rounded-[64px]">
-                <WorkflowAnimation />
-              </div>
-
-              {/* Bottom fade overlay — sits above content, clipped to match the phone's bottom curve */}
+              {/* Phone + screen wrapped in a fade mask so bezel and content fade out together at the bottom */}
               <div
-                className="absolute bottom-0 left-0 right-0 h-[35%] pointer-events-none z-[2] overflow-hidden rounded-b-[50px] sm:rounded-b-[56px] md:rounded-b-[64px]"
-                style={{ background: "linear-gradient(to bottom, transparent 0%, #FFFFFF 70%)" }}
-              />
+                className="relative"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 0%, black 55%, rgba(0,0,0,0.6) 75%, transparent 95%)",
+                  maskImage:
+                    "linear-gradient(to bottom, black 0%, black 55%, rgba(0,0,0,0.6) 75%, transparent 95%)",
+                }}
+              >
+                <Iphone15Pro
+                  width={433}
+                  height={882}
+                  className="w-full h-auto relative z-[1]"
+                />
+
+                {/* Workflow animation — clipped to the phone's rounded shape so the white screen doesn't bleed past the bezel */}
+                <div className="absolute inset-0 overflow-hidden z-0 rounded-[50px] sm:rounded-[56px] md:rounded-[64px]">
+                  <WorkflowAnimation />
+                </div>
+              </div>
 
               {/* Status bar overlay — positioned over the phone screen area */}
               {time && (

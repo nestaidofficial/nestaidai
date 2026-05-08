@@ -84,7 +84,7 @@ export function Testimonials() {
       <div className="container-max">
         {/* Section header */}
         <Reveal className="text-center mb-10 sm:mb-16" amount={0.4}>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight mb-4">
             Why teams choose Nestaid
           </h2>
         </Reveal>

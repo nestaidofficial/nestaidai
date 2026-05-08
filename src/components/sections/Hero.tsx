@@ -22,7 +22,7 @@ export function Hero() {
           </RevealItem>
 
           <RevealItem>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight mb-4">
               The ops team you{" "}
               <em className="italic">never had to hire</em>
             </h2>

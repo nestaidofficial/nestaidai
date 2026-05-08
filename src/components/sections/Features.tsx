@@ -315,7 +315,7 @@ export function Features() {
       <div className="container-max">
         {/* Header */}
         <div className="max-w-3xl mb-10 sm:mb-14" data-aos="fade-up">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight mb-4">
             One smart teammate for home care operations
           </h2>
           <p className="text-[17px] text-muted-foreground max-w-2xl">
