@@ -1,5 +1,6 @@
 /* ============================================================
-   NESTAID · Smart Call Routing — CSS Module (static, no motion)
+   NESTAID · Smart Call Routing — CSS Module
+   Synchronized 8s cycle: handoff at 40% (2 PM)
    ============================================================ */
 
 .wrap {
@@ -69,13 +70,51 @@
 .coord_a .coordAvatar { background: #D85A30; }
 .coord_b .coordAvatar { background: #0F6E56; }
 
-.coord_a {
-  border-color: rgba(216, 90, 48, 0.3);
-  box-shadow: 0 2px 8px rgba(216, 90, 48, 0.08);
+/* Avatar pulse ring — A glows before handoff, B after */
+.coordAvatar::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
 }
-.coord_b {
-  border-color: rgba(15, 110, 86, 0.3);
-  box-shadow: 0 2px 8px rgba(15, 110, 86, 0.08);
+.coord_a .coordAvatar::after { animation: avatarGlowA 8s linear infinite; }
+.coord_b .coordAvatar::after { animation: avatarGlowB 8s linear infinite; }
+@keyframes avatarGlowA {
+  0%, 39.99% { border-color: rgba(216, 90, 48, 0.45); opacity: 1; }
+  40%, 100%  { border-color: transparent; opacity: 0; }
+}
+@keyframes avatarGlowB {
+  0%, 39.99% { border-color: transparent; opacity: 0; }
+  40%, 100%  { border-color: rgba(15, 110, 86, 0.45); opacity: 1; }
+}
+
+/* Shift state — A active until handoff, then B active */
+.coord_a { animation: aShift 8s linear infinite; }
+.coord_b { animation: bShift 8s linear infinite; }
+@keyframes aShift {
+  0%, 39.99% {
+    border-color: rgba(216, 90, 48, 0.3);
+    box-shadow: 0 2px 8px rgba(216, 90, 48, 0.08);
+    opacity: 1;
+  }
+  40%, 100% {
+    border-color: rgba(100, 116, 139, 0.1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    opacity: 0.55;
+  }
+}
+@keyframes bShift {
+  0%, 39.99% {
+    border-color: rgba(100, 116, 139, 0.1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    opacity: 0.55;
+  }
+  40%, 100% {
+    border-color: rgba(15, 110, 86, 0.3);
+    box-shadow: 0 2px 8px rgba(15, 110, 86, 0.08);
+    opacity: 1;
+  }
 }
 
 .coordBody { flex: 1; min-width: 0; }
@@ -115,6 +154,11 @@
 }
 .statusOn  { background: #E1F5EE; color: #0F6E56; }
 .statusOff { background: #F1EFE8; color: rgb(100, 116, 139); }
+.statusOn .statusDot { animation: liveBlink 1.6s ease-in-out infinite; }
+@keyframes liveBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
 
 .coordStatusWrap {
   position: relative;
@@ -127,9 +171,19 @@
   right: 0;
 }
 
-/* Show On for coord_a, Off for coord_b (each card shows one pill) */
-.coord_a .statusOff { display: none; }
-.coord_b .statusOff { display: none; }
+/* Swap On ↔ Off at the handoff moment (40% of 8s cycle) */
+.coord_a .statusOn  { animation: pillSwapHide 8s linear infinite; }
+.coord_a .statusOff { animation: pillSwapShow 8s linear infinite; opacity: 0; }
+.coord_b .statusOff { animation: pillSwapHide 8s linear infinite; }
+.coord_b .statusOn  { animation: pillSwapShow 8s linear infinite; opacity: 0; }
+@keyframes pillSwapHide {
+  0%, 39.99% { opacity: 1; }
+  40%, 100%  { opacity: 0; pointer-events: none; }
+}
+@keyframes pillSwapShow {
+  0%, 39.99% { opacity: 0; pointer-events: none; }
+  40%, 100%  { opacity: 1; }
+}
 
 /* ============ LOG ============ */
 
@@ -208,6 +262,7 @@
   height: 5px;
   border-radius: 50%;
   background: #0F6E56;
+  animation: liveBlink 1.4s ease-in-out infinite;
 }
 
 .logEntries {
@@ -265,21 +320,28 @@
 .routeA { background: #FAECE7; color: #993C1D; }
 .routeB { background: #E1F5EE; color: #0F6E56; }
 
-/* Hero pair (1:58 / 2:01) — soft background tint */
+/* Hero pair (1:58 / 2:01) — soft background glow that pulses with cycle */
 .logEntryHero { position: relative; }
 .logEntryHero::before {
   content: "";
   position: absolute;
   inset: -6px -10px;
-  background: rgba(216, 90, 48, 0.04);
+  background: rgba(216, 90, 48, 0.08);
   border-radius: 8px;
   z-index: -1;
+  opacity: 0;
+  animation: heroGlow 8s ease-out infinite;
 }
 .logEntryHeroB::before {
-  background: rgba(15, 110, 86, 0.04);
+  background: rgba(15, 110, 86, 0.08);
 }
 .logEntryHeroB {
   margin-top: 18px;
+}
+@keyframes heroGlow {
+  0%, 3%    { opacity: 0; }
+  8%, 85%   { opacity: 1; }
+  92%, 100% { opacity: 0; }
 }
 
 /* ============ HANDOFF DIVIDER — vertical dotted line + side label ============ */
@@ -290,6 +352,14 @@
   gap: 14px;
   padding: 22px 0 22px 18px;
   min-height: 96px;
+  opacity: 0;
+  animation: handoffRowShow 8s ease-out infinite;
+}
+@keyframes handoffRowShow {
+  0%, 32%   { opacity: 0; }
+  40%       { opacity: 1; }
+  85%       { opacity: 1; }
+  92%, 100% { opacity: 0.75; }
 }
 
 .handoffDots {
@@ -305,8 +375,26 @@
   background-repeat: repeat-y;
 }
 
+/* Glowing pulse that travels down the dotted line at the route moment */
 .handoffPulse {
-  display: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0F6E56;
+  box-shadow: 0 0 10px rgba(15, 110, 86, 0.7);
+  transform: translate(-50%, 0);
+  opacity: 0;
+  animation: handoffPulseTravel 8s ease-out infinite;
+}
+
+@keyframes handoffPulseTravel {
+  0%, 36%   { opacity: 0; top: 0%; }
+  40%       { opacity: 1; top: 0%; }
+  55%       { opacity: 1; top: 100%; }
+  65%, 100% { opacity: 0; top: 100%; }
 }
 
 .handoffMeta {
@@ -357,4 +445,31 @@
   .handoffRow { padding: 18px 0 18px 12px; min-height: 80px; }
   .handoffMetaTitle { font-size: 10px; }
   .handoffMetaSub { font-size: 10px; }
+}
+
+/* ============ REDUCED MOTION ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  .coord_a,
+  .coord_b,
+  .coordAvatar::after,
+  .statusDot,
+  .coord_a .statusOn,
+  .coord_a .statusOff,
+  .coord_b .statusOn,
+  .coord_b .statusOff,
+  .logLiveDot,
+  .logEntryHero::before,
+  .handoffRow,
+  .handoffPulse {
+    animation: none !important;
+  }
+  .coord_a, .coord_b { opacity: 1; }
+  .coord_a .statusOn  { opacity: 1; }
+  .coord_a .statusOff { opacity: 0; }
+  .coord_b .statusOn  { opacity: 1; }
+  .coord_b .statusOff { opacity: 0; }
+  .logEntryHero::before { opacity: 1; }
+  .handoffRow { opacity: 1; }
+  .handoffPulse { opacity: 0; }
 }

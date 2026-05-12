@@ -69,7 +69,7 @@ export function LatestPostsCarousel({ posts }: { posts: CarouselPost[] }) {
         </div>
 
         {/* Right: image card */}
-        <div className="relative w-full max-w-sm h-64 md:w-60 md:h-80 order-1 md:order-2 mx-auto md:mx-0">
+        <div className="relative w-full max-w-sm h-80 md:w-60 md:h-80 order-1 md:order-2 mx-auto md:mx-0">
           <Link
             href={`/blog/${active.slug}`}
             className="block w-full h-full rounded-2xl overflow-hidden border border-border/50 bg-muted relative"
