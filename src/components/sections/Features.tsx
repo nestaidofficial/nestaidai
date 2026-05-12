@@ -284,7 +284,7 @@ function CallMockup() {
       </div>
 
       {/* Conversation */}
-      <div className="px-4 py-4 space-y-2 min-h-[340px] bg-white">
+      <div className="px-4 py-4 space-y-2 min-h-[420px] sm:min-h-[340px] bg-white">
         {/* Live date/time separator */}
         <p
           className="text-center text-[11px] text-muted-foreground py-1 select-none"
