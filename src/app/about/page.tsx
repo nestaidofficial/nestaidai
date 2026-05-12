@@ -94,7 +94,7 @@ export default function AboutPage() {
           <div className="container-max">
             <div className="max-w-3xl mx-auto text-center">
               <Badge variant="subtle" className="mb-5">Our Story</Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-6">
+              <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                 Built by people who{" "}
                 <span className="gradient-text">lived the problem</span>
               </h1>
@@ -113,7 +113,7 @@ export default function AboutPage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-white/60 backdrop-blur-sm border border-peach rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
+                  className="bg-white/60 border border-peach rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
                 >
                   <p className="text-3xl sm:text-4xl font-heading text-black mb-1">{stat.value}</p>
                   <p className="text-sm text-muted-foreground font-subheading">{stat.label}</p>
@@ -129,7 +129,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <Badge variant="subtle" className="mb-4">Mission</Badge>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-5">
+                <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                   Give care agencies a{" "}
                   <span className="gradient-text">superpower</span>
                 </h2>
@@ -147,7 +147,7 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="bg-white/60 backdrop-blur-sm border border-peach rounded-3xl p-8 lg:p-10">
+                <div className="bg-white/60 border border-peach rounded-3xl p-8 lg:p-10">
                   <blockquote className="text-2xl sm:text-3xl font-heading text-black leading-snug mb-6">
                     "We built the tool we wished existed when we were coordinators ourselves."
                   </blockquote>
@@ -170,7 +170,7 @@ export default function AboutPage() {
                 {/* Decorative accent */}
                 <div
                   aria-hidden="true"
-                  className="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl border border-black/5 bg-white/30 backdrop-blur-sm -z-10"
+                  className="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl border border-black/5 bg-white/30 -z-10"
                 />
               </div>
             </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
           <div className="container-max">
             <div className="text-center mb-12">
               <Badge variant="subtle" className="mb-4">What We Stand For</Badge>
-              <h2 className="text-3xl sm:text-4xl font-heading tracking-tight mb-4">
+              <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                 Values that guide every decision
               </h2>
               <p className="text-base text-muted-foreground max-w-xl mx-auto">
@@ -194,7 +194,7 @@ export default function AboutPage() {
               {values.map((v) => (
                 <div
                   key={v.title}
-                  className="bg-white/60 backdrop-blur-sm border border-peach rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  className="bg-white/60 border border-peach rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center mb-4">
                     <v.icon className="w-5 h-5 text-black/70" />
@@ -212,7 +212,7 @@ export default function AboutPage() {
           <div className="container-max">
             <div className="text-center mb-12">
               <Badge variant="subtle" className="mb-4">The Team</Badge>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-4">
+              <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                 People behind Nestaid
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
@@ -224,7 +224,7 @@ export default function AboutPage() {
               {team.map((member) => (
                 <div
                   key={member.name}
-                  className="bg-peach/35 backdrop-blur-sm border border-peach rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col items-center text-center"
+                  className="bg-peach/35 border border-peach rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col items-center text-center"
                 >
                   {member.imageSrc ? (
                     <div className="w-24 h-24 rounded-full overflow-hidden border border-peach flex-shrink-0 mb-4">
@@ -253,9 +253,9 @@ export default function AboutPage() {
         {/* ── CTA ────────────────────────────────────────────── */}
         <section className="section-padding">
           <div className="container-max">
-            <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-3xl p-10 sm:p-14 text-center">
+            <div className="bg-white/60 border border-black/10 rounded-3xl p-10 sm:p-14 text-center">
               <Badge variant="subtle" className="mb-5">Join Us</Badge>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-5 max-w-2xl mx-auto">
+              <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6 max-w-2xl mx-auto">
                 Ready to transform your home care operations?
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">

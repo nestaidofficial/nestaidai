@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Integrations } from "@/components/sections/Integrations";
 import { FAQ } from "@/components/sections/FAQ";
 import { LatestPosts } from "@/components/sections/LatestPosts";
+import { CallRouting } from "@/components/sections/CallRouting";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
         <HowItWorks />
         <Features />
         <Hero />
+        <CallRouting />
         <Integrations />
         <LatestPosts />
         <FAQ />

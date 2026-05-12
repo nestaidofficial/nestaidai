@@ -1,65 +1,38 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
-import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
-
-function formatDate(iso: string): string {
-  return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
-}
+import { Reveal } from "@/components/ui/reveal";
+import { LatestPostsCarousel } from "@/components/sections/LatestPostsCarousel";
 
 export function LatestPosts() {
   const posts = getAllPosts().slice(0, 3);
   if (posts.length === 0) return null;
 
+  const slides = posts.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    date: post.date,
+    author: post.author,
+    readingMinutes: post.readingMinutes ?? 0,
+    image: post.image ?? "",
+    imageAlt: post.imageAlt ?? post.title,
+  }));
+
   return (
     <section className="section-padding">
       <div className="container-max">
-        <Reveal className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10" amount={0.3}>
-          <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading tracking-tight mb-3">
-              From the <span className="gradient-text">blog</span>
-            </h2>
-            <p className="text-[17px] text-muted-foreground max-w-xl">
-              Operational playbooks and product deep-dives for home care agencies running on AI.
-            </p>
-          </div>
+        <Reveal className="flex justify-end mb-10" amount={0.3}>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline underline-offset-4 self-start sm:self-end"
+            className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline underline-offset-4"
           >
             View all posts
             <ArrowRight className="w-4 h-4" />
           </Link>
         </Reveal>
 
-        <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-5" stagger={0.1} amount={0.2}>
-          {posts.map((post) => (
-            <RevealItem key={post.slug}>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="group rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 sm:p-7 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full"
-              >
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
-                  <time dateTime={post.date}>{formatDate(post.date)}</time>
-                  <span>·</span>
-                  <span>{post.readingMinutes} min read</span>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-body tracking-tight mb-3 leading-snug group-hover:underline underline-offset-4 decoration-black/30">
-                  {post.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                  {post.description}
-                </p>
-                <div className="mt-5 text-xs text-muted-foreground">By {post.author}</div>
-              </Link>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        <LatestPostsCarousel posts={slides} />
       </div>
     </section>
   );

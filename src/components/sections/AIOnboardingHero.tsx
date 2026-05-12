@@ -1,4 +1,3 @@
-"use client";
 
 import Link from "next/link";
 import { ArrowRight, BrainCircuit, MessageSquareText, UserCheck } from "lucide-react";
@@ -13,17 +12,17 @@ export function AIOnboardingHero() {
   return (
     <section className="section-padding pb-0">
       <div className="container-max">
-        <div className="text-center max-w-3xl mx-auto" data-aos="fade-down">
+        <div className="text-center max-w-3xl mx-auto">
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm gap-1.5">
+            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 px-4 py-2 text-sm gap-1.5">
               <BrainCircuit className="w-4 h-4 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground">AI Onboarding</span>
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-5">
+          <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             From first inquiry to matched caregiver — AI handles the intake
           </h1>
 
@@ -54,8 +53,8 @@ export function AIOnboardingHero() {
             <div
               key={label}
               className="workflow-item w-[160px] h-[160px] border-peach"
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
+
+
             >
               <Icon className="w-7 h-7 text-foreground flex-shrink-0" strokeWidth={1.5} />
               <p className="text-sm font-medium text-foreground text-center leading-tight">{label}</p>

@@ -36,9 +36,9 @@ export function CallNessa() {
   return (
     <section className="section-padding">
       <div className="container-max">
-        <div className="flex flex-col items-center text-center" data-aos="fade-up">
+        <div className="flex flex-col items-center text-center">
           {/* Heading */}
-          <h2 className="text-4xl sm:text-5xl font-heading tracking-tight mb-4">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             Hear Nessa <em className="italic">in action</em>
           </h2>
           <p className="text-lg text-muted-foreground max-w-md mb-10 leading-relaxed">
@@ -46,7 +46,7 @@ export function CallNessa() {
           </p>
 
           {/* Input card */}
-          <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl px-6 pt-5 pb-4 w-full max-w-sm shadow-sm">
+          <div className="bg-white/60 border border-black/10 rounded-2xl px-6 pt-5 pb-4 w-full max-w-sm shadow-sm">
             <div className="flex items-center gap-3 border border-black/10 rounded-xl bg-white px-4 h-12 mb-3">
               <input
                 type="tel"

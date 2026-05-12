@@ -415,7 +415,7 @@ const sections = [
     id: "contact",
     title: "14. Contact Us",
     content: (
-      <div className="mt-2 bg-white/60 backdrop-blur-sm border border-black/10 rounded-xl p-5 inline-block">
+      <div className="mt-2 bg-white/60 border border-black/10 rounded-xl p-5 inline-block">
         <p className="font-medium text-black">Nestaid Inc.</p>
         <p>
           Website:{" "}
@@ -452,7 +452,7 @@ export default function PrivacyPage() {
           <div className="container-max">
             <div className="max-w-3xl mx-auto text-center">
               <Badge variant="subtle" className="mb-5">Legal</Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-6">
+              <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                 Privacy <span className="gradient-text">Policy</span>
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -479,7 +479,7 @@ export default function PrivacyPage() {
 
               {/* Sticky table of contents */}
               <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-24 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl p-5">
+                <div className="sticky top-24 bg-white/60 border border-black/10 rounded-2xl p-5">
                   <p className="text-xs font-semibold text-black uppercase tracking-widest mb-4">Contents</p>
                   <nav className="space-y-1">
                     {sections.map((s) => (
@@ -497,14 +497,14 @@ export default function PrivacyPage() {
 
               {/* Policy body */}
               <div className="lg:col-span-9">
-                <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl p-8 sm:p-10 prose-policy">
+                <div className="bg-white/60 border border-black/10 rounded-2xl p-8 sm:p-10 prose-policy">
                   {sections.map((s, idx) => (
                     <div
                       key={s.id}
                       id={s.id}
                       className={idx !== 0 ? "mt-10 pt-10 border-t border-black/8" : ""}
                     >
-                      <h2 className="text-xl sm:text-2xl font-heading tracking-tight text-black mb-4">
+                      <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6 text-black">
                         {s.title}
                       </h2>
                       <div className="text-sm text-muted-foreground leading-relaxed space-y-3 [&_ul]:mt-2 [&_ul]:ml-5 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_li]:leading-relaxed [&_strong]:text-black/80 [&_strong]:font-medium">

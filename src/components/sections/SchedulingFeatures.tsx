@@ -1,4 +1,3 @@
-"use client";
 
 import {
   PhoneCall,
@@ -35,8 +34,8 @@ export function SchedulingFeatures() {
     <section className="section-padding">
       <div className="container-max">
         {/* Header */}
-        <div className="text-center mb-14 max-w-3xl mx-auto" data-aos="fade-up">
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
+        <div className="text-center mb-14 max-w-3xl mx-auto">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             Built for the scheduling work home care teams deal with every day
           </h2>
         </div>
@@ -46,10 +45,10 @@ export function SchedulingFeatures() {
           {features.map((feature, idx) => (
             <div
               key={feature.title}
-              className="group p-5 rounded-2xl border bg-white/60 backdrop-blur-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="group p-5 rounded-2xl border bg-white/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               style={{ borderColor: "#F4C6AC" }}
-              data-aos="fade-up"
-              data-aos-delay={idx * 80}
+
+
             >
               <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center mb-3">
                 <feature.icon className="w-5 h-5 text-black/70" />

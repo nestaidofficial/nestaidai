@@ -78,8 +78,8 @@ export function Pricing() {
     <section id="pricing" className="section-padding">
       <div className="container-max">
         {/* Section header */}
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             Simple, transparent{" "}
             <span className="gradient-text">pricing</span>
           </h2>
@@ -126,11 +126,11 @@ export function Pricing() {
               className={cn(
                 "relative rounded-2xl border p-8 flex flex-col",
                 plan.featured
-                  ? "border-primary shadow-xl shadow-primary/10 bg-white/80 backdrop-blur-sm"
-                  : "border-black/10 bg-white/60 backdrop-blur-sm hover:shadow-md transition-shadow"
+                  ? "border-primary shadow-xl shadow-primary/10 bg-white/80"
+                  : "border-black/10 bg-white/60 hover:shadow-md transition-shadow"
               )}
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
+
+
             >
               {/* Popular badge */}
               {plan.badge && (

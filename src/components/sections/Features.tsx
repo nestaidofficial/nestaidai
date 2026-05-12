@@ -314,8 +314,8 @@ export function Features() {
     <section id="features" className="section-padding">
       <div className="container-max">
         {/* Header */}
-        <div className="max-w-3xl mb-10 sm:mb-14" data-aos="fade-up">
-          <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight mb-4">
+        <div className="max-w-3xl mb-10 sm:mb-14">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             One smart teammate for home care operations
           </h2>
           <p className="text-[17px] text-muted-foreground max-w-2xl">
@@ -327,7 +327,7 @@ export function Features() {
         {/* Bento grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-[minmax(180px,auto)]">
           {/* Hero card — AI Coordinator */}
-          <div className="lg:col-span-2 lg:row-span-3" data-aos="fade-up">
+          <div className="lg:col-span-2 lg:row-span-3">
             <div className="relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 sm:p-8">
               <SmoothWavyCanvas
                 backgroundColor="#F8F8F7"
@@ -359,8 +359,8 @@ export function Features() {
               <div
                 key={card.title}
                 className="lg:col-span-1 lg:row-span-1"
-                data-aos="fade-up"
-                data-aos-delay={idx * 100}
+
+
               >
                 <div className="group relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
                   <SmoothWavyCanvas
@@ -389,7 +389,7 @@ export function Features() {
         </div>
 
         {/* CRM Flow diagram — centered below bento */}
-        <div className="mt-16 sm:mt-20 flex justify-center" data-aos="fade-up">
+        <div className="mt-16 sm:mt-20 flex justify-center">
           <NessaCrmFlow
             className="h-[620px] sm:h-[540px] lg:h-[540px] w-full max-w-3xl"
             bottomBadges={{ first: "AI Receptionist", second: "AI Coordinator" }}

@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Gelasio, IBM_Plex_Sans, Inter } from "next/font/google";
 import "./globals.css";
-import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { AOSProvider } from "@/components/providers/AOSProvider";
 
 const gelasio = Gelasio({
   variable: "--font-heading",
@@ -20,7 +18,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "700"],
 });
 
 const siteUrl = "https://www.nestaid.us";
@@ -193,15 +191,13 @@ export default function RootLayout({
           </noscript>
         ) : null}
 
-        {/* Fixed base background color */}
-        <div aria-hidden="true" className="fixed inset-0 -z-20 bg-white" />
-        {/* Fixed dot-grid on top of the base color */}
-        <div
-          aria-hidden="true"
-          className="fixed inset-0 -z-10 opacity-65 [background-size:20px_20px] [background-image:radial-gradient(#cccac6_1.1px,transparent_1.1px)] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,black_20%,transparent_90%)]"
-        />
-        <AOSProvider />
-        <SmoothScroll>{children}</SmoothScroll>
+        {/* Site-wide dotted background */}
+        <div aria-hidden="true" className="fixed inset-0 -z-20 bg-white">
+          <div
+            className="absolute inset-0 bg-[radial-gradient(rgba(0,0,0,0.07)_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_right,transparent,black_18%,black_82%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_18%,black_82%,transparent)]"
+          />
+        </div>
+        {children}
 
         {gaId ? (
           <>

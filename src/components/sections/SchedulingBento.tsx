@@ -1,4 +1,3 @@
-"use client";
 
 import * as React from "react";
 import {
@@ -139,7 +138,7 @@ const FeatureCard = ({
   return (
     <div
       className={cn(
-        "h-full rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6",
+        "h-full rounded-2xl border border-black/10 bg-white/60 p-6",
         "flex flex-col justify-between",
         className
       )}
@@ -198,7 +197,7 @@ export function SchedulingBento() {
     <section className="section-padding">
       <div className="container-max">
         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-3 auto-rows-[minmax(180px,auto)]">
-          <div className="md:col-span-1 md:row-span-3" data-aos="fade-up">
+          <div className="md:col-span-1 md:row-span-3">
             <FeatureCard
               icon={<Layers3 className="h-5 w-5" />}
               eyebrow="AI Layers"
@@ -210,7 +209,7 @@ export function SchedulingBento() {
             />
           </div>
 
-          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="80">
+          <div className="md:col-span-1 md:row-span-1">
             <FeatureCard
               icon={<RefreshCcw className="h-5 w-5" />}
               eyebrow="Recovery"
@@ -220,7 +219,7 @@ export function SchedulingBento() {
             />
           </div>
 
-          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="160">
+          <div className="md:col-span-1 md:row-span-1">
             <FeatureCard
               icon={<Sparkles className="h-5 w-5" />}
               eyebrow="Go Live"
@@ -229,7 +228,7 @@ export function SchedulingBento() {
             />
           </div>
 
-          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="80">
+          <div className="md:col-span-1 md:row-span-1">
             <FeatureCard
               icon={<Route className="h-5 w-5" />}
               eyebrow="Matching"
@@ -238,7 +237,7 @@ export function SchedulingBento() {
             />
           </div>
 
-          <div className="md:col-span-1 md:row-span-1" data-aos="fade-up" data-aos-delay="160">
+          <div className="md:col-span-1 md:row-span-1">
             <FeatureCard
               icon={<PhoneCall className="h-5 w-5" />}
               eyebrow="Outreach"
@@ -247,7 +246,7 @@ export function SchedulingBento() {
             />
           </div>
 
-          <div className="md:col-span-2 md:row-span-1" data-aos="fade-up">
+          <div className="md:col-span-2 md:row-span-1">
             <FeatureCard
               icon={<CalendarClock className="h-5 w-5" />}
               eyebrow="Workflow"

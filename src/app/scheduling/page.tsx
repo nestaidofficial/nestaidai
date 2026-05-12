@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { SchedulingHero } from "@/components/sections/SchedulingHero";
+import { Hero } from "@/components/sections/Hero";
 import { SchedulingProblem } from "@/components/sections/SchedulingProblem";
 import { SchedulingBento } from "@/components/sections/SchedulingBento";
 import { SchedulingFeatures } from "@/components/sections/SchedulingFeatures";
@@ -25,7 +25,7 @@ export default function SchedulingPage() {
     <>
       <Navbar />
       <main>
-        <SchedulingHero />
+        <Hero />
         <SchedulingProblem />
         <SchedulingBento />
         <SchedulingFeatures />

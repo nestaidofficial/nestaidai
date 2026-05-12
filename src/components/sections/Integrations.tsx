@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
@@ -13,7 +12,7 @@ export function Integrations() {
     <section id="integrations" className="section-padding overflow-hidden">
       <div className="container-max">
         <Reveal direction="up" duration={0.8} amount={0.3} className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-5 text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             We build custom integrations into your systems.
           </h2>
           <p className="mx-auto max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
@@ -42,7 +41,7 @@ export function Integrations() {
               alt={`${integration.name} logo`}
               width={integration.logoWidth}
               height={integration.logoHeight}
-              className="h-12 sm:h-14 w-auto object-contain opacity-90"
+              className="h-10 sm:h-12 w-auto object-contain opacity-90"
             />
           ))}
         </Reveal>

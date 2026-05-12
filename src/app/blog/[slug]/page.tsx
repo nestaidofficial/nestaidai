@@ -135,7 +135,7 @@ export default async function BlogPostPage({
               </nav>
 
               <header className="mb-10">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-6">
+                <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                   {post.title}
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-6">
@@ -174,7 +174,7 @@ export default async function BlogPostPage({
 
               {relatedPosts.length > 0 && (
                 <aside className="mt-20 pt-10 border-t border-black/10">
-                  <h2 className="text-2xl sm:text-3xl font-heading tracking-tight mb-6">
+                  <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                     Keep reading
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -182,7 +182,7 @@ export default async function BlogPostPage({
                       <Link
                         key={related.slug}
                         href={`/blog/${related.slug}`}
-                        className="group rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
+                        className="group rounded-2xl border border-black/10 bg-white/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
                       >
                         <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
                           <time dateTime={related.date}>{formatDate(related.date)}</time>

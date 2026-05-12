@@ -1,4 +1,3 @@
-"use client";
 
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { Reveal } from "@/components/ui/reveal";
@@ -84,7 +83,7 @@ export function Testimonials() {
       <div className="container-max">
         {/* Section header */}
         <Reveal className="text-center mb-10 sm:mb-16" amount={0.4}>
-          <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight mb-4">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             Why teams choose Nestaid
           </h2>
         </Reveal>

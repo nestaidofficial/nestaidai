@@ -21,7 +21,7 @@ export function TestimonialCard({ author, text, href, className }: TestimonialCa
     <Comp
       {...(href ? { href, target: "_blank", rel: "noopener noreferrer" } : {})}
       className={cn(
-        "flex w-[320px] flex-col gap-4 rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6",
+        "flex w-[320px] flex-col gap-4 rounded-2xl border border-black/10 bg-white/60 p-6",
         href && "transition-shadow hover:shadow-md",
         className
       )}

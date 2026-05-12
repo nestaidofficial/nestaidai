@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -26,7 +25,7 @@ export function ManagementFeatures() {
       <div className="container-max">
         <div className="grid gap-6 sm:grid-cols-5">
           {/* Large card - Left side (3 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl !bg-white backdrop-blur-none" data-aos="fade-up">
+          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"
@@ -67,7 +66,7 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Tall card - Right side (2 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col !bg-white backdrop-blur-none" data-aos="fade-up" data-aos-delay="100">
+          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"
@@ -103,7 +102,7 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Bottom left card (2 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col !bg-white backdrop-blur-none" data-aos="fade-up">
+          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"
@@ -134,7 +133,7 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Bottom right card (3 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl flex flex-col !bg-white backdrop-blur-none" data-aos="fade-up" data-aos-delay="100">
+          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl flex flex-col !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"

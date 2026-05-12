@@ -38,7 +38,7 @@ export default function BlogIndexPage() {
         <section className="section-padding">
           <div className="container-max">
             <div className="max-w-3xl mx-auto text-center mb-14">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight mb-5">
+              <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
                 Home care AI, <span className="gradient-text">done right</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
@@ -50,14 +50,14 @@ export default function BlogIndexPage() {
             {featured && (
               <Link
                 href={`/blog/${featured.slug}`}
-                className="block group mb-10 rounded-3xl border border-peach bg-white/60 backdrop-blur-sm p-8 sm:p-12 hover:shadow-lg transition-all duration-300"
+                className="block group mb-10 rounded-3xl border border-peach bg-white/60 p-8 sm:p-12 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground mb-4">
                   <span>{formatDate(featured.date)}</span>
                   <span>·</span>
                   <span>{featured.readingMinutes} min read</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading tracking-tight mb-4 group-hover:underline underline-offset-4 decoration-black/30">
+                <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6 group-hover:underline underline-offset-4 decoration-black/30">
                   {featured.title}
                 </h2>
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
@@ -76,7 +76,7 @@ export default function BlogIndexPage() {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 sm:p-7 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
+                    className="group rounded-2xl border border-black/10 bg-white/60 p-6 sm:p-7 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
                   >
                     <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
                       <span>{formatDate(post.date)}</span>

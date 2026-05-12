@@ -1,4 +1,3 @@
-"use client";
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { AnimatedList } from "@/components/ui/animated-list";
@@ -57,8 +56,8 @@ export function AIOnboardingFeatures() {
       <div className="container-max">
 
         {/* Section Header */}
-        <div className="mb-12" data-aos="fade-up">
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
+        <div className="mb-12">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             How AI Onboarding works
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
@@ -70,7 +69,7 @@ export function AIOnboardingFeatures() {
         <div className="grid gap-6 sm:grid-cols-5">
 
           {/* Left large card — animated intake list */}
-          <Card className="group overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col" data-aos="fade-up">
+          <Card className="group overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col">
             <div className="p-6 pb-2">
               <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
                 Every intake step, handled automatically.
@@ -95,7 +94,7 @@ export function AIOnboardingFeatures() {
           </Card>
 
           {/* Right tall card — matching steps */}
-          <Card className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+          <Card className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl">
             <CardHeader>
               <div className="p-6 md:p-8">
                 <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
@@ -138,7 +137,7 @@ export function AIOnboardingFeatures() {
           </Card>
 
           {/* Bottom full-width card — capabilities grid */}
-          <div className="sm:col-span-5 mt-8" data-aos="fade-up">
+          <div className="sm:col-span-5 mt-8">
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-2 mb-3">
                 <Sparkles className="w-5 h-5 text-foreground" strokeWidth={1.5} />
@@ -163,7 +162,7 @@ export function AIOnboardingFeatures() {
                 ].map(({ icon: Icon, label, desc }, idx) => (
                   <div
                     key={label}
-                    className={`bg-white/60 backdrop-blur-sm p-6 space-y-3 border-peach ${
+                    className={`bg-white/60 p-6 space-y-3 border-peach ${
                       idx < 4 ? 'border-b' : ''
                     } ${
                       idx % 4 !== 3 ? 'lg:border-r' : ''

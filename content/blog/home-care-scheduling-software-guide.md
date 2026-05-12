@@ -4,6 +4,8 @@ description: "How modern home care scheduling software — with AI coordination,
 date: "2026-04-17"
 author: "Rabina Adhikari"
 authorRole: "Co-founder & CEO, Nestaid"
+image: "/blog/scheduling-guide.jpg"
+imageAlt: "Home care scheduling software dashboard"
 tags: ["Home Care Scheduling", "Operations"]
 keywords:
   - "home care scheduling software"

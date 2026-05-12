@@ -1,6 +1,3 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {
   AlertCircle,
@@ -60,28 +57,15 @@ const statusStyle = {
 };
 
 export function SchedulingHowItWorks() {
-  const [activeStep, setActiveStep] = useState(2);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep((prev) => {
-        if (prev >= steps.length) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 600);
-    return () => clearInterval(interval);
-  }, []);
+  const activeStep = steps.length; // all complete
 
   return (
     <section id="how-it-works" className="section-padding">
       <div className="container-max">
 
         {/* Header */}
-        <div className="mb-14" data-aos="fade-up">
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-3">
+        <div className="mb-14">
+          <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             From call-out to confirmed coverage
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
@@ -90,7 +74,7 @@ export function SchedulingHowItWorks() {
         </div>
 
         {/* Desktop timeline */}
-        <div className="hidden md:block" data-aos="fade-up">
+        <div className="hidden md:block">
           {/* Static line + dots */}
           <div className="relative mb-8 h-6">
             <div className="absolute top-1/2 left-[10%] right-[10%] h-px bg-black/15 -translate-y-1/2" />
@@ -129,7 +113,7 @@ export function SchedulingHowItWorks() {
                     "rounded-2xl border p-4 flex flex-col gap-3 transition-all duration-300",
                     isUpcoming
                       ? "border-black/8 bg-white/40"
-                      : "border-black/10 bg-white/60 backdrop-blur-sm"
+                      : "border-black/10 bg-white/60"
                   )}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -172,7 +156,7 @@ export function SchedulingHowItWorks() {
         </div>
 
         {/* Mobile — vertical list */}
-        <div className="flex flex-col gap-0 md:hidden" data-aos="fade-up">
+        <div className="flex flex-col gap-0 md:hidden">
           {steps.map((step, i) => (
             <div
               key={step.id}
@@ -188,7 +172,7 @@ export function SchedulingHowItWorks() {
                 "flex-1 rounded-2xl border p-4 mb-3",
                 step.status === "upcoming"
                   ? "border-black/8 bg-white/40"
-                  : "border-black/10 bg-white/60 backdrop-blur-sm"
+                  : "border-black/10 bg-white/60"
               )}>
                 <div className="flex items-center gap-2 mb-2">
                   <div className={cn(

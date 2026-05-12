@@ -117,7 +117,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-20 border-t border-black/10 pt-6 pb-8 flex items-center justify-center">
           <p className="text-xs text-gray-400">
-            &copy; {new Date().getFullYear()} Nestaid, Inc. All rights reserved.
+            &copy; 2026 Nestaid, Inc. All rights reserved.
           </p>
         </div>
       </div>

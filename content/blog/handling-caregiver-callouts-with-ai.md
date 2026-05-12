@@ -4,6 +4,8 @@ description: "Caregiver call-outs cost home care agencies millions a year. Here'
 date: "2026-04-16"
 author: "Rahul Chettri"
 authorRole: "Co-founder & CTO, Nestaid"
+image: "/blog/callouts-playbook.jpg"
+imageAlt: "Caregiver call-out routing visualization"
 tags: ["Call-out Management", "AI Coordinator", "Operations"]
 keywords:
   - "caregiver call-out management"

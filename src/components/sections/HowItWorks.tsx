@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Phone, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
@@ -8,7 +8,7 @@ import { WorkflowAnimation } from "@/components/ui/workflow-animation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 
 export function HowItWorks() {
-  const [time, setTime] = useState("");
+  const time = "9:41";
   const [phone, setPhone] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -37,18 +37,6 @@ export function HowItWorks() {
     }
   }
 
-  useEffect(() => {
-    const update = () => {
-      const now = new Date();
-      const h = now.getHours();
-      const m = now.getMinutes().toString().padStart(2, "0");
-      setTime(`${h}:${m}`);
-    };
-    update();
-    const id = setInterval(update, 10000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section id="how-it-works" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 pb-16">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +44,7 @@ export function HowItWorks() {
         <RevealGroup className="text-center mb-10 sm:mb-16" stagger={0.1} amount={0.3}>
           <RevealItem>
             <div className="flex justify-center mb-8">
-              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-2 text-sm">
                 <span className="inline-flex items-center justify-center rounded-md bg-[#FFDAB9] text-black px-2 py-0.5 text-xs font-semibold">
                   24/7
                 </span>
@@ -67,7 +55,7 @@ export function HowItWorks() {
             </div>
           </RevealItem>
           <RevealItem>
-            <h1 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight leading-tight mb-6">
+            <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
               Grow your home care agency with a <br />24/7 AI teammate.
             </h1>
           </RevealItem>

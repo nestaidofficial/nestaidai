@@ -5,7 +5,7 @@ export function SchedulingCTA() {
   return (
     <section className="section-padding">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-black p-12 sm:p-16 lg:p-20 text-center text-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)]" data-aos="fade-up">
+        <div className="relative overflow-hidden rounded-3xl bg-black p-12 sm:p-16 lg:p-20 text-center text-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)]">
           {/* Background decoration */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -21,7 +21,7 @@ export function SchedulingCTA() {
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading mb-6 text-white">
+            <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6 text-white">
               Ready to make scheduling easier to run?
             </h2>
 

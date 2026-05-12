@@ -4,6 +4,8 @@ description: "An AI receptionist handles 24/7 inbound calls for home care agenci
 date: "2026-04-18"
 author: "Rahul Chettri"
 authorRole: "Co-founder & CTO, Nestaid"
+image: "/blog/ai-receptionist.jpg"
+imageAlt: "AI receptionist handling a home care call"
 tags: ["AI Receptionist", "Home Care Operations"]
 keywords:
   - "AI receptionist for home care"

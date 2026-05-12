@@ -1,4 +1,3 @@
-"use client";
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -7,16 +6,16 @@ export function ManagementHero() {
   return (
     <section className="section-padding pb-0">
       <div className="container-max">
-        <div className="text-center max-w-3xl mx-auto" data-aos="fade-down">
+        <div className="text-center max-w-3xl mx-auto">
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 backdrop-blur-sm px-4 py-2 text-sm">
+            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 px-4 py-2 text-sm">
               <span className="text-foreground">Client & Caregiver Management</span>
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-tight leading-tight mb-5">
+          <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
             Manage records, AI workflows, and automations in one place
           </h1>
 

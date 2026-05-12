@@ -16,7 +16,7 @@ function FAQItem({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-black/10 rounded-xl overflow-hidden bg-white/60 backdrop-blur-sm">
+    <div className="border border-black/10 rounded-xl overflow-hidden bg-white/60">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between p-5 text-left hover:bg-black/5 transition-colors"
@@ -46,7 +46,7 @@ export function FAQ() {
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
           <Reveal className="text-center mb-8 sm:mb-12" amount={0.4}>
-            <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-heading tracking-tight mb-4">
+            <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
               Frequently asked questions
             </h2>
             <p className="text-[17px] text-muted-foreground max-w-2xl mx-auto">

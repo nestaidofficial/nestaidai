@@ -9,6 +9,8 @@ export type BlogFrontmatter = {
   date: string;
   author: string;
   authorRole?: string;
+  image?: string;
+  imageAlt?: string;
   tags: string[];
   keywords: string[];
   readingMinutes?: number;

@@ -1,0 +1,275 @@
+.frame {
+  width: 100%;
+  height: 100%;
+  background: #FAFAF7;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.headerRow {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topLabel {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  color: #1A1A1A;
+  opacity: 0.55;
+  white-space: nowrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  font-weight: 600;
+  color: #1A1A1A;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1D9E75;
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.timerWrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timerRing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.timerRing circle {
+  fill: none;
+  stroke-width: 4;
+}
+.timerBg {
+  stroke: #1A1A1A;
+  opacity: 0.1;
+}
+.timerFg {
+  stroke: #1A1A1A;
+  stroke-linecap: round;
+  stroke-dasharray: 528;
+  stroke-dashoffset: 528;
+  animation: drain 8s ease-in-out infinite;
+}
+@keyframes drain {
+  0% { stroke-dashoffset: 528; }
+  10% { stroke-dashoffset: 528; }
+  55% { stroke-dashoffset: 176; }
+  78% { stroke-dashoffset: 176; }
+  85%, 100% { stroke-dashoffset: 528; }
+}
+
+.timerContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.timerNums {
+  position: relative;
+  height: 36px;
+  width: 90px;
+  margin: 0 auto;
+}
+.timerValue {
+  font-size: 30px;
+  font-weight: 500;
+  color: #1A1A1A;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+}
+.timerUnit {
+  font-size: 9px;
+  font-weight: 500;
+  color: #1A1A1A;
+  opacity: 0.5;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+}
+
+.timerNum {
+  animation: count 8s ease-in-out infinite;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.timerNum:nth-child(1) { animation-delay: 0s; }
+.timerNum:nth-child(2) { animation-delay: 0.6s; }
+.timerNum:nth-child(3) { animation-delay: 1.4s; }
+.timerNum:nth-child(4) { animation-delay: 2.2s; }
+.timerNum:nth-child(5) { animation-delay: 3.0s; }
+.timerNum:nth-child(6) { animation-delay: 3.8s; }
+@keyframes count {
+  0%, 4% { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  8%, 13% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  16%, 100% { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+}
+
+.timerFinal {
+  animation: finalShow 8s ease-in-out infinite;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+@keyframes finalShow {
+  0%, 55% { opacity: 0; transform: translateX(-50%) scale(0.8); }
+  60%, 80% { opacity: 1; transform: translateX(-50%) scale(1); }
+  85%, 100% { opacity: 0; transform: translateX(-50%) scale(0.8); }
+}
+
+.caregivers {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  height: 28px;
+  align-items: center;
+}
+.cgAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 500;
+  color: #1A1A1A;
+  background: #FAFAF7;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: cgFlow 8s ease-in-out infinite;
+  position: relative;
+}
+.cgAvatarMatched {
+  background: #1A1A1A;
+  color: #FAFAF7;
+}
+.cgAvatar:nth-child(1) { animation-delay: 1.6s; }
+.cgAvatar:nth-child(2) { animation-delay: 2.4s; }
+.cgAvatar:nth-child(3) { animation-delay: 3.2s; }
+.cgAvatar:nth-child(4) { animation-delay: 4.0s; }
+.cgAvatar:nth-child(5) { animation-delay: 4.6s; }
+@keyframes cgFlow {
+  0%, 18% { opacity: 0; transform: translateY(8px) scale(0.8); }
+  22%, 70% { opacity: 1; transform: translateY(0) scale(1); }
+  78%, 100% { opacity: 0; transform: translateY(-8px) scale(0.8); }
+}
+
+.checkMark {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #1D9E75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAFAF7;
+  opacity: 0;
+  animation: checkPop 8s ease-in-out infinite 4.8s;
+}
+@keyframes checkPop {
+  0%, 60% { opacity: 0; transform: scale(0); }
+  64%, 75% { opacity: 1; transform: scale(1); }
+  80%, 100% { opacity: 0; transform: scale(0); }
+}
+
+.status {
+  position: absolute;
+  bottom: 54px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  min-height: 22px;
+}
+.statusText {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1A1A1A;
+  animation: cycle 8s ease-in-out infinite;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.statusText:nth-child(1) { animation-delay: 0s; }
+.statusText:nth-child(2) { animation-delay: 2s; }
+.statusText:nth-child(3) { animation-delay: 4s; }
+.statusText:nth-child(4) { animation-delay: 6s; }
+@keyframes cycle {
+  0%, 22%, 100% { opacity: 0; transform: translateY(6px); }
+  4%, 18% { opacity: 1; transform: translateY(0); }
+}
+
+.dotRow {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.progressDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1A1A1A;
+  opacity: 0.2;
+  animation: dotProgress 8s ease-in-out infinite;
+}
+.progressDot:nth-child(1) { animation-delay: 0s; }
+.progressDot:nth-child(2) { animation-delay: 2s; }
+.progressDot:nth-child(3) { animation-delay: 4s; }
+.progressDot:nth-child(4) { animation-delay: 6s; }
+@keyframes dotProgress {
+  0%, 22%, 100% { opacity: 0.2; transform: scale(1); }
+  4%, 18% { opacity: 1; transform: scale(1.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timerFg, .timerNum, .timerFinal, .cgAvatar, .checkMark, .statusText, .progressDot, .badgeDot {
+    animation: none;
+  }
+  .timerFinal { opacity: 1; }
+  .cgAvatar { opacity: 1; transform: none; }
+  .statusText:nth-child(1) { opacity: 1; }
+}
