@@ -7,9 +7,25 @@ import { Integrations } from "@/components/sections/Integrations";
 import { FAQ } from "@/components/sections/FAQ";
 import { LatestPosts } from "@/components/sections/LatestPosts";
 import { CallRouting } from "@/components/sections/CallRouting";
+import { faqs } from "@/lib/faq-data";
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
+      />
       <Navbar />
       <main>
         <HowItWorks />

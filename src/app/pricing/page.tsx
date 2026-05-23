@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE_URL = "https://www.nestaid.us";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Pricing",
+      item: `${SITE_URL}/pricing`,
+    },
+  ],
+};
+
 export default function PricingPage() {
-  return <PricingClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <PricingClient />
+    </>
+  );
 }

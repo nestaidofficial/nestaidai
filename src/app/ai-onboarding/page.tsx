@@ -19,9 +19,49 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE_URL = "https://www.nestaid.us";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "AI Caregiver Onboarding",
+      item: `${SITE_URL}/ai-onboarding`,
+    },
+  ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "AI Caregiver Onboarding",
+  serviceType: "Caregiver Onboarding Automation",
+  provider: { "@type": "Organization", name: "Nestaid", url: SITE_URL },
+  areaServed: "United States",
+  audience: {
+    "@type": "Audience",
+    audienceType: "Home care agencies",
+  },
+  description:
+    "AI-driven caregiver onboarding for home care agencies. Collects documents over text, verifies credentials, schedules interviews, and enrolls caregivers into the scheduling and EVV systems — without paperwork chasing.",
+  url: `${SITE_URL}/ai-onboarding`,
+};
+
 export default function AIOnboardingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Navbar />
       <main>
         <AIOnboardingHero />

@@ -91,4 +91,25 @@ If a vendor only checks half of these, they're selling you a dashboard — not a
 
 [Nestaid](/scheduling) pairs an AI receptionist that takes the call-out with an AI coordinator that runs replacement outreach. The average fill time for shifts in our platform is **under 5 minutes** — a 9× improvement over manual workflows.
 
+For the operator-side playbook with timing detail, see [how home care agencies can handle caregiver call-outs faster](/blog/how-home-care-agencies-can-handle-caregiver-callouts-faster).
+
+## FAQ
+
+**What is caregiver call-out management?**
+The workflow a home care agency runs when a scheduled caregiver becomes unable to make a shift — logging the call-out, finding a qualified replacement, confirming, updating the schedule, and notifying the client.
+
+**How much does a single unfilled caregiver shift cost?**
+$200–$500 once you stack up coordinator time, lost billable hours, client trust erosion, and overtime premiums on the eventual replacement. Multiply by 15–30 call-outs per week at a mid-sized agency and the annual cost easily clears $50,000.
+
+**What's the median fill time for a caregiver call-out today?**
+Manual workflows typically take 30–60 minutes. AI-native workflows with parallel voice + text outreach typically fill in under 5 minutes.
+
+**Are caregivers comfortable getting offers from an AI?**
+Across the pilots we've run, caregivers prefer it — fewer unknown-number voicemails, text-based shift offers, and instant confirmation. Most adoption resistance comes from office staff, not caregivers.
+
+**How do I reduce no-shows (the slow-motion call-out)?**
+Pre-shift confirmation texts an hour before the visit. Anyone who doesn't respond gets flagged as a no-show risk and replacement outreach begins proactively. This single change reduces no-shows 50–70% in most agencies.
+
+## Run the math on your agency
+
 Curious about the math for your specific agency? [Book a 30-minute demo](https://calendly.com/rahulchettri601/nestaid-demo-call) and we'll walk through the ROI on your actual call-out volume.

@@ -74,4 +74,25 @@ You don't need "AI" features that don't map to a real workflow. Beware of:
 
 At [Nestaid](/), we built the scheduling layer around one principle: **the system should do the work, not tell the coordinator to do the work**. When a caregiver calls out, Nestaid's AI coordinator opens the shift, contacts qualified caregivers over voice and text, confirms the replacement, and updates the schedule. The coordinator sees a filled shift, not a to-do list.
 
+For the architectural framing, see [AI-native home care software: what it means](/blog/ai-native-home-care-software-what-it-means). For an honest vendor comparison, see [best home care scheduling software in 2026 (compared)](/blog/best-home-care-scheduling-software-2026-compared).
+
+## FAQ
+
+**What is home care scheduling software?**
+Software designed to manage the schedule of caregivers and clients at a home care agency — including shift assignment, availability tracking, EVV integration, and (in modern platforms) AI-driven call-out coverage and matching.
+
+**Is "home care scheduling software" the same as "homecare scheduling software"?**
+Yes. The spelling difference is convention only. Both refer to scheduling software for non-medical / private duty home care agencies. Home health agencies (Medicare-certified, skilled clinical) use a different category.
+
+**Do small home care agencies need scheduling software?**
+Past 5–10 caregivers, the scheduling complexity outgrows a spreadsheet quickly. The point at which dedicated software pays off depends on call volume, call-out rate, and whether the owner is also the coordinator.
+
+**What's the difference between scheduling software and an AI-native operations platform?**
+Scheduling software stores and displays the schedule. An AI-native operations platform executes the workflows around the schedule — taking call-outs, contacting replacement caregivers, updating the schedule, syncing EVV. See [home care agency software vs AI-native care operations platform](/blog/home-care-agency-software-vs-ai-native-care-operations-platform).
+
+**How important is EVV integration?**
+For any Medicaid-funded visits, essential. EVV integration must be real-time (not nightly batch) to prevent exceptions from compounding. See [EVV problems in home care](/blog/evv-problems-in-home-care-missed-clock-ins-exceptions).
+
+## See it live
+
 Want to see how fast that works on your actual caregiver roster? [Book a free 30-minute demo](https://calendly.com/rahulchettri601/nestaid-demo-call).

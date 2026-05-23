@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   const url = `/blog/${post.slug}`;
   return {
-    title: { absolute: post.title },
+    title: post.title,
     description: post.description,
     keywords: post.keywords,
     alternates: { canonical: url },
@@ -67,16 +67,18 @@ export default async function BlogPostPage({
     .slice(0, 2);
 
   const siteUrl = "https://www.nestaid.us";
+  const ogImageUrl = `${siteUrl}/opengraph-image`;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
+    headline: post.title.length > 110 ? post.title.slice(0, 107) + "…" : post.title,
     description: post.description,
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: `${post.date}T00:00:00Z`,
+    dateModified: `${post.date}T00:00:00Z`,
     author: {
       "@type": "Person",
       name: post.author,
+      url: `${siteUrl}/about`,
       ...(post.authorRole ? { jobTitle: post.authorRole } : {}),
     },
     publisher: {
@@ -86,14 +88,23 @@ export default async function BlogPostPage({
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/logomain.jpg`,
+        width: 512,
+        height: 195,
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${siteUrl}/blog/${post.slug}`,
     },
-    image: `${siteUrl}/opengraph-image`,
+    image: {
+      "@type": "ImageObject",
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+    },
+    inLanguage: "en-US",
     keywords: post.keywords.join(", "),
+    articleSection: post.tags?.[0] ?? "Home Care AI",
   };
 
   const breadcrumbSchema = {
@@ -111,6 +122,22 @@ export default async function BlogPostPage({
     ],
   };
 
+  const faqSchema =
+    post.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
@@ -121,6 +148,12 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <Navbar />
       <main>
         <article className="section-padding">

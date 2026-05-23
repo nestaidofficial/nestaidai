@@ -66,4 +66,25 @@ If you're evaluating AI receptionists for your agency, the short list:
 
 [Nestaid](/) pairs Nessa — the AI receptionist — with an AI coordinator that handles the workflows *started* on the call. When a caregiver calls out, Nessa logs the call-out, the AI coordinator reaches out to available caregivers, and your scheduler sees a filled shift instead of an empty one.
 
+For the agency-specific framing, see [AI receptionist for home care agencies: never miss a client call again](/blog/ai-receptionist-for-home-care-agencies-never-miss-a-call). For the revenue impact, see [why missed calls cost home care agencies new clients](/blog/why-missed-calls-cost-home-care-agencies-new-clients).
+
+## FAQ
+
+**What is an AI receptionist for home care?**
+Software that picks up every inbound call to a home care agency, talks to the caller the way a front-desk coordinator would, captures intake or call-out details, and routes the conversation into the right workflow — all without a human picking up the phone.
+
+**Is an AI receptionist HIPAA compliant?**
+HIPAA compliance is a process, not a checkbox. A reasonable vendor should be built HIPAA-conscious — with encryption in transit and at rest, access controls, audit logs, and BAA support — and you should verify their controls before sending any PHI. Nestaid is built with privacy and security as first principles and supports BAAs.
+
+**How is it different from an answering service?**
+An answering service takes a message and leaves the work for your team to do later. An AI receptionist starts the workflow on the call itself — logs the call-out, books the discovery call, captures intake data — so by the time the call ends, the work is in motion.
+
+**Can it handle caregiver call-outs?**
+Yes. The receptionist logs the call-out with shift details and reason, notifies the coordinator, and in Nestaid hands off to the Coverage Coordinator Agent which fills the shift via parallel outreach. See [how home care agencies can handle caregiver call-outs faster](/blog/how-home-care-agencies-can-handle-caregiver-callouts-faster).
+
+**Does it work in languages other than English?**
+A home-care-grade AI receptionist should support the languages your families and caregivers actually speak. Nestaid handles English, Spanish, Mandarin, and Tagalog by default, and can be configured per agency.
+
+## See it live
+
 Ready to see it in action? [Book a free 30-minute demo](https://calendly.com/rahulchettri601/nestaid-demo-call) or call Nessa directly from the [Nestaid homepage](/) to experience a live AI receptionist call in 30 seconds.

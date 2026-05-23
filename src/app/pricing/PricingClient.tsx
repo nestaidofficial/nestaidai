@@ -62,10 +62,22 @@ export default function PricingClient() {
                 Transparent <span className="gradient-text">Pricing</span>
               </h1>
               <p className="font-subheading text-lg sm:text-xl text-foreground max-w-2xl mx-auto mb-4">
-                Value-based pricing for home care teams
+                Usage-based pricing built for home care agencies
               </p>
               <p className="text-base text-muted-foreground max-w-2xl mx-auto">
                 Pay for the work Nestaid handles — not for unused seats.
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto mb-16 space-y-4 text-base text-muted-foreground leading-relaxed">
+              <p>
+                Most home care software charges per seat — every coordinator, every scheduler, every supervisor. That model penalizes growth. Nestaid is different. Our pricing scales with the work our AI agents actually do: calls answered, call-outs covered, shifts coordinated. If we save your team five hours of phone tag this week, you pay for those five hours of automation. If your volume drops, your bill drops with it.
+              </p>
+              <p>
+                Three usage levers shape every quote: inbound call volume handled by the <strong>AI Receptionist</strong>, coordinator actions completed by the <strong>AI Coordinator</strong> (call-out outreach, caregiver follow-ups, intake confirmations), and scheduling outcomes — open shifts filled, conflicts resolved, exceptions cleaned up. We size each lever to your agency's profile during a short discovery call before quoting.
+              </p>
+              <p>
+                Every plan includes guided implementation, EVV-aware workflows, integration with the home care software you already use (we work alongside AxisCare, WellSky Personal Care, HHAeXchange, AlayaCare, CareSmartz360, and others — we don't replace them), and a dedicated launch contact. There are no per-caregiver fees, no per-client fees, and no setup fees on annual plans.
               </p>
             </div>
 
