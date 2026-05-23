@@ -154,6 +154,7 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <div aria-hidden="true" className="fixed inset-0 -z-10 bg-white" />
       <Navbar />
       <main>
         <article className="section-padding">
