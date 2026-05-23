@@ -62,7 +62,7 @@ export function CallRouting() {
             Smart Call Routing
           </p>
           <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
-            Coverage that <em className="italic">follows the clock</em>
+            Coverage that <em className="italic" style={{ color: "#F58D42" }}>follows</em> the clock
           </h2>
           <p className="text-[17px] text-muted-foreground max-w-2xl mx-auto">
             Sofia handles mornings. Anna covers nights and weekends. Every call

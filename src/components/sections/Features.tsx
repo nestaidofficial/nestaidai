@@ -316,7 +316,7 @@ export function Features() {
         {/* Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
-            One smart teammate for home care operations
+            One <span style={{ color: "#F58D42" }}>smart teammate</span> for home care operations
           </h2>
           <p className="text-[17px] text-muted-foreground max-w-2xl">
             Nestaid handles scheduling, caregiver coordination, EVV, and daily

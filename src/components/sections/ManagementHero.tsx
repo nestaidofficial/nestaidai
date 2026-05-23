@@ -16,7 +16,7 @@ export function ManagementHero() {
 
           {/* Headline */}
           <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
-            Manage records, AI workflows, and automations in one place
+            Manage <span style={{ color: "#F58D42" }}>records</span>, <span style={{ color: "#F58D42" }}>AI workflows</span>, and <span style={{ color: "#F58D42" }}>automations</span> in one place
           </h1>
 
           {/* Subtext */}

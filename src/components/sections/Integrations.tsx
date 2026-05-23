@@ -13,7 +13,7 @@ export function Integrations() {
       <div className="container-max">
         <Reveal direction="up" duration={0.8} amount={0.3} className="mx-auto max-w-4xl text-center">
           <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
-            We build custom integrations into your systems.
+            We build <span style={{ color: "#F58D42" }}>custom integrations</span> into your systems.
           </h2>
           <p className="mx-auto max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
             We connect to your software so our team can schedule like your best

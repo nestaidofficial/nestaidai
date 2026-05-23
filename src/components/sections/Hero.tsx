@@ -9,7 +9,7 @@ export function Hero() {
         <RevealGroup className="w-full max-w-4xl mx-auto text-center mb-10 sm:mb-16" stagger={0.1} amount={0.3}>
           <RevealItem>
             <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
-              Built for care operations and management
+              Built for <span style={{ color: "#F58D42" }}>care operations</span> and <span style={{ color: "#F58D42" }}>management</span>
             </h2>
           </RevealItem>
 

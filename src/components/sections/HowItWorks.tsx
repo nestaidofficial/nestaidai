@@ -56,7 +56,8 @@ export function HowItWorks() {
           </RevealItem>
           <RevealItem>
             <h1 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">
-              Grow your home care agency with a <br />24/7 AI teammate.
+              Grow your home care agency with a <br />
+              <span style={{ color: "#F58D42" }}>24/7 AI teammate.</span>
             </h1>
           </RevealItem>
           <RevealItem>
