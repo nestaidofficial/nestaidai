@@ -5,6 +5,7 @@ import { SchedulingHero } from "@/components/sections/SchedulingHero";
 import { SchedulingProblem } from "@/components/sections/SchedulingProblem";
 import { SchedulingBento } from "@/components/sections/SchedulingBento";
 import { SchedulingFeatures } from "@/components/sections/SchedulingFeatures";
+import { ProductCrossLinks } from "@/components/sections/ProductCrossLinks";
 
 export const metadata: Metadata = {
   title: "AI Scheduling & Call-Out Coordination for Home Care",
@@ -69,6 +70,7 @@ export default function SchedulingPage() {
         <SchedulingProblem />
         <SchedulingBento />
         <SchedulingFeatures />
+        <ProductCrossLinks current="scheduling" />
       </main>
       <Footer />
     </>

@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AIOnboardingHero } from "@/components/sections/AIOnboardingHero";
 import { AIOnboardingFeatures } from "@/components/sections/AIOnboardingFeatures";
 import { AIOnboardingCTA } from "@/components/sections/AIOnboardingCTA";
+import { ProductCrossLinks } from "@/components/sections/ProductCrossLinks";
 
 export const metadata: Metadata = {
   title: "AI Caregiver Onboarding for Home Care Agencies",
@@ -66,6 +67,7 @@ export default function AIOnboardingPage() {
       <main>
         <AIOnboardingHero />
         <AIOnboardingFeatures />
+        <ProductCrossLinks current="ai-onboarding" />
         <AIOnboardingCTA />
       </main>
       <Footer />

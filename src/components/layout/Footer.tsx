@@ -12,6 +12,7 @@ import {
   Shield,
   FileText,
   Leaf,
+  Mail,
 } from "lucide-react";
 
 const brand = {
@@ -41,6 +42,7 @@ const columns = [
     links: [
       { name: "About", Icon: Info, href: "/about" },
       { name: "Blog", Icon: Leaf, href: "/blog" },
+      { name: "Contact", Icon: Mail, href: "/contact" },
     ],
   },
   {

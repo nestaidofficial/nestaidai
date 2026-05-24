@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import NessaCrmFlow from "@/components/ui/nessa-crm-flow";
 import SmoothWavyCanvas from "@/components/ui/smooth-wavy-canvas";
@@ -9,6 +10,7 @@ import {
   Phone,
   UserCog,
   CheckCircle2,
+  ArrowUpRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -18,18 +20,24 @@ const supportingCards = [
     title: "Client & Caregiver Management",
     description:
       "Keep all client profiles, care plans, and caregiver credentials in one place — always accurate and easy to access.",
+    href: "/management",
+    cta: "Explore agency management",
   },
   {
     eyebrow: "EVV",
     title: "Electronic Visit Verification",
     description:
       "Track visits with GPS-based check-in and check-out — fully compliant with Medicaid EVV requirements.",
+    href: "/management",
+    cta: "See compliance tools",
   },
   {
     eyebrow: "Onboarding",
     title: "AI-Powered Onboarding",
     description:
       "Help clients and caregivers complete onboarding faster with guided workflows, reminders, and progress tracking.",
+    href: "/ai-onboarding",
+    cta: "How AI onboarding works",
   },
 ];
 
@@ -345,8 +353,14 @@ export function Features() {
                   AI Coordinator & Receptionist
                 </p>
                 <p className="text-sm leading-relaxed text-muted-foreground mb-3 max-w-md">
-                  Answers calls, handles call-outs, keeps schedules on track —
-                  24/7.
+                  Answers calls, handles{" "}
+                  <Link
+                    href="/scheduling"
+                    className="text-[#C97B5B] underline underline-offset-2 hover:opacity-80"
+                  >
+                    caregiver call-outs
+                  </Link>
+                  , keeps schedules on track — 24/7.
                 </p>
                 <CallMockup />
               </div>
@@ -354,13 +368,13 @@ export function Features() {
           </div>
 
           {/* Supporting cards */}
-          {supportingCards.map((card, idx) => {
+          {supportingCards.map((card) => {
             return (
-              <div
+              <Link
                 key={card.title}
-                className="lg:col-span-1 lg:row-span-1"
-
-
+                href={card.href}
+                className="lg:col-span-1 lg:row-span-1 block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F58D42] rounded-3xl"
+                aria-label={`${card.title} — ${card.cta}`}
               >
                 <div className="group relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
                   <SmoothWavyCanvas
@@ -378,12 +392,16 @@ export function Features() {
                   <h3 className="font-body font-bold text-lg sm:text-xl tracking-tight text-foreground mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
+                  <p className="text-sm leading-relaxed text-muted-foreground mb-3">
                     {card.description}
                   </p>
+                  <span className="inline-flex items-center gap-1 text-xs font-medium text-[#C97B5B] group-hover:gap-1.5 transition-all">
+                    {card.cta}
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

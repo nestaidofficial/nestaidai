@@ -18,12 +18,10 @@ import {
 import { LucideIcon } from 'lucide-react';
 import {
   Users,
-  Star,
   FileText,
   Shield,
-  Handshake,
   Leaf,
-  HelpCircle,
+  Mail,
   CalendarDays,
   MapPin,
   CreditCard,
@@ -333,16 +331,10 @@ const companyLinks: LinkItem[] = [
     icon: Users,
   },
   {
-    title: 'Customer Stories',
-    href: '#',
-    description: "See how we've helped our clients succeed",
-    icon: Star,
-  },
-  {
-    title: 'Partnerships',
-    href: '#',
-    icon: Handshake,
-    description: 'Collaborate with us for mutual growth',
+    title: 'Contact',
+    href: '/contact',
+    description: 'Book a demo, email us, or talk to Nessa',
+    icon: Mail,
   },
 ];
 
@@ -362,28 +354,5 @@ const companyLinks2: LinkItem[] = [
     href: '/blog',
     icon: Leaf,
   },
-  {
-    title: 'Help Center',
-    href: '#',
-    icon: HelpCircle,
-  },
 ];
 
-function useScroll(threshold: number) {
-  const [scrolled, setScrolled] = React.useState(false);
-
-  const onScroll = React.useCallback(() => {
-    setScrolled(window.scrollY > threshold);
-  }, [threshold]);
-
-  React.useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [onScroll]);
-
-  React.useEffect(() => {
-    onScroll();
-  }, [onScroll]);
-
-  return scrolled;
-}

@@ -206,6 +206,54 @@ export default async function BlogPostPage({
                 </Link>
               </div>
 
+              <aside className="mt-20 pt-10 border-t border-black/10">
+                <h2 className="text-xl sm:text-2xl font-heading tracking-tight mb-2">
+                  Explore the Nestaid platform
+                </h2>
+                <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
+                  See how Nestaid&apos;s AI agents run home care operations end to end.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {[
+                    {
+                      href: "/scheduling",
+                      title: "AI Scheduling & Call-Outs",
+                      desc: "Fill open shifts in under 5 minutes, 24/7.",
+                    },
+                    {
+                      href: "/management",
+                      title: "Agency Management",
+                      desc: "Client records, credentials, and compliance in one place.",
+                    },
+                    {
+                      href: "/ai-onboarding",
+                      title: "AI Caregiver Onboarding",
+                      desc: "Collect forms, verify compliance, and book interviews.",
+                    },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group rounded-2xl border border-black/10 bg-white/60 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      <h3 className="text-base font-heading tracking-tight mb-1.5 group-hover:underline underline-offset-4 decoration-black/30">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground mt-5">
+                  Compare plans on the{" "}
+                  <Link href="/pricing" className="font-medium text-black underline underline-offset-2 hover:opacity-70">
+                    pricing page
+                  </Link>
+                  .
+                </p>
+              </aside>
+
               {relatedPosts.length > 0 && (
                 <aside className="mt-20 pt-10 border-t border-black/10">
                   <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6">

@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ManagementHero } from "@/components/sections/ManagementHero";
 import { ManagementFeatures } from "@/components/sections/ManagementFeatures";
 import { AgencyOnboarding } from "@/components/sections/AgencyOnboarding";
+import { ProductCrossLinks } from "@/components/sections/ProductCrossLinks";
 
 export const metadata: Metadata = {
   title: "Agency Management Platform for Home Care",
@@ -67,6 +68,7 @@ export default function ManagementPage() {
         <ManagementHero />
         <ManagementFeatures />
         <AgencyOnboarding />
+        <ProductCrossLinks current="management" />
       </main>
       <Footer />
     </>
