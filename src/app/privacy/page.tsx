@@ -159,100 +159,53 @@ const sections = [
     content: (
       <>
         <p>
-          Nestaid offers optional integrations with Google services that Agency
-          Customers may enable. Connecting these services is voluntary and can
-          be disconnected at any time from Nestaid&rsquo;s integration settings.
+          Nestaid offers optional Google integrations that Agency Customers may
+          enable and disconnect at any time from integration settings.
         </p>
 
-        <p className="font-medium text-black/80 mt-4">
-          Google Sign-In (OpenID Connect)
-        </p>
+        <p className="font-medium text-black/80 mt-4">Google Sign-In</p>
         <p>
-          When an agency user chooses &ldquo;Sign in with Google,&rdquo; Nestaid
-          uses the <strong>openid</strong>,{" "}
-          <strong>https://www.googleapis.com/auth/userinfo.email</strong>, and{" "}
-          <strong>https://www.googleapis.com/auth/userinfo.profile</strong>{" "}
-          scopes only to identify the user, link their Google account to their
-          Nestaid agency user record, and complete authentication. We collect
-          and store the user&rsquo;s Google account email, basic profile name,
-          and Google account identifier solely for the purpose of authentication
-          and account linkage. This data is not used for advertising, marketing,
-          or any unrelated purpose.
+          We use the <strong>openid</strong>,{" "}
+          <strong>userinfo.email</strong>, and{" "}
+          <strong>userinfo.profile</strong> scopes only to authenticate the user
+          and link their Google account to their Nestaid record. We store the
+          user&rsquo;s email, profile name, and Google account ID. Not used for
+          advertising or marketing.
         </p>
 
-        <p className="font-medium text-black/80 mt-4">
-          Google Calendar Integration (AI Receptionist Appointment Booking)
-        </p>
+        <p className="font-medium text-black/80 mt-4">Google Calendar</p>
         <p>
-          Nestaid uses the{" "}
-          <strong>https://www.googleapis.com/auth/calendar.events</strong> scope
-          only for its AI Receptionist appointment booking feature for home-care
-          agencies. The scope is used to:
-        </p>
-        <ul>
-          <li>
-            Read existing events on the agency&rsquo;s selected Google Calendar
-            during business hours to calculate available appointment slots
-          </li>
-          <li>
-            Create a Google Calendar event when a caller confirms an appointment
-            (with the appointment title, start/end time, time zone, attendee
-            email, and an internal appointment ID)
-          </li>
-          <li>
-            Update the corresponding Google Calendar event when an appointment
-            is rescheduled in Nestaid
-          </li>
-          <li>
-            Delete the corresponding Google Calendar event when an appointment
-            is cancelled in Nestaid
-          </li>
-        </ul>
-        <p>
-          Nestaid does not request access to broader Google Calendar settings,
-          calendar metadata, sharing permissions, ACLs, or user settings. We do
-          not request the broader{" "}
-          <strong>https://www.googleapis.com/auth/calendar</strong> scope
-          because we only need access to event objects required for appointment
-          booking.
+          We use the <strong>calendar.events</strong> scope solely for AI
+          Receptionist appointment booking to: read events during business hours
+          to find availability, and create, update, or delete events as
+          appointments are booked, rescheduled, or cancelled in Nestaid. We do
+          not request the broader <strong>calendar</strong> scope or access
+          calendar settings, metadata, ACLs, or sharing permissions.
         </p>
 
-        <p className="font-medium text-black/80 mt-4">
-          Data We Store From Google
-        </p>
+        <p className="font-medium text-black/80 mt-4">Data We Store</p>
         <p>
-          For Google Sign-In, we store the user&rsquo;s Google email address,
-          basic profile name, and Google account identifier, plus an OAuth
-          refresh token used to maintain the integration. For Google Calendar,
-          we store only the data needed to manage bookings: appointment title,
-          start/end time, time zone, attendee email, internal appointment ID,
-          and the Google event ID returned by Google. Existing calendar events
-          read for availability checks are processed transiently and are not
-          persisted by Nestaid.
+          Sign-In: email, profile name, Google account ID, and OAuth refresh
+          token. Calendar: appointment title, start/end time, time zone,
+          attendee email, internal appointment ID, and Google event ID. Events
+          read for availability checks are processed transiently and not
+          persisted.
         </p>
 
-        <p className="font-medium text-black/80 mt-4">
-          Sharing of Google User Data
-        </p>
+        <p className="font-medium text-black/80 mt-4">Sharing</p>
         <p>
-          Nestaid does not sell, rent, or transfer Google user data to third
-          parties for their own purposes. We share Google user data only with
-          the Agency Customer that connected the account and with vetted
-          subprocessors strictly required to operate the booking and
-          authentication features (for example, secure cloud hosting and
-          database providers), under contractual confidentiality and security
+          We do not sell or transfer Google user data. We share it only with
+          the connecting Agency Customer and vetted subprocessors (e.g., hosting
+          and database providers) under confidentiality and security
           obligations.
         </p>
 
         <p className="font-medium text-black/80 mt-4">
-          Retention, Deletion, and User Control
+          Retention &amp; Revocation
         </p>
         <p>
-          Users can disconnect Google Sign-In or Google Calendar at any time
-          from Nestaid&rsquo;s integration settings. On disconnect, Nestaid
-          revokes and deletes the stored OAuth refresh token and removes stored
-          Google event IDs from our database. Users can additionally revoke
-          access at{" "}
+          On disconnect, Nestaid revokes and deletes the stored OAuth refresh
+          token and Google event IDs. Users can also revoke access at{" "}
           <a
             href="https://myaccount.google.com/permissions"
             target="_blank"
@@ -261,16 +214,13 @@ const sections = [
           >
             myaccount.google.com/permissions
           </a>
-          . Nestaid does not delete the underlying Google Calendar events on
-          disconnect, since those events belong to the user&rsquo;s calendar.
+          . Existing calendar events remain in the user&rsquo;s Google Calendar.
         </p>
 
-        <p className="font-medium text-black/80 mt-4">
-          Limited Use Disclosure
-        </p>
+        <p className="font-medium text-black/80 mt-4">Limited Use</p>
         <p>
-          Nestaid&rsquo;s use and transfer of information received from Google
-          APIs to any other app will adhere to the{" "}
+          Nestaid&rsquo;s use and transfer of information from Google APIs
+          adheres to the{" "}
           <a
             href="https://developers.google.com/terms/api-services-user-data-policy"
             target="_blank"
@@ -279,18 +229,11 @@ const sections = [
           >
             Google API Services User Data Policy
           </a>
-          , including the Limited Use requirements. Specifically: (1) we use
-          Google user data only to provide and improve the user-facing features
-          described above; (2) we do not transfer Google user data to third
-          parties except as needed to provide or improve those features, to
-          comply with applicable law, or as part of a merger, acquisition, or
-          sale of assets with appropriate notice to users; (3) we do not use
-          Google user data for serving advertisements; and (4) we do not allow
-          humans to read Google user data unless we have obtained the
-          user&rsquo;s affirmative agreement for specific data, it is necessary
-          for security purposes (such as investigating abuse), to comply with
-          applicable law, or the data is aggregated and used for internal
-          operations under standard privacy protections.
+          , including the Limited Use requirements. We do not use Google data
+          for advertising, do not transfer it except as needed to operate these
+          features or comply with law, and do not allow humans to read it
+          except with the user&rsquo;s consent, for security/abuse
+          investigation, legal compliance, or in aggregated form.
         </p>
       </>
     ),
