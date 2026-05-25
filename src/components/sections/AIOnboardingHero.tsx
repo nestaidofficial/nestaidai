@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { ArrowRight, BrainCircuit, MessageSquareText, UserCheck } from "lucide-react";
+import { ArrowUpRight, BrainCircuit, MessageSquareText, UserCheck } from "lucide-react";
 
 const highlights = [
   { icon: MessageSquareText, label: "Intake Interviews", desc: "AI conducts structured intake calls" },
@@ -15,7 +15,7 @@ export function AIOnboardingHero() {
         <div className="text-center max-w-3xl mx-auto">
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/60 px-4 py-2 text-sm gap-1.5">
+            <div className="inline-flex items-center gap-2 border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
               <BrainCircuit className="w-4 h-4 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground">AI Onboarding</span>
             </div>
@@ -37,12 +37,10 @@ export function AIOnboardingHero() {
               href="https://calendly.com/rahulchettri601/nestaid-demo-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium text-foreground hover:bg-white/80 transition-colors"
+              className="group inline-flex items-center gap-2 bg-black px-6 py-3 font-sans text-sm font-light text-white transition-all hover:bg-black/85"
             >
               See It in Action
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-black">
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
-              </span>
+              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
           </div>
         </div>

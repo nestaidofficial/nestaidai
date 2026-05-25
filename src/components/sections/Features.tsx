@@ -336,7 +336,7 @@ export function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-[minmax(180px,auto)]">
           {/* Hero card — AI Coordinator */}
           <div className="lg:col-span-2 lg:row-span-3">
-            <div className="relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 sm:p-8">
+            <div className="relative h-full overflow-hidden rounded-none border border-dashed border-black/15 bg-white p-6 sm:p-8">
               <SmoothWavyCanvas
                 backgroundColor="#F8F8F7"
                 primaryColor="52, 52, 52"
@@ -373,10 +373,10 @@ export function Features() {
               <Link
                 key={card.title}
                 href={card.href}
-                className="lg:col-span-1 lg:row-span-1 block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F58D42] rounded-3xl"
+                className="lg:col-span-1 lg:row-span-1 block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F58D42] rounded-none"
                 aria-label={`${card.title} — ${card.cta}`}
               >
-                <div className="group relative h-full overflow-hidden rounded-3xl border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
+                <div className="group relative h-full overflow-hidden rounded-none border border-dashed border-black/15 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
                   <SmoothWavyCanvas
                     backgroundColor="#F8F8F7"
                     primaryColor="52, 52, 52"

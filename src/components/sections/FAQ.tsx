@@ -16,7 +16,7 @@ function FAQItem({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-black/10 rounded-xl overflow-hidden bg-white/60">
+    <div className="border border-black/10 rounded-none overflow-hidden bg-white/60">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between p-5 text-left hover:bg-black/5 transition-colors"

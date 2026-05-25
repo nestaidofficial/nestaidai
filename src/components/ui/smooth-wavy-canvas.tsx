@@ -209,7 +209,7 @@ export default function SmoothWavyCanvas({
   }, [accentColor, animationSpeed, backgroundColor, lineOpacity, primaryColor, secondaryColor]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none" style={{ backgroundColor }}>
+    <div className="absolute inset-0 overflow-hidden rounded-[inherit] pointer-events-none" style={{ backgroundColor }}>
       <canvas ref={canvasRef} className="block h-full w-full" />
     </div>
   );
