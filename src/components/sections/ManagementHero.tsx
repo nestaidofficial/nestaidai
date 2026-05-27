@@ -9,7 +9,7 @@ export function ManagementHero() {
         <div className="text-center max-w-3xl mx-auto">
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-2 border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
+            <div className="inline-flex items-center gap-2 rounded-full border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
               <span className="text-foreground">Client & Caregiver Management</span>
             </div>
           </div>

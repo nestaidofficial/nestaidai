@@ -44,7 +44,7 @@ export function HowItWorks() {
         <RevealGroup className="text-center mb-10 sm:mb-16" stagger={0.1} amount={0.3}>
           <RevealItem>
             <div className="flex justify-center mb-8">
-              <div className="inline-flex items-center gap-2 border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
+              <div className="inline-flex items-center gap-2 rounded-full border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
                 <span className="inline-flex items-center justify-center rounded-md bg-[#FFDAB9] text-black px-2 py-0.5 text-xs font-semibold">
                   24/7
                 </span>

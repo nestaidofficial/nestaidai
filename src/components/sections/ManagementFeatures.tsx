@@ -25,7 +25,7 @@ export function ManagementFeatures() {
       <div className="container-max">
         <div className="grid gap-6 sm:grid-cols-5">
           {/* Large card - Left side (3 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl !bg-white">
+          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-3 rounded-none !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"
@@ -37,7 +37,7 @@ export function ManagementFeatures() {
             <div className="relative z-10">
               <CardHeader>
                 <div className="p-6 md:p-8">
-                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
+                  <h3 className="font-body font-bold tracking-tight text-2xl sm:text-3xl lg:text-4xl mb-3">
                     Client & Caregiver Management
                   </h3>
                   <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
@@ -66,7 +66,7 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Tall card - Right side (2 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col !bg-white">
+          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-2 rounded-none flex flex-col !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"
@@ -77,7 +77,7 @@ export function ManagementFeatures() {
             />
             <div className="relative z-10">
               <div className="p-6 pb-2">
-                <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-body font-semibold tracking-tight text-center">
                   Keep every profile, plan, and credential easy to find and update.
                 </p>
               </div>
@@ -102,7 +102,7 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Bottom left card (2 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col !bg-white">
+          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-2 rounded-none flex flex-col !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"
@@ -113,7 +113,7 @@ export function ManagementFeatures() {
             />
             <div className="relative z-10 flex h-full flex-col">
               <CardHeader className="p-6 md:p-8">
-                <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-body font-semibold tracking-tight text-center">
                   Give your team one place to manage client records, care details, and AI-driven workflows.
                 </p>
               </CardHeader>
@@ -133,7 +133,7 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Bottom right card (3 columns) */}
-          <Card className="group relative overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl flex flex-col !bg-white">
+          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-3 rounded-none flex flex-col !bg-white">
             <SmoothWavyCanvas
               backgroundColor="#F8F8F7"
               primaryColor="52, 52, 52"
@@ -144,7 +144,7 @@ export function ManagementFeatures() {
             />
             <div className="relative z-10 flex h-full flex-col">
               <CardHeader className="p-6 md:p-8">
-                <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
+                <h3 className="font-body font-bold tracking-tight text-2xl sm:text-3xl lg:text-4xl mb-3">
                   Client Onboarding Workflows
                 </h3>
                 <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">

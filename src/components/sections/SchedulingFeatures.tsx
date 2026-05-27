@@ -45,7 +45,7 @@ export function SchedulingFeatures() {
           {features.map((feature, idx) => (
             <div
               key={feature.title}
-              className="group p-5 rounded-2xl border bg-white/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="group p-5 rounded-none border border-dashed bg-white/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               style={{ borderColor: "#F4C6AC" }}
 
 

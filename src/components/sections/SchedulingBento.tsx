@@ -138,7 +138,7 @@ const FeatureCard = ({
   return (
     <div
       className={cn(
-        "h-full rounded-2xl border border-black/10 bg-white/60 p-6",
+        "h-full rounded-none border border-dashed border-black/15 bg-white/60 p-6",
         "flex flex-col justify-between",
         className
       )}

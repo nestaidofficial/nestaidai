@@ -69,7 +69,7 @@ export function AIOnboardingFeatures() {
         <div className="grid gap-6 sm:grid-cols-5">
 
           {/* Left large card — animated intake list */}
-          <Card className="group overflow-hidden shadow-black/5 sm:col-span-2 sm:rounded-2xl flex flex-col">
+          <Card className="group overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-2 rounded-none flex flex-col">
             <div className="p-6 pb-2">
               <p className="text-xl sm:text-2xl lg:text-3xl font-heading text-center">
                 Every intake step, handled automatically.
@@ -80,7 +80,7 @@ export function AIOnboardingFeatures() {
                 {intakeItems.map(({ icon: Icon, label, desc }) => (
                   <div
                     key={label}
-                    className="flex items-center gap-4 rounded-xl border border-peach bg-white/80 px-4 py-3.5"
+                    className="flex items-center gap-4 rounded-none border border-dashed border-peach bg-white/80 px-4 py-3.5"
                   >
                     <Icon className="w-6 h-6 text-foreground flex-shrink-0" strokeWidth={1.5} />
                     <div className="min-w-0">
@@ -94,7 +94,7 @@ export function AIOnboardingFeatures() {
           </Card>
 
           {/* Right tall card — matching steps */}
-          <Card className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-2xl">
+          <Card className="group overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-3 rounded-none">
             <CardHeader>
               <div className="p-6 md:p-8">
                 <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3">
@@ -148,7 +148,7 @@ export function AIOnboardingFeatures() {
               </p>
             </div>
 
-            <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-peach">
+            <div className="relative mx-auto max-w-4xl overflow-hidden rounded-none border border-dashed border-peach">
               <div className="grid sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   { icon: CalendarCheck,  label: "Schedule availability", desc: "Preferred days, times, and frequency" },

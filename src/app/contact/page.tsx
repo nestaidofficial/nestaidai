@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
 import { CalendarCheck, Mail, PhoneCall, ArrowRight, ArrowUpRight } from "lucide-react";
 
 const SITE_URL = "https://www.nestaid.us";
@@ -157,9 +156,9 @@ export default function ContactPage() {
               {channels.map((c) => (
                 <div
                   key={c.title}
-                  className="group flex flex-col rounded-3xl border border-black/10 bg-white/60 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60"
+                  className="group flex flex-col rounded-none border border-dashed border-black/15 bg-white/60 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-black/5 flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded-none bg-black/5 flex items-center justify-center mb-4">
                     <c.icon className="w-5 h-5 text-black/70" strokeWidth={1.75} />
                   </div>
                   <p className="text-[11px] font-medium uppercase tracking-wider text-[#C97B5B] mb-1.5">
@@ -189,26 +188,25 @@ export default function ContactPage() {
             </div>
 
             {/* Primary demo CTA */}
-            <div className="mt-12 rounded-3xl bg-black p-8 sm:p-12 text-white">
+            <div className="mt-12 border border-dashed border-black/15 p-8 sm:p-12">
               <div className="max-w-2xl">
                 <h2 className="text-2xl sm:text-3xl font-body font-bold tracking-tight mb-3">
                   Ready to see Nestaid handle your call-outs?
                 </h2>
-                <p className="text-white/80 leading-relaxed mb-6">
+                <p className="text-muted-foreground leading-relaxed mb-6">
                   Book a 20-minute demo and we&apos;ll walk through how Nestaid&apos;s
                   AI agents would fit your agency&apos;s calls, scheduling, and
                   onboarding — using your real workflow as the example.
                 </p>
-                <Button
-                  size="xl"
-                  className="bg-white text-gray-900 hover:bg-white/90 shadow-xl font-semibold"
-                  asChild
+                <Link
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 bg-black px-6 py-3 font-sans text-sm font-light text-white transition-all hover:bg-black/85"
                 >
-                  <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                    Book a free demo
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+                  Book a free demo
+                  <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </Link>
               </div>
             </div>
 
@@ -255,7 +253,7 @@ export default function ContactPage() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group rounded-2xl border border-black/10 bg-white/60 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                    className="group rounded-none border border-dashed border-black/15 bg-white/60 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <h3 className="text-base font-heading tracking-tight mb-1.5 group-hover:underline underline-offset-4 decoration-black/30">
                       {item.title}

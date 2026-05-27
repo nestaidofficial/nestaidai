@@ -15,7 +15,7 @@ export function AIOnboardingHero() {
         <div className="text-center max-w-3xl mx-auto">
           {/* Eyebrow pill */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-2 border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
+            <div className="inline-flex items-center gap-2 rounded-full border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
               <BrainCircuit className="w-4 h-4 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground">AI Onboarding</span>
             </div>
@@ -50,7 +50,7 @@ export function AIOnboardingHero() {
           {highlights.map(({ icon: Icon, label, desc }, idx) => (
             <div
               key={label}
-              className="workflow-item w-[160px] h-[160px] border-peach"
+              className="workflow-item w-[160px] h-[160px] border-peach rounded-none border-dashed"
 
 
             >

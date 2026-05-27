@@ -30,7 +30,7 @@ export function ProductCrossLinks({ current }: { current: ProductKey }) {
     <section className="section-padding">
       <div className="container-max">
         <div className="border-t border-black/10 pt-12">
-          <h2 className="text-xl sm:text-2xl font-heading tracking-tight mb-6">
+          <h2 className="text-xl sm:text-2xl font-body font-bold tracking-tight mb-6">
             More of the Nestaid platform
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -40,9 +40,9 @@ export function ProductCrossLinks({ current }: { current: ProductKey }) {
                 <Link
                   key={p.href}
                   href={p.href}
-                  className="group rounded-2xl border border-black/10 bg-white/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  className="group rounded-none border border-dashed border-black/15 bg-white/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <h3 className="text-lg font-heading tracking-tight mb-1.5 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                  <h3 className="text-lg font-body font-semibold tracking-tight mb-1.5 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
                     {p.title}
                     <ArrowUpRight className="w-4 h-4 text-[#C97B5B]" />
                   </h3>

@@ -32,7 +32,7 @@ export function SchedulingProblem() {
         {/* Two-column comparison */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {/* Without Nestaid */}
-          <div className="rounded-2xl border border-black/10 bg-white/60 p-6">
+          <div className="rounded-none border border-dashed border-black/15 bg-white/60 p-6">
             <h3 className="font-heading text-xl sm:text-2xl mb-4">Without Nestaid</h3>
             <ul className="space-y-3">
               {withoutItems.map((item) => (
@@ -45,7 +45,7 @@ export function SchedulingProblem() {
           </div>
 
           {/* With Nestaid */}
-          <div className="rounded-2xl border border-black/10 bg-white/60 p-6">
+          <div className="rounded-none border border-dashed border-black/15 bg-white/60 p-6">
             <h3 className="font-heading text-xl sm:text-2xl mb-4">With Nestaid</h3>
             <ul className="space-y-3">
               {withItems.map((item) => (
