@@ -23,9 +23,9 @@ const inter = Inter({
 
 const siteUrl = "https://www.nestaid.us";
 const siteName = "Nestaid";
-const defaultTitle = "Nestaid — AI receptionist & coordinator for home care";
+const defaultTitle = "Nestaid — AI-native platform for home care agencies";
 const defaultDescription =
-  "AI operations platform for home care agencies. Handle calls, cover call-outs, and keep schedules moving 24/7 with Nessa.";
+  "The AI-native platform for home care agencies. Nestaid's AI receptionist, coordinator, and scheduler answer calls, cover call-outs, onboard caregivers, and keep schedules moving 24/7.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,6 +36,8 @@ export const metadata: Metadata = {
   description: defaultDescription,
   applicationName: siteName,
   keywords: [
+    "AI-native home care platform",
+    "AI-native care operations platform",
     "AI receptionist",
     "home care software",
     "home care scheduling",

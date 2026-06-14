@@ -1,8 +1,17 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
-export const alt = "Nestaid — AI receptionist & coordinator for home care";
+export const alt = "Nestaid — AI-native platform for home care agencies";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Embed the real logo as a data URI so it renders reliably at build time
+// (no network fetch, no missing-asset risk in the serverless image runtime).
+const logoData = readFileSync(join(process.cwd(), "public", "logomain.jpg"));
+const logoSrc = `data:image/jpeg;base64,${logoData.toString("base64")}`;
+const LOGO_HEIGHT = 60;
+const LOGO_WIDTH = Math.round((LOGO_HEIGHT * 1767) / 637); // preserve aspect ratio
 
 export default async function Image() {
   return new ImageResponse(
@@ -15,38 +24,14 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "80px",
-          background:
-            "radial-gradient(ellipse at top left, #FDE6D6 0%, #F6F6F3 55%, #F1EFEA 100%)",
+          background: "#FFFFFF",
           fontFamily: "sans-serif",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-            fontSize: "32px",
-            fontWeight: 600,
-            color: "#0A0A0A",
-            letterSpacing: "-0.01em",
-          }}
-        >
-          <div
-            style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "12px",
-              background: "#F4C6AC",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#0A0A0A",
-              fontWeight: 700,
-            }}
-          >
-            N
-          </div>
-          Nestaid
+        {/* Brand logo */}
+        <div style={{ display: "flex", alignItems: "center" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} alt="Nestaid" width={LOGO_WIDTH} height={LOGO_HEIGHT} />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
@@ -62,18 +47,21 @@ export default async function Image() {
               maxWidth: "1000px",
             }}
           >
-            <span>AI receptionist &amp; coordinator</span>
+            <span>
+              The&nbsp;<span style={{ color: "#F58D42" }}>AI-native</span>&nbsp;platform
+            </span>
             <span>for home care agencies.</span>
           </div>
           <div
             style={{
-              fontSize: "28px",
+              fontSize: "27px",
               color: "#4A4A4A",
-              maxWidth: "900px",
+              maxWidth: "1040px",
               lineHeight: 1.4,
+              whiteSpace: "nowrap",
             }}
           >
-            Handle calls, cover call-outs, and keep schedules moving 24/7.
+            One platform for calls, scheduling, onboarding &amp; coordination, 24/7.
           </div>
           <div
             style={{
