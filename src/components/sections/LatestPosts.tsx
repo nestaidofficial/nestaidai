@@ -33,6 +33,22 @@ export function LatestPosts() {
         </Reveal>
 
         <LatestPostsCarousel posts={slides} />
+
+        {/*
+          The carousel is a client component that only renders the active slide's
+          link in the initial HTML. Emit every latest-post link server-side so
+          Googlebot can crawl all of them from the homepage (the page Google
+          trusts most). Visually hidden, fully crawlable — not cloaking.
+        */}
+        <nav aria-label="Latest blog posts" className="sr-only">
+          <ul>
+            {slides.map((post) => (
+              <li key={post.slug}>
+                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </section>
   );

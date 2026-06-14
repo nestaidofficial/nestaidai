@@ -62,7 +62,7 @@ export function HowItWorks() {
           </RevealItem>
           <RevealItem>
             <p className="text-[17px] text-muted-foreground max-w-xs sm:max-w-2xl mx-auto mb-8 leading-relaxed">
-              Nestaid's AI agents handles your calls, captures leads and fills call outs, so you can focus on business and scale faster.
+              Nestaid's AI agents handle your calls, capture leads, and fill call-outs — so you can focus on the business and scale faster.
             </p>
           </RevealItem>
           <RevealItem>

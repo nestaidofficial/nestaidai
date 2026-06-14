@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       "Centralize client records, caregiver coordination, onboarding, and compliance with Nestaid's AI-powered management platform.",
     url: "/management",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

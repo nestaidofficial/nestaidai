@@ -13,6 +13,7 @@ import {
   FileText,
   Leaf,
   Mail,
+  Accessibility,
 } from "lucide-react";
 
 const brand = {
@@ -50,6 +51,7 @@ const columns = [
     links: [
       { name: "Privacy Policy", Icon: Shield, href: "/privacy" },
       { name: "Terms of Service", Icon: FileText, href: "/terms" },
+      { name: "Accessibility", Icon: Accessibility, href: "/accessibility" },
     ],
   },
 ];

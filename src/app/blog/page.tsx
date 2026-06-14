@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       "Guides for home care agencies on AI receptionists, scheduling, call-out management, and caregiver coordination.",
     url: "/blog",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

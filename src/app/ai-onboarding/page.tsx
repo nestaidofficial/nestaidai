@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       "Automate caregiver intake, compliance verification, and interview scheduling with Nestaid's AI onboarding workflow.",
     url: "/ai-onboarding",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

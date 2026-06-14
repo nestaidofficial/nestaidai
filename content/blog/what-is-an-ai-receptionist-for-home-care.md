@@ -66,7 +66,7 @@ If you're evaluating AI receptionists for your agency, the short list:
 
 [Nestaid](/) pairs Nessa — the AI receptionist — with an AI coordinator that handles the workflows *started* on the call. When a caregiver calls out, Nessa logs the call-out, the AI coordinator reaches out to available caregivers, and your scheduler sees a filled shift instead of an empty one.
 
-For the agency-specific framing, see [AI receptionist for home care agencies: never miss a client call again](/blog/ai-receptionist-for-home-care-agencies-never-miss-a-call). For the revenue impact, see [why missed calls cost home care agencies new clients](/blog/why-missed-calls-cost-home-care-agencies-new-clients).
+For the agency-specific framing, see [AI receptionist for home care agencies: never miss a client call again](/blog/ai-receptionist-for-home-care-agencies-never-miss-a-call). For the revenue impact, see [why missed calls cost home care agencies new clients](/blog/why-missed-calls-cost-home-care-agencies-new-clients). And for budgeting, see [what an AI receptionist costs for home care agencies](/blog/ai-receptionist-cost-for-home-care-agencies).
 
 ## FAQ
 

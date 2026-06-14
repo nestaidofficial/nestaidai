@@ -18,6 +18,7 @@ const staticEntries: StaticEntry[] = [
   { path: "/about", changeFrequency: "monthly", priority: 0.6 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.6 },
   { path: "/blog", changeFrequency: "daily", priority: 0.9 },
+  { path: "/accessibility", changeFrequency: "yearly", priority: 0.4 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];
@@ -33,7 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified = latestPostDate > buildTime ? buildTime : latestPostDate;
     }
     return {
-      url: `${siteUrl}${entry.path}`,
+      // Homepage canonical is the bare origin (no trailing slash); keep the sitemap consistent with it.
+      url: entry.path === "/" ? siteUrl : `${siteUrl}${entry.path}`,
       lastModified,
       changeFrequency: entry.changeFrequency,
       priority: entry.priority,

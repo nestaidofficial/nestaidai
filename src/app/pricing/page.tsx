@@ -12,6 +12,7 @@ export const metadata: Metadata = {
       "Value-based pricing across AI Receptionist, AI Coordinator, and Scheduling Outcomes.",
     url: "/pricing",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

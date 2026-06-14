@@ -19,6 +19,7 @@ export const metadata: Metadata = {
       "Book a free demo, email us, or talk to Nessa, our AI receptionist for home care agencies.",
     url: "/contact",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

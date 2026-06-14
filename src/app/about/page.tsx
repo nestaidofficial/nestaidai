@@ -12,6 +12,7 @@ export const metadata: Metadata = {
       "Meet the team behind Nestaid — the AI-powered operations platform built for home care agencies.",
     url: "/about",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

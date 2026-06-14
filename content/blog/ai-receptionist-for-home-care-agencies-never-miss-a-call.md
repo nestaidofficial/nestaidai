@@ -86,7 +86,7 @@ This is where most generic AI phone vendors fail. A home care AI receptionist ne
 2. **It pairs with the [Coverage Coordinator Agent](/scheduling).** When a caregiver calls out, the call-out doesn't sit in a queue. The Coordinator Agent starts replacement outreach over voice and text the moment the receptionist hangs up.
 3. **It hands off cleanly to humans.** Anything Nessa can't or shouldn't handle gets routed — with a full transcript — to the right person on your team.
 
-You can read more about the [definitional version](/blog/what-is-an-ai-receptionist-for-home-care) of this idea, or see how it ties into [why missed calls cost agencies new clients](/blog/why-missed-calls-cost-home-care-agencies-new-clients).
+You can read more about the [definitional version](/blog/what-is-an-ai-receptionist-for-home-care) of this idea, or see how it ties into [why missed calls cost agencies new clients](/blog/why-missed-calls-cost-home-care-agencies-new-clients). And if you're weighing the investment, here's a full breakdown of [what an AI receptionist costs for home care agencies](/blog/ai-receptionist-cost-for-home-care-agencies).
 
 ## What to look for if you're evaluating
 

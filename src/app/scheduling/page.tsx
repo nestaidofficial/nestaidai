@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       "Handle call-outs, open shifts, and caregiver coordination 24/7 with Nestaid's AI coordinator.",
     url: "/scheduling",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

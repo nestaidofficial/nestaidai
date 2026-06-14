@@ -20,6 +20,8 @@ There is no single "best" home care scheduling software in 2026. There are six o
 
 This is the honest comparison I wish existed when I started talking to home care agencies. No affiliate ranking. No fake bashing. Just what each option is good at, where it falls short, and how to decide.
 
+New to the category? Start with our [complete guide to home care scheduling software](/blog/home-care-scheduling-software-guide) for the fundamentals, then come back here for the head-to-head.
+
 ## How I evaluated
 
 For each vendor I considered:
