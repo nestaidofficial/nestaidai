@@ -1,0 +1,40 @@
+/* White soundwave shown INSIDE the "Try Nestaid" button while a call is
+   active, so the button looks like Nessa is talking in real time.
+   Sized to sit within a ~44px-tall button; clipped by the button's overflow. */
+.wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* White soundwave in the center — the "talking" effect */
+.wave {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 24px;
+}
+.bar {
+  width: 3px;
+  border-radius: 2px;
+  background: #fff;
+  animation: wave 0.9s ease-in-out infinite;
+}
+.bar:nth-child(1) { height: 9px;  animation-delay: 0s; }
+.bar:nth-child(2) { height: 16px; animation-delay: 0.1s; }
+.bar:nth-child(3) { height: 22px; animation-delay: 0.2s; }
+.bar:nth-child(4) { height: 14px; animation-delay: 0.15s; }
+.bar:nth-child(5) { height: 9px;  animation-delay: 0.05s; }
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.4); }
+  50%      { transform: scaleY(1.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar { animation: none; }
+}

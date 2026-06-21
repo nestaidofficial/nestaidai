@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
@@ -8,16 +10,25 @@ export function LatestPosts() {
   const posts = getAllPosts().slice(0, 3);
   if (posts.length === 0) return null;
 
-  const slides = posts.map((post) => ({
-    slug: post.slug,
-    title: post.title,
-    description: post.description,
-    date: post.date,
-    author: post.author,
-    readingMinutes: post.readingMinutes ?? 0,
-    image: post.image ?? "",
-    imageAlt: post.imageAlt ?? post.title,
-  }));
+  const slides = posts.map((post) => {
+    const image = post.image ?? "";
+    // Only treat the image as displayable if the file actually exists in /public.
+    // Posts without a real photo fall back to the animated cards in the carousel.
+    const hasImage =
+      image.length > 0 &&
+      fs.existsSync(path.join(process.cwd(), "public", image));
+    return {
+      slug: post.slug,
+      title: post.title,
+      description: post.description,
+      date: post.date,
+      author: post.author,
+      readingMinutes: post.readingMinutes ?? 0,
+      image,
+      imageAlt: post.imageAlt ?? post.title,
+      hasImage,
+    };
+  });
 
   return (
     <section className="section-padding">

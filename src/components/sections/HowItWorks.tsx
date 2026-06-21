@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Loader2 } from "lucide-react";
+import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
 import { WorkflowAnimation } from "@/components/ui/workflow-animation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
+import { CallingRipples } from "./CallingRipples";
 
 export function HowItWorks() {
   const time = "9:41";
@@ -81,15 +82,16 @@ export function HowItWorks() {
               </div>
               <Button
                 variant="default"
-                className="h-11 rounded-l-none rounded-r-xl px-4 sm:px-5 text-sm font-medium shrink-0"
+                className="relative overflow-hidden h-11 rounded-l-none rounded-r-xl px-4 sm:px-5 text-sm font-medium shrink-0"
                 onClick={handleCall}
                 disabled={status === "loading"}
               >
-                {status === "loading" ? (
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                ) : (
-                  "Try Nestaid"
-                )}
+                {/* Keep the label mounted for sizing; hide it while the call is
+                    active so the white ripples take over without the button resizing. */}
+                <span className={status === "loading" || status === "success" ? "invisible" : ""}>
+                  Try Nestaid
+                </span>
+                {(status === "loading" || status === "success") && <CallingRipples />}
               </Button>
             </div>
             {message ? (

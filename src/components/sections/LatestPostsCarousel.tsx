@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { NessaCallAnimation } from "./NessaCallAnimation";
 import { NessaScheduleAnimation } from "./NessaScheduleAnimation";
@@ -16,6 +17,7 @@ type CarouselPost = {
   readingMinutes: number;
   image: string;
   imageAlt: string;
+  hasImage: boolean;
 };
 
 function formatDate(iso: string): string {
@@ -69,13 +71,21 @@ export function LatestPostsCarousel({ posts }: { posts: CarouselPost[] }) {
         </div>
 
         {/* Right: image card */}
-        <div className="relative w-full max-w-sm h-80 md:w-60 md:h-80 order-1 md:order-2 mx-auto md:mx-0">
+        <div className="relative w-full max-w-sm h-80 md:w-72 md:h-80 order-1 md:order-2 mx-auto md:mx-0">
           <Link
             href={`/blog/${active.slug}`}
-            className="block w-full h-full rounded-none overflow-hidden border border-border/50 bg-muted relative"
+            className="block w-full h-full rounded-lg overflow-hidden border border-black/10 dark:border-white/10 bg-muted relative"
             aria-label={`Read: ${active.title}`}
           >
-            {active.slug === "home-care-scheduling-software-guide" ? (
+            {active.hasImage ? (
+              <Image
+                src={active.image}
+                alt={active.imageAlt}
+                fill
+                sizes="(max-width: 768px) 100vw, 240px"
+                className="object-cover"
+              />
+            ) : active.slug === "home-care-scheduling-software-guide" ? (
               <NessaScheduleAnimation />
             ) : active.slug === "handling-caregiver-callouts-with-ai" ? (
               <NessaCalloutAnimation />
