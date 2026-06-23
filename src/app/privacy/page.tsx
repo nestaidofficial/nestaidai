@@ -470,7 +470,7 @@ export default function PrivacyPage() {
                       id={s.id}
                       className={idx !== 0 ? "mt-10 pt-10 border-t border-black/8" : ""}
                     >
-                      <h2 className="text-[2.1rem] sm:text-[2.7rem] lg:text-[50px] font-body font-bold tracking-tight leading-tight mb-6 text-black">
+                      <h2 className="text-[1.35rem] sm:text-[1.6rem] lg:text-[28px] font-sans font-medium tracking-tight leading-tight mb-6 text-[#F58D42]">
                         {s.title}
                       </h2>
                       <div className="text-sm text-muted-foreground leading-relaxed space-y-3 [&_ul]:mt-2 [&_ul]:ml-5 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_li]:leading-relaxed [&_strong]:text-black/80 [&_strong]:font-medium">
