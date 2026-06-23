@@ -64,7 +64,7 @@ export function Navbar() {
               alt="Nestaid"
               width={512}
               height={195}
-              className="h-12 w-auto"
+              className="h-10 w-auto"
               priority
             />
           </Link>

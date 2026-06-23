@@ -268,13 +268,13 @@ function CallMockup() {
       {/* Header — iMessage-style contact */}
       <div className="flex flex-col items-center justify-center px-4 py-3 border-b border-black/5 bg-white">
         <div className="relative mb-1">
-          <div className="relative h-10 w-10 rounded-full overflow-hidden ring-1 ring-black/5">
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-full overflow-hidden ring-1 ring-black/5 bg-white">
             <Image
               src="/logo.svg"
               alt="Nestaid"
-              fill
-              sizes="40px"
-              className="object-cover"
+              width={24}
+              height={24}
+              className="h-6 w-6 object-contain"
               priority
             />
           </div>

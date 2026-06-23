@@ -281,13 +281,13 @@ const NessaCrmFlow = ({
         </div>
 
         {/* Center circle */}
-        <div className="absolute -bottom-9 z-30 grid h-[70px] w-[70px] place-items-center overflow-hidden rounded-full border border-black/10 bg-black shadow-lg">
+        <div className="absolute -bottom-9 z-30 grid h-[70px] w-[70px] place-items-center overflow-hidden rounded-full border border-black/10 bg-white shadow-lg">
           <Image
             src="/logo.svg"
             alt={centerText}
-            width={44}
-            height={44}
-            className="h-[44px] w-[44px] object-contain"
+            width={30}
+            height={30}
+            className="h-[30px] w-[30px] object-contain"
             priority
           />
         </div>

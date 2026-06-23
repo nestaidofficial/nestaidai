@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -103,33 +105,48 @@ export default function BlogIndexPage() {
                     />
                   </div>
                 </div>
-                <div className="relative grid grid-cols-[auto_1fr] gap-x-3">
-                  <Image
-                    alt={featured.author}
-                    src="/rahul.jpg"
-                    width={36}
-                    height={36}
-                    className="size-9 rounded-full object-cover"
-                  />
-                  <div className="min-w-0">
-                    <div className="-mt-0.5 -space-y-0.5">
-                      <p className="font-sans text-sm font-light md:text-base">{featured.author}</p>
-                      <span className="block font-sans text-[11px] font-light tracking-tight text-muted-foreground">
-                        Founder, Nestaid
-                      </span>
-                    </div>
-                    <h2 className="mt-4 font-sans text-2xl font-light leading-tight tracking-tight sm:text-3xl lg:text-4xl group-hover:underline underline-offset-4 decoration-black/30">
-                      {featured.title}
-                    </h2>
-                    <p className="mt-3 max-w-3xl font-sans text-base font-light leading-relaxed tracking-wide text-muted-foreground">
-                      {featured.description}
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-2 font-sans text-[11px] font-light text-muted-foreground">
-                      <span>{formatDate(featured.date)}</span>
-                      <span>·</span>
-                      <span>{featured.readingMinutes} min read</span>
+                <div className="relative grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+                  <div className="grid grid-cols-[auto_1fr] gap-x-3">
+                    <Image
+                      alt={featured.author}
+                      src="/rahul.jpg"
+                      width={36}
+                      height={36}
+                      className="size-9 rounded-full object-cover"
+                    />
+                    <div className="min-w-0">
+                      <div className="-mt-0.5 -space-y-0.5">
+                        <p className="font-sans text-sm font-light md:text-base">{featured.author}</p>
+                        <span className="block font-sans text-[11px] font-light tracking-tight text-muted-foreground">
+                          Founder, Nestaid
+                        </span>
+                      </div>
+                      <h2 className="mt-4 font-sans text-2xl font-light leading-tight tracking-tight sm:text-3xl lg:text-4xl group-hover:underline underline-offset-4 decoration-black/30">
+                        {featured.title}
+                      </h2>
+                      <p className="mt-3 max-w-3xl font-sans text-base font-light leading-relaxed tracking-wide text-muted-foreground">
+                        {featured.description}
+                      </p>
+                      <div className="mt-4 flex flex-wrap items-center gap-2 font-sans text-[11px] font-light text-muted-foreground">
+                        <span>{formatDate(featured.date)}</span>
+                        <span>·</span>
+                        <span>{featured.readingMinutes} min read</span>
+                      </div>
                     </div>
                   </div>
+                  {featured.image &&
+                    fs.existsSync(
+                      path.join(process.cwd(), "public", featured.image),
+                    ) && (
+                      <Image
+                        src={featured.image}
+                        alt={featured.imageAlt ?? featured.title}
+                        width={1100}
+                        height={1100}
+                        sizes="(max-width: 768px) 100vw, 288px"
+                        className="mx-auto h-auto w-full max-w-xs rounded-lg border border-black/10 md:mx-0 md:w-64 lg:w-72"
+                      />
+                    )}
                 </div>
               </Link>
             )}
