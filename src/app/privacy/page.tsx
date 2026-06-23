@@ -134,21 +134,44 @@ const sections = [
           Nestaid may support voice calls, AI-assisted conversations, emails,
           alerts, and SMS/text messaging.
         </p>
+
+        <p className="font-medium text-black/80 mt-4">SMS / Text Messaging</p>
         <p>
-          Agency Customers may use Nestaid to communicate with caregivers,
-          applicants, employees, clients, staff, or other users. These
-          communications may include shift updates, call-out alerts, coverage
-          requests, reminders, onboarding messages, and other operational
-          communications.
+          Nestaid sends operational and transactional text messages only to
+          users who have opted in. During onboarding, a user enters their mobile
+          number and checks a separate SMS consent checkbox that is unchecked by
+          default, optional, and not required to create or use a Nestaid account.
+          Pilot participants confirm consent before being added to SMS testing.
+          Nestaid does not purchase, rent, scrape, or import phone numbers from
+          third parties.
         </p>
         <p>
-          Message frequency may vary. Message and data rates may apply. SMS
-          recipients may opt out at any time by replying <strong>STOP</strong>.
-          For help, reply <strong>HELP</strong>.
+          These messages may include open-shift coverage requests, schedule
+          updates, shift confirmations, visit reminders, EVV clock-in reminders,
+          weekly shift summaries, onboarding and testing updates, and replies to
+          scheduling or coordination questions. They are operational messages —
+          not marketing, promotional, or advertising messages.
+        </p>
+        <p>
+          To protect privacy, text messages contain only the minimum necessary
+          operational information. Client names, health details, care-plan
+          details, addresses, and other sensitive information are not included in
+          text messages; users are directed to the secure Nestaid app to view
+          full details.
+        </p>
+        <p>
+          Message frequency varies. Message and data rates may apply. You can opt
+          out at any time by replying <strong>STOP</strong>, and you can get help
+          at any time by replying <strong>HELP</strong>. Opt-out requests are
+          honored before any further messages are sent.
         </p>
         <p className="font-medium text-black/80">
-          We do not sell, rent, or share phone numbers, SMS consent data, or
-          SMS opt-in records with third parties for their own marketing purposes.
+          No mobile information, phone numbers, SMS consent, or opt-in data is
+          sold or shared with third parties or affiliates for their own marketing
+          or promotional purposes. This information may be shared only with
+          subcontractors and service providers that support the messaging program
+          (such as our SMS and telephony provider), and only to deliver these
+          messages.
         </p>
       </>
     ),
@@ -335,7 +358,7 @@ const sections = [
   },
   {
     id: "childrens-privacy",
-    title: "12. Children&apos;s Privacy",
+    title: "12. Children’s Privacy",
     content: (
       <p>
         Nestaid is not intended for individuals under 18. We do not knowingly
@@ -409,7 +432,7 @@ export default function PrivacyPage() {
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
                 Last updated:{" "}
-                <span className="font-medium text-black/70">May 8, 2026</span>
+                <span className="font-medium text-black/70">June 23, 2026</span>
               </p>
             </div>
           </div>

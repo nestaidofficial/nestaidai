@@ -336,8 +336,62 @@ const sections = [
     ),
   },
   {
+    id: "sms-messaging",
+    title: "21. SMS and Text Messaging Terms",
+    content: (
+      <>
+        <p>
+          Nestaid offers an operational SMS/text messaging program for opted-in
+          users such as caregivers, coordinators, pilot participants, and team
+          members. These Terms, together with our{" "}
+          <a href="/privacy" className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity">
+            Privacy Policy
+          </a>
+          , govern that program.
+        </p>
+        <p>
+          <strong>How you opt in.</strong> You opt in through the Nestaid
+          onboarding flow by entering your mobile number and checking a separate
+          SMS consent checkbox. The checkbox is unchecked by default, optional,
+          and not required to create or use a Nestaid account. Pilot participants
+          confirm consent before being added to SMS testing. Nestaid does not
+          purchase, rent, scrape, or obtain phone numbers from third parties.
+        </p>
+        <p>
+          <strong>Message types.</strong> Messages are operational and
+          transactional only — for example, open-shift coverage requests,
+          schedule updates, shift confirmations, visit reminders, EVV clock-in
+          reminders, weekly shift summaries, onboarding and testing updates, and
+          replies to scheduling or coordination questions. They are not
+          marketing, promotional, or advertising messages.
+        </p>
+        <p>
+          <strong>Frequency and cost.</strong> Message frequency varies based on
+          your schedule and shift activity. Message and data rates may apply
+          according to your mobile carrier and plan.
+        </p>
+        <p>
+          <strong>Opt out and help.</strong> You can opt out at any time by
+          replying <strong>STOP</strong>, after which you will receive no further
+          messages unless you opt in again. Reply <strong>HELP</strong> at any
+          time for assistance. Opt-out requests are honored before any further
+          messages are sent.
+        </p>
+        <p>
+          <strong>Privacy.</strong> Text messages contain only the minimum
+          necessary operational information; full shift and care details are
+          viewed inside the secure Nestaid app. No mobile numbers, SMS consent,
+          or opt-in data is sold or shared with third parties or affiliates for
+          their own marketing or promotional purposes. See our Privacy Policy for
+          details.
+        </p>
+        <p>Carriers are not liable for delayed or undelivered messages.</p>
+      </>
+    ),
+  },
+  {
     id: "contact",
-    title: "21. Contact Information",
+    title: "22. Contact Information",
     content: (
       <>
         <p>If you have questions about these Terms, contact us at:</p>
@@ -388,7 +442,7 @@ export default function TermsPage() {
                 Please read these Terms carefully before using the Nestaid platform. They outline your rights, responsibilities, and the rules governing your use of our Services.
               </p>
               <p className="mt-4 text-base text-muted-foreground">
-                Last updated: <span className="font-medium text-black/70">March 28, 2026</span>
+                Last updated: <span className="font-medium text-black/70">June 23, 2026</span>
               </p>
             </div>
           </div>
