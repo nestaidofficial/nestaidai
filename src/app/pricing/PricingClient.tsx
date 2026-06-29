@@ -121,7 +121,7 @@ export default function PricingClient() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-3xl text-center"
             >
-              <div className="mb-6 inline-flex items-center gap-2 border border-dashed border-black/20 px-3 py-1 font-sans text-xs font-light tracking-wide text-muted-foreground">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/20 px-3 py-1 font-sans text-xs font-light tracking-wide text-muted-foreground">
                 <Sparkles className="size-3" />
                 Usage-based pricing
               </div>
@@ -157,7 +157,7 @@ export default function PricingClient() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-y border-dashed border-black/15 py-6"
+              className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-y border-black/15 py-6"
             >
               {differentiators.map((item) => (
                 <div
@@ -192,11 +192,11 @@ export default function PricingClient() {
                   whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 * index + 0.1, duration: 0.7 }}
-                  className="group relative overflow-hidden border border-dashed border-black/15 p-6 sm:p-8"
+                  className="group relative overflow-hidden rounded-2xl border border-black/15 p-6 sm:p-8"
                 >
                   <GridBackdrop />
                   <div className="relative">
-                    <div className="mb-6 inline-flex size-10 items-center justify-center border border-dashed border-black/20">
+                    <div className="mb-6 inline-flex size-10 items-center justify-center rounded-lg border border-black/20">
                       <pillar.icon className="size-4 text-foreground/80" />
                     </div>
                     <h3 className="font-sans text-lg font-light tracking-tight sm:text-xl">
@@ -223,7 +223,7 @@ export default function PricingClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative overflow-hidden border border-dashed border-black/15"
+              className="relative overflow-hidden rounded-2xl border border-black/15"
             >
               <GridBackdrop />
               <div className="relative grid grid-cols-1 gap-10 p-8 sm:p-12 lg:grid-cols-[1.2fr_1fr]">
@@ -254,7 +254,7 @@ export default function PricingClient() {
                   </div>
                 </div>
 
-                <div className="border-t border-dashed border-black/15 pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+                <div className="border-t border-black/15 pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
                   <p className="font-sans text-xs font-light uppercase tracking-[0.2em] text-muted-foreground">
                     Integrates with
                   </p>
@@ -262,7 +262,7 @@ export default function PricingClient() {
                     {integrations.map((integration) => (
                       <li
                         key={integration}
-                        className="flex items-center justify-between border-b border-dashed border-black/10 pb-3 font-sans text-sm font-light"
+                        className="flex items-center justify-between border-b border-black/10 pb-3 font-sans text-sm font-light"
                       >
                         <span>{integration}</span>
                         <Check className="size-3.5 text-foreground/50" />
@@ -295,11 +295,11 @@ export default function PricingClient() {
                   whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.05 * index + 0.1, duration: 0.7 }}
-                  className="relative overflow-hidden border border-dashed border-black/15 p-5"
+                  className="relative overflow-hidden rounded-2xl border border-black/15 p-5"
                 >
                   <GridBackdrop />
                   <div className="relative">
-                    <div className="mb-4 inline-flex size-8 items-center justify-center border border-dashed border-black/20">
+                    <div className="mb-4 inline-flex size-8 items-center justify-center rounded-lg border border-black/20">
                       <feature.icon className="size-3.5 text-foreground/80" />
                     </div>
                     <p className="font-sans text-sm font-light tracking-tight text-foreground">

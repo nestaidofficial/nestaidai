@@ -157,9 +157,9 @@ export default function ContactPage() {
               {channels.map((c) => (
                 <div
                   key={c.title}
-                  className="group flex flex-col rounded-none border border-dashed border-black/15 bg-white/60 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60"
+                  className="group flex flex-col rounded-2xl border border-black/15 bg-white/60 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60"
                 >
-                  <div className="w-11 h-11 rounded-none bg-black/5 flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded-lg bg-black/5 flex items-center justify-center mb-4">
                     <c.icon className="w-5 h-5 text-black/70" strokeWidth={1.75} />
                   </div>
                   <p className="text-[11px] font-medium uppercase tracking-wider text-[#C97B5B] mb-1.5">
@@ -189,7 +189,7 @@ export default function ContactPage() {
             </div>
 
             {/* Primary demo CTA */}
-            <div className="mt-12 border border-dashed border-black/15 p-8 sm:p-12">
+            <div className="mt-12 rounded-2xl border border-black/15 p-8 sm:p-12">
               <div className="max-w-2xl">
                 <h2 className="text-2xl sm:text-3xl font-body font-bold tracking-tight mb-3">
                   Ready to see Nestaid handle your call-outs?
@@ -254,7 +254,7 @@ export default function ContactPage() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group rounded-none border border-dashed border-black/15 bg-white/60 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                    className="group rounded-2xl border border-black/15 bg-white/60 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <h3 className="text-base font-heading tracking-tight mb-1.5 group-hover:underline underline-offset-4 decoration-black/30">
                       {item.title}

@@ -100,7 +100,7 @@ export function SchedulingHero() {
         </div>
 
         {/* Feature grid */}
-        <div className="mt-10 grid grid-cols-1 divide-y divide-dashed divide-black/15 border-t border-dashed border-black/15 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+        <div className="mt-10 grid grid-cols-1 divide-y divide-black/10 border-t border-black/10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
           {features.map((feature, idx) => {
             const Icon = feature.icon;
             return (
@@ -110,7 +110,7 @@ export function SchedulingHero() {
 
 
               >
-                <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-sm bg-black/5 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex flex-col gap-2 pt-8 lg:pt-16">

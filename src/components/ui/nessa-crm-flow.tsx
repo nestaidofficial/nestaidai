@@ -132,11 +132,10 @@ const NessaCrmFlow = ({
               y={y}
               width={w}
               height="14"
-              rx="0"
+              rx="1"
               fill="#FFFFFF"
               stroke="#F4C6AC"
               strokeWidth="0.6"
-              strokeDasharray="1.4 1.4"
             />
             <text
               x={x + w / 2}
@@ -228,11 +227,10 @@ const NessaCrmFlow = ({
               y="3.5"
               width={item.width}
               height="12"
-              rx="0"
+              rx="1"
               fill="#FFFFFF"
               stroke="#F4C6AC"
               strokeWidth="0.4"
-              strokeDasharray="1.4 1.4"
             />
             <text
               x={item.x + item.width / 2}

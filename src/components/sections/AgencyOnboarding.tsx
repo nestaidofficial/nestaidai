@@ -70,13 +70,13 @@ function StepCard({ step }: { step: Step }) {
   const Icon = step.icon;
   const isDone = step.status === "done";
   return (
-    <div className="flex items-center gap-3 rounded-2xl bg-white p-2.5 sm:p-3">
+    <div className="flex items-center gap-3 rounded-sm bg-white p-2.5 sm:p-3">
       {/* Meaningful per-step icon */}
       <div
         className={
           isDone
-            ? "flex size-10 shrink-0 items-center justify-center rounded-xl border border-black/5 bg-[#F4F4F2]"
-            : "flex size-10 shrink-0 items-center justify-center rounded-xl border border-dashed border-black/15 bg-white"
+            ? "flex size-10 shrink-0 items-center justify-center rounded-sm border border-black/5 bg-[#F4F4F2]"
+            : "flex size-10 shrink-0 items-center justify-center rounded-sm border border-black/15 bg-white"
         }
       >
         <Icon className="size-[18px] text-[#C2410C]" strokeWidth={2} />
@@ -106,11 +106,11 @@ function StepConnector({ withNode }: { withNode: boolean }) {
   }
   return (
     <div className="flex flex-col items-center py-1" aria-hidden="true">
-      <span className="h-3 w-px border-l border-dashed border-black/25" />
+      <span className="h-3 w-px border-l border-black/25" />
       <span className="my-0.5 flex size-7 items-center justify-center rounded-full bg-[#F58D42]">
         <ArrowDown className="size-3.5 text-white" strokeWidth={2.5} />
       </span>
-      <span className="h-3 w-px border-l border-dashed border-black/25" />
+      <span className="h-3 w-px border-l border-black/25" />
     </div>
   );
 }
@@ -118,10 +118,10 @@ function StepConnector({ withNode }: { withNode: boolean }) {
 function StepContainer({ steps }: { steps: Step[] }) {
   return (
     <div
-      className="flex-1 rounded-[1.75rem] p-4 sm:p-6"
+      className="flex-1 rounded-sm p-4 sm:p-6"
       style={{ backgroundColor: "#FAF9F7" }}
     >
-      <div className="rounded-[1.25rem] bg-[#F1EEE9] p-3 sm:p-4">
+      <div className="rounded-sm bg-[#F1EEE9] p-3 sm:p-4">
         <div className="flex flex-col">
           {steps.map((step, i) => (
             <div key={step.id}>
@@ -141,7 +141,7 @@ export function AgencyOnboarding() {
       <div className="container-max">
         <div className="mb-14 text-center">
           <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
               <span className="inline-flex items-center justify-center rounded-md bg-[#FFDAB9] px-2 py-0.5 text-xs font-semibold text-black">
                 Onboarding
               </span>
@@ -162,12 +162,12 @@ export function AgencyOnboarding() {
 
           {/* AI Sync connector */}
           <div className="flex flex-col items-center justify-center py-2 lg:flex-row lg:px-1 lg:py-0">
-            <span className="h-4 w-px border-l border-dashed border-black/25 lg:h-px lg:w-6 lg:border-l-0 lg:border-t" aria-hidden="true" />
+            <span className="h-4 w-px border-l border-black/25 lg:h-px lg:w-6 lg:border-l-0 lg:border-t" aria-hidden="true" />
             <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#FFDAB9] px-3.5 py-1.5 text-xs font-semibold text-[#7A3B12]">
               <Sparkles className="size-3.5 text-[#F58D42]" strokeWidth={2.5} />
               AI Sync
             </span>
-            <span className="h-4 w-px border-l border-dashed border-black/25 lg:h-px lg:w-6 lg:border-l-0 lg:border-t" aria-hidden="true" />
+            <span className="h-4 w-px border-l border-black/25 lg:h-px lg:w-6 lg:border-l-0 lg:border-t" aria-hidden="true" />
           </div>
 
           {/* AI phase — right */}

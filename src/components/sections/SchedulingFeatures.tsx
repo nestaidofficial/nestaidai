@@ -45,12 +45,12 @@ export function SchedulingFeatures() {
           {features.map((feature, idx) => (
             <div
               key={feature.title}
-              className="group p-5 rounded-none border border-dashed bg-white/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="group p-5 rounded-sm border bg-white/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               style={{ borderColor: "#F4C6AC" }}
 
 
             >
-              <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-sm bg-black/5 flex items-center justify-center mb-3">
                 <feature.icon className="w-5 h-5 text-black/70" />
               </div>
               <h3 className="font-semibold text-base mb-1.5">{feature.title}</h3>

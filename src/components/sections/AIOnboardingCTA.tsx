@@ -5,9 +5,9 @@ export function AIOnboardingCTA() {
   return (
     <section className="section-padding">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden border border-dashed border-black/15 p-10 text-center sm:p-14">
+        <div className="relative overflow-hidden rounded-2xl border border-black/15 p-10 text-center sm:p-14">
           <div className="relative mx-auto max-w-2xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-dashed border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/20 px-4 py-1.5 font-sans text-xs font-light tracking-wide text-muted-foreground">
               AI Onboarding
             </div>
 

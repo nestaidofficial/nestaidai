@@ -336,9 +336,9 @@ export function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-[minmax(180px,auto)]">
           {/* Hero card — AI Coordinator */}
           <div className="lg:col-span-2 lg:row-span-3">
-            <div className="relative h-full overflow-hidden rounded-none border border-dashed border-black/15 bg-white p-6 sm:p-8">
+            <div className="relative h-full overflow-hidden rounded-sm bg-[#FAF9F7] p-6 sm:p-8">
               <SmoothWavyCanvas
-                backgroundColor="#F8F8F7"
+                backgroundColor="#FAF9F7"
                 primaryColor="52, 52, 52"
                 secondaryColor="98, 98, 98"
                 accentColor="130, 130, 130"
@@ -349,14 +349,14 @@ export function Features() {
               <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#F8F8F6] blur-3xl" />
 
               <div className="relative">
-                <p className="text-xs font-medium uppercase tracking-wider text-[#C97B5B] mb-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-[#F58D42] mb-3">
                   AI Coordinator & Receptionist
                 </p>
                 <p className="text-sm leading-relaxed text-muted-foreground mb-3 max-w-md">
                   Answers calls, handles{" "}
                   <Link
                     href="/scheduling"
-                    className="text-[#C97B5B] underline underline-offset-2 hover:opacity-80"
+                    className="text-[#F58D42] underline underline-offset-2 hover:opacity-80"
                   >
                     caregiver call-outs
                   </Link>
@@ -373,12 +373,12 @@ export function Features() {
               <Link
                 key={card.title}
                 href={card.href}
-                className="lg:col-span-1 lg:row-span-1 block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F58D42] rounded-none"
+                className="lg:col-span-1 lg:row-span-1 block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F58D42] rounded-sm"
                 aria-label={`${card.title} — ${card.cta}`}
               >
-                <div className="group relative h-full overflow-hidden rounded-none border border-dashed border-black/15 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[#F4C6AC]/60">
+                <div className="group relative h-full overflow-hidden rounded-sm bg-[#FAF9F7] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
                   <SmoothWavyCanvas
-                    backgroundColor="#F8F8F7"
+                    backgroundColor="#FAF9F7"
                     primaryColor="52, 52, 52"
                     secondaryColor="98, 98, 98"
                     accentColor="130, 130, 130"
@@ -386,7 +386,7 @@ export function Features() {
                     animationSpeed={0.006}
                   />
                   <div className="relative z-10">
-                  <p className="text-[11px] font-medium uppercase tracking-wider text-[#C97B5B] mb-1.5">
+                  <p className="text-[11px] font-medium uppercase tracking-wider text-[#F58D42] mb-1.5">
                     {card.eyebrow}
                   </p>
                   <h3 className="font-body font-bold text-lg sm:text-xl tracking-tight text-foreground mb-2">
@@ -395,7 +395,7 @@ export function Features() {
                   <p className="text-sm leading-relaxed text-muted-foreground mb-3">
                     {card.description}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-xs font-medium text-[#C97B5B] group-hover:gap-1.5 transition-all">
+                  <span className="inline-flex items-center gap-1 text-xs font-medium text-[#F58D42] group-hover:gap-1.5 transition-all">
                     {card.cta}
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>

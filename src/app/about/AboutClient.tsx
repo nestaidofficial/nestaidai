@@ -115,7 +115,7 @@ export default function AboutClient() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-3xl text-center"
             >
-              <div className="mb-6 inline-flex items-center gap-2 border border-dashed border-black/20 px-3 py-1 font-sans text-xs font-light tracking-wide text-muted-foreground">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/20 px-3 py-1 font-sans text-xs font-light tracking-wide text-muted-foreground">
                 <Sparkles className="size-3" />
                 Our Story
               </div>
@@ -139,7 +139,7 @@ export default function AboutClient() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="relative overflow-hidden border border-dashed border-black/15 p-5 text-center"
+                  className="relative overflow-hidden rounded-2xl border border-black/15 p-5 text-center"
                 >
                   <GridBackdrop />
                   <div className="relative">
@@ -165,7 +165,7 @@ export default function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative overflow-hidden border border-dashed border-black/15 p-8 sm:p-10"
+                className="relative overflow-hidden rounded-2xl border border-black/15 p-8 sm:p-10"
               >
                 <GridBackdrop />
                 <div className="relative">
@@ -200,7 +200,7 @@ export default function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15, duration: 0.6 }}
-                className="relative overflow-hidden border border-dashed border-black/15 p-8 sm:p-10 flex flex-col justify-between"
+                className="relative overflow-hidden rounded-2xl border border-black/15 p-8 sm:p-10 flex flex-col justify-between"
               >
                 <GridBackdrop />
                 <div className="relative">
@@ -212,7 +212,7 @@ export default function AboutClient() {
                   </blockquote>
                 </div>
                 <div className="relative mt-6">
-                  <div className="grid grid-cols-[auto_1fr] items-center gap-3 border-t border-dashed border-black/15 pt-4">
+                  <div className="grid grid-cols-[auto_1fr] items-center gap-3 border-t border-black/15 pt-4">
                     <Image
                       src="/rahul.jpg"
                       alt="Rahul Chettri"
@@ -228,9 +228,9 @@ export default function AboutClient() {
                     </div>
                   </div>
 
-                  <ul className="mt-5 space-y-3 border-t border-dashed border-black/15 pt-5">
+                  <ul className="mt-5 space-y-3 border-t border-black/15 pt-5">
                     <li className="grid grid-cols-[auto_1fr] items-center gap-4">
-                      <span className="flex size-12 items-center justify-center overflow-hidden rounded-md border border-dashed border-black/15 bg-white">
+                      <span className="flex size-12 items-center justify-center overflow-hidden rounded-md border border-black/15 bg-white">
                         <Image
                           src="/neu-logo.png"
                           alt="Northeastern University"
@@ -249,7 +249,7 @@ export default function AboutClient() {
                       </div>
                     </li>
                     <li className="grid grid-cols-[auto_1fr] items-center gap-4">
-                      <span className="flex size-12 items-center justify-center overflow-hidden rounded-md border border-dashed border-black/15 bg-white">
+                      <span className="flex size-12 items-center justify-center overflow-hidden rounded-md border border-black/15 bg-white">
                         <Image
                           src="/salesian-college.jpg"
                           alt="Salesian College"
@@ -294,11 +294,11 @@ export default function AboutClient() {
                   whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.05 * index + 0.1, duration: 0.7 }}
-                  className="relative overflow-hidden border border-dashed border-black/15 p-6"
+                  className="relative overflow-hidden rounded-2xl border border-black/15 p-6"
                 >
                   <GridBackdrop />
                   <div className="relative">
-                    <div className="mb-5 inline-flex size-9 items-center justify-center border border-dashed border-black/20">
+                    <div className="mb-5 inline-flex size-9 items-center justify-center rounded-lg border border-black/20">
                       <v.icon className="size-4 text-foreground/80" />
                     </div>
                     <h3 className="font-sans text-base font-light tracking-tight text-foreground">
@@ -334,7 +334,7 @@ export default function AboutClient() {
                   whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.05 * index + 0.1, duration: 0.7 }}
-                  className="relative overflow-hidden border border-dashed border-black/15 p-6 sm:p-8"
+                  className="relative overflow-hidden rounded-2xl border border-black/15 p-6 sm:p-8"
                 >
                   <GridBackdrop />
                   <div className="relative grid grid-cols-[auto_1fr] gap-x-5">
@@ -375,11 +375,11 @@ export default function AboutClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative overflow-hidden border border-dashed border-black/15 p-10 text-center sm:p-14"
+              className="relative overflow-hidden rounded-2xl border border-black/15 p-10 text-center sm:p-14"
             >
               <GridBackdrop />
               <div className="relative mx-auto max-w-2xl">
-                <div className="mb-6 inline-flex items-center gap-2 border border-dashed border-black/20 px-3 py-1 font-sans text-xs font-light tracking-wide text-muted-foreground">
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/20 px-3 py-1 font-sans text-xs font-light tracking-wide text-muted-foreground">
                   <Users className="size-3" />
                   Join us
                 </div>

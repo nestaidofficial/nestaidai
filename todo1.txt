@@ -1,0 +1,98 @@
+==========================================================================
+ TODO1 — Google Search Console indexing for nestaid.us
+ Created: 2026-06-28  |  Owner: Rahul  |  Driver: Claude Code (browser automation)
+==========================================================================
+
+GOAL
+----
+Get all 27 nestaid.us URLs indexed by Google. Only the homepage was indexed;
+the rest were "Discovered – not yet crawled." We are pushing each page into
+Google's priority crawl queue via GSC URL Inspection -> "Request Indexing".
+
+KEY FACTS (verified 2026-06-28 — do NOT re-debug these)
+-------------------------------------------------------
+- Code/sitemap/robots.txt/canonicals are ALL CORRECT. There is NO file to fix.
+  Every page returns HTTP 200, is "index, follow", and self-canonicals properly.
+- Sitemap is already submitted & healthy:
+    https://www.nestaid.us/sitemap.xml  -> Status: Success, 27 pages discovered.
+  Do NOT re-submit it. Do NOT re-request pages already done (no effect on queue).
+- The real bottleneck is crawl priority / site authority (normal for a young site),
+  not a technical block.
+
+GOOGLE SEARCH CONSOLE ACCESS
+----------------------------
+- Property: Domain property  ->  sc-domain:nestaid.us
+- Google account index in URL: /u/5/
+- URL Inspection page pattern:
+    https://search.google.com/u/5/search-console/inspect?resource_id=sc-domain%3Anestaid.us
+- Sitemaps page:
+    https://search.google.com/u/5/search-console/sitemaps?resource_id=sc-domain%3Anestaid.us
+- Quota: ~10 "Request Indexing" calls per property per day. We use ~10/day.
+
+PROCEDURE (how to request indexing for one URL)
+-----------------------------------------------
+1. Click the top search bar ("Inspect any URL in nestaid.us").
+2. Type the full https URL, press Return.
+3. Wait ~5s for "URL is not on Google" to load.
+4. Click "REQUEST INDEXING" (right side, under the result card).
+5. It runs a live test ("Testing if live URL can be indexed", ~10-60s).
+6. Confirm the green "Indexing requested" dialog appears, click "Dismiss".
+7. Repeat for next URL until daily quota is hit (Google will show a quota
+   message if exceeded — stop there and resume next day).
+
+==========================================================================
+ PROGRESS
+==========================================================================
+
+DONE — 2026-06-28 (10 URLs, all confirmed "Indexing requested")
+  [x] /management
+  [x] /scheduling
+  [x] /ai-onboarding
+  [x] /pricing
+  [x] /blog
+  [x] /about
+  [x] /contact
+  [x] /blog/best-home-care-scheduling-software-2026-compared
+  [x] /blog/what-is-an-ai-receptionist-for-home-care
+  [x] /blog/ai-receptionist-cost-for-home-care-agencies
+
+ALREADY INDEXED (no action needed)
+  [x] /            (homepage)
+
+==========================================================================
+ REMAINING QUEUE (16 URLs) — do up to ~10/day, top of list first
+==========================================================================
+
+DAY 2 batch (highest search/commercial value first):
+  [ ] /blog/home-care-scheduling-software-guide
+  [ ] /blog/home-care-agency-software-vs-ai-native-care-operations-platform
+  [ ] /blog/ai-receptionist-for-home-care-agencies-never-miss-a-call
+  [ ] /blog/how-home-care-agencies-can-handle-caregiver-callouts-faster
+  [ ] /blog/best-home-care-software-features-agencies-should-look-for
+  [ ] /blog/caregiver-onboarding-software-reduce-manual-admin-work
+  [ ] /blog/why-missed-calls-cost-home-care-agencies-new-clients
+  [ ] /blog/ai-native-home-care-software-what-it-means
+  [ ] /blog/home-care-scheduling-software-is-broken-ai-agents-can-fix-the-chaos
+  [ ] /blog/how-ai-can-help-home-care-agencies-grow-without-hiring-more-office-staff
+
+DAY 3 batch (remaining blog posts + low-priority legal pages):
+  [ ] /blog/evv-problems-in-home-care-missed-clock-ins-exceptions
+  [ ] /blog/handling-caregiver-callouts-with-ai
+  [ ] /blog/inside-our-comforcare-marlborough-pilot-ai-caregiver-coverage
+  [ ] /accessibility       (low priority)
+  [ ] /privacy             (low priority)
+  [ ] /terms               (low priority)
+
+==========================================================================
+ FOLLOW-UP / VERIFY
+==========================================================================
+- ~3-4 days after a request, re-inspect the URL; it should flip to
+  "URL is on Google" (indexed). If it shows "Crawled - currently not indexed"
+  for weeks, that's an authority/quality signal -> needs backlinks, not config.
+- Durable fix = build a few real inbound links (directories, founders'
+  LinkedIn/profiles, partner sites, industry listings). That's what makes
+  Google crawl deep pages faster and keep them indexed.
+
+NOTE FOR CLAUDE: to resume, just read this file, open the GSC URL Inspection
+page (link above), and work the REMAINING QUEUE top-down using the PROCEDURE.
+Mark each line [x] here as you confirm "Indexing requested".

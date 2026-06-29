@@ -152,7 +152,7 @@ export function Navbar() {
         {/* Button — right */}
         <div className="flex shrink-0 items-center justify-end">
           <div className="hidden md:flex">
-            <Button variant="default" size="default" className="text-sm px-5 rounded-none group" asChild>
+            <Button variant="default" size="default" className="text-sm px-5 rounded-sm group" asChild>
               <Link href="https://calendly.com/rahulchettri601/nestaid-demo-call" target="_blank" rel="noopener noreferrer">
                 Book a Free Demo
                 <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

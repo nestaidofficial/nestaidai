@@ -18,7 +18,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "400", "500", "700", "800", "900"],
 });
 
 const siteUrl = "https://www.nestaid.us";

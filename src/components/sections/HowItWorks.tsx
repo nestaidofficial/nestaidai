@@ -109,7 +109,7 @@ export function HowItWorks() {
                 href="https://calendly.com/rahulchettri601/nestaid-demo-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline underline-offset-2 font-medium text-foreground hover:opacity-70 transition-opacity"
+                className="underline underline-offset-2 font-medium text-[#F58D42] hover:opacity-70 transition-opacity"
               >
                 Book a Demo
               </a>

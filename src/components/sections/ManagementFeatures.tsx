@@ -25,9 +25,9 @@ export function ManagementFeatures() {
       <div className="container-max">
         <div className="grid gap-6 sm:grid-cols-5">
           {/* Large card - Left side (3 columns) */}
-          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-3 rounded-none !bg-white">
+          <Card className="group relative overflow-hidden border-0 shadow-black/5 sm:col-span-3 rounded-sm !bg-[#FAF9F7]">
             <SmoothWavyCanvas
-              backgroundColor="#F8F8F7"
+              backgroundColor="#FAF9F7"
               primaryColor="52, 52, 52"
               secondaryColor="98, 98, 98"
               accentColor="130, 130, 130"
@@ -49,8 +49,8 @@ export function ManagementFeatures() {
               <div className="relative h-fit pl-6 md:pl-12 pb-6 md:pb-8">
                 <div className="absolute -inset-6 [background:radial-gradient(75%_95%_at_50%_0%,transparent,#F6F6F3_100%)]"></div>
 
-                <div className="bg-white/80 overflow-hidden rounded-tl-2xl border-l border-t border-black/10 pl-3 pt-3 relative">
-                  <div className="aspect-[4/3] rounded-tl-xl overflow-hidden relative">
+                <div className="bg-white/80 overflow-hidden rounded-tl-sm border-l border-t border-black/10 pl-3 pt-3 relative">
+                  <div className="aspect-[4/3] rounded-tl-sm overflow-hidden relative">
                     <Image
                       src="/client management.png"
                       alt="Client & Caregiver Management Dashboard"
@@ -66,9 +66,9 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Tall card - Right side (2 columns) */}
-          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-2 rounded-none flex flex-col !bg-white">
+          <Card className="group relative overflow-hidden border-0 shadow-black/5 sm:col-span-2 rounded-sm flex flex-col !bg-[#FAF9F7]">
             <SmoothWavyCanvas
-              backgroundColor="#F8F8F7"
+              backgroundColor="#FAF9F7"
               primaryColor="52, 52, 52"
               secondaryColor="98, 98, 98"
               accentColor="130, 130, 130"
@@ -87,7 +87,7 @@ export function ManagementFeatures() {
                   {featureItems.map(({ icon: Icon, label, desc }) => (
                     <div
                       key={label}
-                      className="flex items-center gap-4 rounded-xl border border-peach bg-white/80 px-4 py-3.5"
+                      className="flex items-center gap-4 rounded-sm bg-white/80 px-4 py-3.5"
                     >
                       <Icon className="w-6 h-6 text-foreground flex-shrink-0" strokeWidth={1.5} />
                       <div className="min-w-0">
@@ -102,9 +102,9 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Bottom left card (2 columns) */}
-          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-2 rounded-none flex flex-col !bg-white">
+          <Card className="group relative overflow-hidden border-0 shadow-black/5 sm:col-span-2 rounded-sm flex flex-col !bg-[#FAF9F7]">
             <SmoothWavyCanvas
-              backgroundColor="#F8F8F7"
+              backgroundColor="#FAF9F7"
               primaryColor="52, 52, 52"
               secondaryColor="98, 98, 98"
               accentColor="130, 130, 130"
@@ -119,11 +119,11 @@ export function ManagementFeatures() {
               </CardHeader>
               <CardContent className="mt-auto px-6 pb-6 md:px-8 md:pb-8">
                 <div className="flex justify-center gap-3">
-                  <div className="workflow-item w-[90px]">
+                  <div className="workflow-item w-[90px] !border-0">
                     <Search className="size-7 text-foreground flex-shrink-0" strokeWidth={1.5} />
                     <span className="text-xs text-muted-foreground text-center leading-tight">Search Records</span>
                   </div>
-                  <div className="workflow-item w-[90px]">
+                  <div className="workflow-item w-[90px] !border-0">
                     <Plus className="size-7 text-foreground flex-shrink-0" strokeWidth={1.5} />
                     <span className="text-xs text-muted-foreground text-center leading-tight">Add Client</span>
                   </div>
@@ -133,9 +133,9 @@ export function ManagementFeatures() {
           </Card>
 
           {/* Bottom right card (3 columns) */}
-          <Card className="group relative overflow-hidden border border-dashed border-black/15 shadow-black/5 sm:col-span-3 rounded-none flex flex-col !bg-white">
+          <Card className="group relative overflow-hidden border-0 shadow-black/5 sm:col-span-3 rounded-sm flex flex-col !bg-[#FAF9F7]">
             <SmoothWavyCanvas
-              backgroundColor="#F8F8F7"
+              backgroundColor="#FAF9F7"
               primaryColor="52, 52, 52"
               secondaryColor="98, 98, 98"
               accentColor="130, 130, 130"
@@ -163,7 +163,7 @@ export function ManagementFeatures() {
                   ].map(({ icon: Icon, label }) => (
                     <div
                       key={label}
-                      className="workflow-item"
+                      className="workflow-item !border-0"
                     >
                       <Icon className="size-7 text-foreground flex-shrink-0" />
                       <span className="text-xs text-muted-foreground text-center leading-tight">{label}</span>

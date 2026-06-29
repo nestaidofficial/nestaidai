@@ -1,5 +1,5 @@
 
-import { X, CheckCircle } from "lucide-react";
+import { X, Check } from "lucide-react";
 
 const withoutItems = [
   "Manual outreach",
@@ -14,6 +14,61 @@ const withItems = [
   "Live workflow updates",
   "Less admin work",
 ];
+
+type Variant = "without" | "with";
+
+function ComparisonItem({ label, variant }: { label: string; variant: Variant }) {
+  const isWith = variant === "with";
+  const Icon = isWith ? Check : X;
+  return (
+    <div className="flex items-center gap-3 rounded-sm bg-white p-2.5 sm:p-3">
+      {/* Icon box */}
+      <div
+        className={
+          isWith
+            ? "flex size-10 shrink-0 items-center justify-center rounded-sm border border-black/5 bg-[#F4F4F2]"
+            : "flex size-10 shrink-0 items-center justify-center rounded-sm border border-black/10 bg-white"
+        }
+      >
+        <Icon
+          className={isWith ? "size-[18px] text-[#16A34A]" : "size-[18px] text-[#DC2626]"}
+          strokeWidth={2}
+        />
+      </div>
+
+      {/* Label */}
+      <p className="min-w-0 flex-1 font-body font-bold text-[13px] sm:text-sm text-foreground leading-tight">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function ComparisonColumn({
+  title,
+  items,
+  variant,
+}: {
+  title: string;
+  items: string[];
+  variant: Variant;
+}) {
+  return (
+    <div
+      className="flex-1 rounded-sm p-4 sm:p-6"
+      style={{ backgroundColor: "#FAF9F7" }}
+    >
+      <h3 className="font-heading text-xl sm:text-2xl mb-4">{title}</h3>
+      <div className="rounded-sm bg-[#F1EEE9] p-3 sm:p-4">
+        <div className="flex flex-col gap-2.5">
+          {items.map((item) => (
+            <ComparisonItem key={item} label={item} variant={variant} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function SchedulingProblem() {
   return (
@@ -30,32 +85,9 @@ export function SchedulingProblem() {
         </div>
 
         {/* Two-column comparison */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {/* Without Nestaid */}
-          <div className="rounded-none border border-dashed border-black/15 bg-white/60 p-6">
-            <h3 className="font-heading text-xl sm:text-2xl mb-4">Without Nestaid</h3>
-            <ul className="space-y-3">
-              {withoutItems.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <X className="w-5 h-5 text-black/40 flex-shrink-0" />
-                  <span className="text-base text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* With Nestaid */}
-          <div className="rounded-none border border-dashed border-black/15 bg-white/60 p-6">
-            <h3 className="font-heading text-xl sm:text-2xl mb-4">With Nestaid</h3>
-            <ul className="space-y-3">
-              {withItems.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#F4C6AC] flex-shrink-0" />
-                  <span className="text-base text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mx-auto flex max-w-4xl flex-col items-stretch gap-6 lg:flex-row">
+          <ComparisonColumn title="Without Nestaid" items={withoutItems} variant="without" />
+          <ComparisonColumn title="With Nestaid" items={withItems} variant="with" />
         </div>
       </div>
     </section>

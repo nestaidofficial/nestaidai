@@ -53,8 +53,8 @@ const SchedulingDiagram = () => {
           const Icon = step.icon;
           return (
             <div key={step.label} className="relative">
-              <div className="flex items-start gap-3 rounded-xl border border-black/10 bg-white/80 p-3">
-                <div className="w-8 h-8 rounded-lg bg-[#F4C6AC]/20 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 rounded-sm border border-black/10 bg-white/80 p-3">
+                <div className="w-8 h-8 rounded-sm bg-[#F4C6AC]/20 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4 h-4 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -99,8 +99,8 @@ const ReceptionistDiagram = () => {
           const Icon = step.icon;
           return (
             <div key={step.label} className="relative">
-              <div className="flex items-start gap-3 rounded-xl border border-black/10 bg-white/80 p-3">
-                <div className="w-8 h-8 rounded-lg bg-[#F4C6AC]/20 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 rounded-sm border border-black/10 bg-white/80 p-3">
+                <div className="w-8 h-8 rounded-sm bg-[#F4C6AC]/20 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4 h-4 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -138,21 +138,21 @@ const FeatureCard = ({
   return (
     <div
       className={cn(
-        "h-full rounded-none border border-dashed border-black/15 bg-white/60 p-6",
+        "h-full rounded-sm border border-black/10 bg-white/60 p-6",
         "flex flex-col justify-between",
         className
       )}
     >
       <div className="space-y-4">
         {!hideIcon && (
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-black/5 text-foreground">
+          <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-black/5 text-foreground">
             {icon}
           </div>
         )}
 
         <div className="space-y-2">
           {eyebrow ? (
-            <p className="text-xs font-medium uppercase tracking-wider text-[#F4C6AC]">
+            <p className="text-xs font-medium uppercase tracking-wider text-[#F58D42]">
               {eyebrow}
             </p>
           ) : null}

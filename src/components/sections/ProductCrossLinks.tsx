@@ -40,7 +40,7 @@ export function ProductCrossLinks({ current }: { current: ProductKey }) {
                 <Link
                   key={p.href}
                   href={p.href}
-                  className="group rounded-none border border-dashed border-black/15 bg-white/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  className="group rounded-2xl border border-black/10 bg-white/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <h3 className="text-lg font-body font-semibold tracking-tight mb-1.5 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
                     {p.title}

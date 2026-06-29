@@ -80,7 +80,7 @@ export function CallRouting() {
             </div>
 
             {/* Live activity log */}
-            <div className="relative overflow-hidden rounded-none border border-dashed border-black/15 bg-white p-6 sm:p-8 mt-5">
+            <div className="relative overflow-hidden rounded-none border border-black/15 bg-white p-6 sm:p-8 mt-5">
               <div className={styles.logHeader}>
                 <div className={styles.logBadge}>
                   <Image

@@ -29,7 +29,7 @@ export function BlogCards({ posts }: BlogCardsProps) {
           whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.05 * index + 0.1, duration: 0.8 }}
-          className="relative overflow-hidden border border-dashed border-black/15 p-4 font-sans"
+          className="relative overflow-hidden border border-black/15 p-4 font-sans"
         >
           <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
             <div className="absolute inset-0 bg-gradient-to-r from-black/[0.02] to-black/[0.01] [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]">
