@@ -3,6 +3,8 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
+export type BlogImage = { src: string; alt: string; width?: number; height?: number };
+
 export type BlogFrontmatter = {
   title: string;
   description: string;
@@ -11,6 +13,7 @@ export type BlogFrontmatter = {
   authorRole?: string;
   image?: string;
   imageAlt?: string;
+  images?: BlogImage[];
   tags: string[];
   keywords: string[];
   readingMinutes?: number;

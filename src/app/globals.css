@@ -285,3 +285,19 @@
   0%, 100% { opacity: 0.35; transform: translateY(0); }
   50%      { opacity: 1;    transform: translateY(-1px); }
 }
+
+/* Featured blog card — CSS-only crossfade between two photos.
+   Top layer holds photo 1 for ~4s, fades to reveal photo 2, then fades back. */
+@keyframes featuredCrossfade {
+  0%, 40%  { opacity: 1; }
+  50%, 90% { opacity: 0; }
+  100%     { opacity: 1; }
+}
+.featured-crossfade {
+  animation: featuredCrossfade 10s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured-crossfade {
+    animation: none;
+  }
+}

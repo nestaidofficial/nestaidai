@@ -4,8 +4,17 @@ description: "Nestaid took 3rd place and $5,000 at Epipelagic Ventures Pitch Day
 date: "2026-07-17"
 author: "Rahul Chettri"
 authorRole: "Founder, Nestaid"
-image: "/blog/epipelagic-pitch-day.jpg"
-imageAlt: "Winners on stage at Epipelagic Ventures Pitch Day in Kendall Square — Nestaid holding the 3rd place $5,000 check"
+image: "/blog/ev-pitch-day-third-place-check.jpg"
+imageAlt: "Nestaid accepting the 3rd place $5,000 check on stage at Epipelagic Ventures Pitch Day in Kendall Square"
+images:
+  - src: "/blog/ev-pitch-day-nestaid-pitching.jpg"
+    alt: "Nestaid pitching on stage at Epipelagic Ventures Pitch Day — slide reading 10K Americans turn 65 every single day"
+    width: 1600
+    height: 998
+  - src: "/blog/ev-pitch-day-third-place-check.jpg"
+    alt: "Nestaid accepting the 3rd place $5,000 check on stage at Epipelagic Ventures Pitch Day in Kendall Square"
+    width: 1600
+    height: 1099
 tags: ["Company News", "Pitch Day", "Startup Journey"]
 keywords:
   - "Epipelagic Ventures Pitch Day"

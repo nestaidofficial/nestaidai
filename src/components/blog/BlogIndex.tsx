@@ -46,7 +46,26 @@ function FeaturedCard({ post }: { post: BlogPostMeta }) {
         className="group grid overflow-hidden rounded-[28px] border border-black/10 bg-white lg:grid-cols-[1.15fr_1fr]"
       >
         <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto lg:min-h-[460px]">
-          {post.image ? (
+          {post.images && post.images.length >= 2 ? (
+            <>
+              <Image
+                src={post.images[1].src}
+                alt={post.images[1].alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+              />
+              <Image
+                src={post.images[0].src}
+                alt={post.images[0].alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="featured-crossfade object-cover transition duration-700 group-hover:scale-[1.03]"
+              />
+            </>
+          ) : post.image ? (
             <Image
               src={post.image}
               alt={post.imageAlt ?? post.title}
