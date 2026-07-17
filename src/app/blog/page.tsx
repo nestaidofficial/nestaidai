@@ -3,7 +3,7 @@ import path from "node:path";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { BlogBento } from "@/components/blog/BlogBento";
+import { BlogIndex } from "@/components/blog/BlogIndex";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ const blogBreadcrumbSchema = {
 };
 
 export default function BlogIndexPage() {
-  // Blog index: bento "magazine" hero + archive grid (see BlogBento).
+  // Blog index: featured latest story + filterable image-led article grid (see BlogIndex).
   const posts = getAllPosts();
 
   // Resolve images on the server: keep the path only when the file actually
@@ -78,10 +78,8 @@ export default function BlogIndexPage() {
       <main>
         <section className="section-padding">
           <div className="container-max">
-            <h1 className="sr-only">Home care AI, operations &amp; scheduling</h1>
-
             {posts.length > 0 ? (
-              <BlogBento posts={postsWithImages} />
+              <BlogIndex posts={postsWithImages} />
             ) : (
               <p className="text-center text-muted-foreground">
                 No posts yet. Check back soon.

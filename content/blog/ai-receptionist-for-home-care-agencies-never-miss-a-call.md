@@ -4,7 +4,7 @@ description: "Missed calls cost home care agencies real revenue. Here's how an A
 date: "2026-05-22"
 author: "Rahul Chettri"
 authorRole: "Founder, Nestaid"
-image: "/blog/ai-receptionist.jpg"
+image: "/blog/never-miss-a-call.jpg"
 imageAlt: "AI receptionist answering a home care agency call at 6 AM"
 tags: ["AI Receptionist", "Home Care Operations", "Missed Calls"]
 keywords:

@@ -76,6 +76,7 @@ DAY 2 batch (highest search/commercial value first):
   [ ] /blog/how-ai-can-help-home-care-agencies-grow-without-hiring-more-office-staff
 
 DAY 3 batch (remaining blog posts + low-priority legal pages):
+  [ ] /blog/nestaid-third-place-epipelagic-ventures-pitch-day   (added 2026-07-17, new post)
   [ ] /blog/evv-problems-in-home-care-missed-clock-ins-exceptions
   [ ] /blog/handling-caregiver-callouts-with-ai
   [ ] /blog/inside-our-comforcare-marlborough-pilot-ai-caregiver-coverage
