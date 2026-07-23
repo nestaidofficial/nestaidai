@@ -262,8 +262,103 @@ const sections = [
     ),
   },
   {
+    id: "caregiver-mobile-app",
+    title: "7. Nestaid Caregiver Mobile App",
+    content: (
+      <>
+        <p>
+          The Nestaid Caregiver app for iPhone is used by caregivers at Agency
+          Customers to view their schedule, verify visits, and document care.
+          This section explains exactly what the app collects and why.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">What the app collects</p>
+        <ul>
+          <li>
+            <strong>Name, email address, and account identifier</strong> — used
+            to sign you in and to show your schedule and visit records.
+          </li>
+          <li>
+            <strong>Precise location</strong> — captured only at the moment you
+            clock in or clock out of a visit, to verify you are at the
+            client&rsquo;s home. This is required for Electronic Visit
+            Verification (EVV) under the 21st Century Cures Act and state
+            Medicaid programs. The app does not track your location in the
+            background or between visits.
+          </li>
+          <li>
+            <strong>Microphone recordings</strong> — only when you tap the
+            microphone button to dictate your visit notes. Recording never
+            starts on its own.
+          </li>
+        </ul>
+
+        <p className="font-medium text-black/80 mt-4">
+          Voice recordings and how long they are kept
+        </p>
+        <p>
+          When you dictate a note, the recording is uploaded over an encrypted
+          connection, converted to text, and turned into a written care note.
+          Nestaid does not store the audio — the recording is processed in
+          memory and discarded after the transcript is produced. Only the
+          written note that you review and submit is saved to the visit record.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">Service providers</p>
+        <p>
+          App data is handled by vetted service providers under
+          confidentiality and security obligations: speech-to-text
+          transcription (Deepgram), AI note structuring (Anthropic),
+          application hosting (Vercel), and database and authentication
+          (Supabase). The app contains no advertising or third-party analytics
+          SDKs.
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">What we never do</p>
+        <ul>
+          <li>Nestaid does not sell personal information.</li>
+          <li>
+            Nestaid does not use app data for advertising or tracking of any
+            kind.
+          </li>
+        </ul>
+
+        <p className="font-medium text-black/80 mt-4">Your privacy choices</p>
+        <p>
+          You can access, correct, or request deletion of your information at
+          any time. Start with your agency (they control your employment and
+          care records), or contact Nestaid directly at{" "}
+          <a
+            href="mailto:rahul@nestaid.us"
+            className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            rahul@nestaid.us
+          </a>{" "}
+          and we will respond within 30 days. Account-deletion steps are on our{" "}
+          <a
+            href="/support#account-deletion"
+            className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
+          >
+            Support page
+          </a>
+          .
+        </p>
+
+        <p className="font-medium text-black/80 mt-4">Records we must retain</p>
+        <p>
+          EVV visit-verification records (clock-in/out times and location
+          verification) and care documentation are healthcare records. Your
+          agency and Nestaid may be legally required to retain them under state
+          and federal Medicaid record-keeping rules even after your account is
+          deleted. Retained records stay secured and are no longer linked to an
+          active account.
+        </p>
+      </>
+    ),
+  },
+  {
     id: "how-we-share",
-    title: "7. How We Share Information",
+    title: "8. How We Share Information",
     content: (
       <>
         <p>We may share information:</p>
@@ -297,7 +392,7 @@ const sections = [
   },
   {
     id: "data-security",
-    title: "8. Data Security",
+    title: "9. Data Security",
     content: (
       <>
         <p>
@@ -312,7 +407,7 @@ const sections = [
   },
   {
     id: "data-retention",
-    title: "9. Data Retention",
+    title: "10. Data Retention",
     content: (
       <>
         <p>
@@ -329,7 +424,7 @@ const sections = [
   },
   {
     id: "your-rights",
-    title: "10. Your Rights",
+    title: "11. Your Rights",
     content: (
       <>
         <p>
@@ -347,7 +442,7 @@ const sections = [
   },
   {
     id: "cookies",
-    title: "11. Cookies",
+    title: "12. Cookies",
     content: (
       <p>
         We use cookies and similar technologies to operate the website and
@@ -358,7 +453,7 @@ const sections = [
   },
   {
     id: "childrens-privacy",
-    title: "12. Children’s Privacy",
+    title: "13. Children’s Privacy",
     content: (
       <p>
         Nestaid is not intended for individuals under 18. We do not knowingly
@@ -368,7 +463,7 @@ const sections = [
   },
   {
     id: "changes",
-    title: "13. Changes to This Policy",
+    title: "14. Changes to This Policy",
     content: (
       <p>
         We may update this Privacy Policy from time to time. If we make
@@ -379,7 +474,7 @@ const sections = [
   },
   {
     id: "contact",
-    title: "14. Contact Us",
+    title: "15. Contact Us",
     content: (
       <div className="mt-2 bg-white/60 border border-black/10 rounded-xl p-5 inline-block">
         <p className="font-medium text-black">Nestaid Inc.</p>
@@ -432,7 +527,7 @@ export default function PrivacyPage() {
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
                 Last updated:{" "}
-                <span className="font-medium text-black/70">June 23, 2026</span>
+                <span className="font-medium text-black/70">July 23, 2026</span>
               </p>
             </div>
           </div>

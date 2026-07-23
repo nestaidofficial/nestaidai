@@ -14,6 +14,7 @@ import {
   Leaf,
   Mail,
   Accessibility,
+  LifeBuoy,
 } from "lucide-react";
 
 const brand = {
@@ -44,6 +45,7 @@ const columns = [
       { name: "About", Icon: Info, href: "/about" },
       { name: "Blog", Icon: Leaf, href: "/blog" },
       { name: "Contact", Icon: Mail, href: "/contact" },
+      { name: "App Support", Icon: LifeBuoy, href: "/support" },
     ],
   },
   {
