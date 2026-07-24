@@ -28,7 +28,7 @@ export function GET() {
         `      <guid isPermaLink="true">${url}</guid>`,
         `      <pubDate>${pubDate}</pubDate>`,
         `      <description>${escapeXml(post.description)}</description>`,
-        `      <author>rahul@nestaid.us (${escapeXml(post.author)})</author>`,
+        `      <author>support@nestaid.us (${escapeXml(post.author)})</author>`,
         "    </item>",
       ].join("\n");
     })

@@ -6,7 +6,7 @@ import { CalendarCheck, Mail, PhoneCall, ArrowRight, ArrowUpRight } from "lucide
 
 const SITE_URL = "https://www.nestaid.us";
 const CALENDLY_URL = "https://calendly.com/rahulchettri601/nestaid-demo-call";
-const CONTACT_EMAIL = "rahul@nestaid.us";
+const CONTACT_EMAIL = "support@nestaid.us";
 
 export const metadata: Metadata = {
   title: "Contact Nestaid — Talk to Our Home Care AI Team",

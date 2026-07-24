@@ -154,10 +154,10 @@ const sections = [
           <p>
             Email:{" "}
             <a
-              href="mailto:rahul@nestaid.us"
+              href="mailto:support@nestaid.us"
               className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
-              rahul@nestaid.us
+              support@nestaid.us
             </a>
           </p>
           <p>

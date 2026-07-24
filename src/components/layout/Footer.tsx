@@ -24,7 +24,7 @@ const brand = {
 };
 
 const socialLinks = [
-  { name: "Email", href: "mailto:rahul@nestaid.us" },
+  { name: "Email", href: "mailto:support@nestaid.us" },
   { name: "Book a demo", href: "https://calendly.com/rahulchettri601/nestaid-demo-call" },
 ];
 

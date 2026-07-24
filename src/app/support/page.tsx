@@ -29,10 +29,10 @@ const sections = [
             <strong>App problems</strong> (sign-in, crashes, something looks
             wrong) — email us at{" "}
             <a
-              href="mailto:rahul@nestaid.us"
+              href="mailto:support@nestaid.us"
               className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
-              rahul@nestaid.us
+              support@nestaid.us
             </a>
             . Include your name, your agency&rsquo;s name, your iPhone model,
             and a screenshot if you can — it helps us fix things faster.
@@ -164,10 +164,10 @@ const sections = [
           <li>
             <strong>Directly with Nestaid</strong> — email{" "}
             <a
-              href="mailto:rahul@nestaid.us"
+              href="mailto:support@nestaid.us"
               className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
-              rahul@nestaid.us
+              support@nestaid.us
             </a>{" "}
             with the subject &ldquo;Delete my account&rdquo; from the email
             address on your account.
@@ -212,7 +212,7 @@ const sections = [
         <p>
           Email:{" "}
           <a
-            href="mailto:rahul@nestaid.us"
+            href="mailto:support@nestaid.us"
             className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
           >
             rahul@Nestaid.us

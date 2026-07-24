@@ -52,7 +52,7 @@ export function FAQ() {
             <p className="text-[17px] text-muted-foreground max-w-2xl mx-auto">
               Everything you need to know about Nestaid. Can&apos;t find the answer
               you&apos;re looking for?{" "}
-              <a href="mailto:rahul@nestaid.us" className="hover:underline">
+              <a href="mailto:support@nestaid.us" className="hover:underline">
                 Reach out to our team.
               </a>
             </p>

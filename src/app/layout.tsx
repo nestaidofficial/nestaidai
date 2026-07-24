@@ -112,7 +112,7 @@ const organizationSchema = {
     {
       "@type": "ContactPoint",
       contactType: "sales",
-      email: "rahul@nestaid.us",
+      email: "support@nestaid.us",
       url: "https://calendly.com/rahulchettri601/nestaid-demo-call",
       availableLanguage: ["en"],
     },

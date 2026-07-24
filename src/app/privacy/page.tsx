@@ -329,10 +329,10 @@ const sections = [
           any time. Start with your agency (they control your employment and
           care records), or contact Nestaid directly at{" "}
           <a
-            href="mailto:rahul@nestaid.us"
+            href="mailto:support@nestaid.us"
             className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
           >
-            rahul@nestaid.us
+            support@nestaid.us
           </a>{" "}
           and we will respond within 30 days. Account-deletion steps are on our{" "}
           <a
@@ -492,7 +492,7 @@ const sections = [
         <p>
           Email:{" "}
           <a
-            href="mailto:rahul@nestaid.us"
+            href="mailto:support@nestaid.us"
             className="text-black underline underline-offset-2 hover:opacity-70 transition-opacity"
           >
             rahul@Nestaid.us

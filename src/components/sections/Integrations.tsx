@@ -19,7 +19,7 @@ export function Integrations() {
             We connect to your software so our team can schedule like your best
             coordinator. Don&apos;t see yours?{" "}
             <a
-              href="mailto:rahul@nestaid.us"
+              href="mailto:support@nestaid.us"
               className="underline underline-offset-4 hover:text-foreground transition-colors"
             >
               Let us know.
